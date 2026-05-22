@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exercici 3.5 - Expressions</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 24px;
+      background: #f7f7f7;
+      color: #222;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 28px;
+      border-radius: 14px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+    }
+
+    h1 {
+      margin-top: 0;
+      font-size: 1.8rem;
+    }
+
+    .instructions {
+      background: #eef5ff;
+      border-left: 5px solid #1f4e79;
+      padding: 16px 18px;
+      border-radius: 10px;
+      margin-bottom: 24px;
+      color: #1f2d3d;
+      line-height: 1.5;
+    }
+
+    .example {
+      background: #f1f4f8;
+      border-left: 4px solid #1f4e79;
+      padding: 12px 16px;
+      margin-bottom: 22px;
+      border-radius: 8px;
+    }
+
+    .bank {
+      background: #fafafa;
+      border: 1px solid #ddd;
+      padding: 16px;
+      border-radius: 10px;
+      margin-bottom: 24px;
+    }
+
+    .bank ul {
+      columns: 2;
+      margin: 8px 0 0 0;
+      padding-left: 22px;
+    }
+
+    .item {
+      margin-bottom: 18px;
+    }
+
+    .item-number {
+      font-weight: bold;
+      margin-right: 4px;
+    }
+
+    select {
+      font-size: 1rem;
+      padding: 4px 8px;
+      margin: 0 3px;
+      border: 2px solid #bbb;
+      border-radius: 6px;
+      background: #fff;
+      max-width: 100%;
+    }
+
+    select.correct {
+      border-color: #2e7d32;
+      background: #e8f5e9;
+    }
+
+    select.incorrect {
+      border-color: #c62828;
+      background: #ffebee;
+    }
+
+    .buttons {
+      margin-top: 24px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      font-size: 1rem;
+      padding: 10px 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background: #1f4e79;
+      color: white;
+    }
+
+    button.secondary {
+      background: #666;
+    }
+
+    #resultat {
+      margin-top: 18px;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    @media (max-width: 700px) {
+      body {
+        padding: 12px;
+      }
+
+      .container {
+        padding: 18px;
+      }
+
+      .bank ul {
+        columns: 1;
+      }
+
+      select {
+        display: block;
+        margin: 6px 0;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <div class="instructions">
+      <strong>
+        Trieu l’expressió adequada per completar el significat de cada frase. Tingueu en compte que hi ha dues expressions que no fareu servir. Cliqueu <em>Comprova</em> per validar les respostes.
+      </strong>
+    </div>
+
+    <div class="example">
+      <strong>Exemple:</strong><br />
+      Vol aprendre a esquiar en una setmana perquè es pensa que això és <strong>bufar i fer ampolles</strong>.
+    </div>
+
+    <div class="bank">
+      <strong>Expressions:</strong>
+      <ul>
+        <li>agafar el bou per les banyes</li>
+        <li>aixecar la camisa</li>
+        <li>estar a l’aguait</li>
+        <li>fer el pes</li>
+        <li>fer els ulls grossos</li>
+        <li>passar per alt</li>
+        <li>perdre el cap</li>
+        <li>picar-se els dits</li>
+        <li>tocar de peus a terra</li>
+        <li>tocar el crostó</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <span class="item-number">1.</span>
+      Finalment vam decidir no comprar l’aparell que havíem reservat perquè no ens acabava de
+      <select data-answer="fer el pes" aria-label="Pregunta 1">
+        <option value="">— tria —</option>
+        <option>agafar el bou per les banyes</option>
+        <option>aixecar la camisa</option>
+        <option>estar a l’aguait</option>
+        <option>fer el pes</option>
+        <option>fer els ulls grossos</option>
+        <option>passar per alt</option>
+        <option>perdre el cap</option>
+        <option>picar-se els dits</option>
+        <option>tocar de peus a terra</option>
+        <option>tocar el crostó</option>
+      </select>.
+      En buscarem un de més adequat.
+    </div>
+
+    <div class="item">
+      <span class="item-number">2.</span>
+      Quan es busca feina, cal
+      <select data-answer="estar a l’aguait" aria-label="Pregunta 2">
+        <option value="">— tria —</option>
+        <option>agafar el bou per les banyes</option>
+        <option>aixecar la camisa</option>
+        <option>estar a l’aguait</option>
+        <option>fer el pes</option>
+        <option>fer els ulls grossos</option>
+        <option>passar per alt</option>
+        <option>perdre el cap</option>
+        <option>picar-se els dits</option>
+        <option>tocar de peus a terra</option>
+        <option>tocar el crostó</option>
+      </select>
+      de totes les ofertes laborals que es publiquen als diaris i les xarxes socials.
+    </div>
+
+    <div class="item">
+      <span class="item-number">3.</span>
+      Tot i que els havien avisat dels riscos de la inversió, hi van posar tots els estalvis i van
+      <select data-answer="picar-se els dits" aria-label="Pregunta 3">
+        <option value="">— tria —</option>
+        <option>agafar el bou per les banyes</option>
+        <option>aixecar la camisa</option>
+        <option>estar a l’aguait</option>
+        <option>fer el pes</option>
+        <option>fer els ulls grossos</option>
+        <option>passar per alt</option>
+        <option>perdre el cap</option>
+        <option>picar-se els dits</option>
+        <option>tocar de peus a terra</option>
+        <option>tocar el crostó</option>
+      </select>:
+      ho van perdre pràcticament tot.
+    </div>
+
+    <div class="item">
+      <span class="item-number">4.</span>
+      Ningú no es decidia a fer el primer pas i denunciar la situació; així que finalment va
+      <select data-answer="agafar el bou per les banyes" aria-label="Pregunta 4">
+        <option value="">— tria —</option>
+        <option>agafar el bou per les banyes</option>
+        <option>aixecar la camisa</option>
+        <option>estar a l’aguait</option>
+        <option>fer el pes</option>
+        <option>fer els ulls grossos</option>
+        <option>passar per alt</option>
+        <option>perdre el cap</option>
+        <option>picar-se els dits</option>
+        <option>tocar de peus a terra</option>
+        <option>tocar el crostó</option>
+      </select>
+      i va explicar la veritat a la directora.
+    </div>
+
+    <div class="item">
+      <span class="item-number">5.</span>
+      Feia dies que en David no acomplia els objectius fixats i que no estava prou atent a la feina. Li van haver de
+      <select data-answer="tocar el crostó" aria-label="Pregunta 5">
+        <option value="">— tria —</option>
+        <option>agafar el bou per les banyes</option>
+        <option>aixecar la camisa</option>
+        <option>estar a l’aguait</option>
+        <option>fer el pes</option>
+        <option>fer els ulls grossos</option>
+        <option>passar per alt</option>
+        <option>perdre el cap</option>
+        <option>picar-se els dits</option>
+        <option>tocar de peus a terra</option>
+        <option>tocar el crostó</option>
+      </select>.
+    </div>
+
+    <div class="item">
+      <span class="item-number">6.</span>
+      Em sembla que ens van
+      <select data-answer="aixecar la camisa" aria-label="Pregunta 6">
+        <option value="">— tria —</option>
+        <option>agafar el bou per les banyes</option>
+        <option>aixecar la camisa</option>
+        <option>estar a l’aguait</option>
+        <option>fer el pes</option>
+        <option>fer els ulls grossos</option>
+        <option>passar per alt</option>
+        <option>perdre el cap</option>
+        <option>picar-se els dits</option>
+        <option>tocar de peus a terra</option>
+        <option>tocar el crostó</option>
+      </select>:
+      ens van cobrar el mateix per un ordinador de segona mà que per un ordinador nou.
+    </div>
+
+    <div class="item">
+      <span class="item-number">7.</span>
+      La professora va advertir que no corregiria els treballs lliurats fora de termini. Finalment, però, va
+      <select data-answer="fer els ulls grossos" aria-label="Pregunta 7">
+        <option value="">— tria —</option>
+        <option>agafar el bou per les banyes</option>
+        <option>aixecar la camisa</option>
+        <option>estar a l’aguait</option>
+        <option>fer el pes</option>
+        <option>fer els ulls grossos</option>
+        <option>passar per alt</option>
+        <option>perdre el cap</option>
+        <option>picar-se els dits</option>
+        <option>tocar de peus a terra</option>
+        <option>tocar el crostó</option>
+      </select>
+      i els va avaluar sense dir res.
+    </div>
+
+    <div class="item">
+      <span class="item-number">8.</span>
+      Encara que vaig fer una lectura atenta de l’article, em va
+      <select data-answer="passar per alt" aria-label="Pregunta 8">
+        <option value="">— tria —</option>
+        <option>agafar el bou per les banyes</option>
+        <option>aixecar la camisa</option>
+        <option>estar a l’aguait</option>
+        <option>fer el pes</option>
+        <option>fer els ulls grossos</option>
+        <option>passar per alt</option>
+        <option>perdre el cap</option>
+        <option>picar-se els dits</option>
+        <option>tocar de peus a terra</option>
+        <option>tocar el crostó</option>
+      </select>
+      que no hi constaven totes les fonts.
+    </div>
+
+    <div class="buttons">
+      <button onclick="corregir()">Comprova</button>
+      <button class="secondary" onclick="reiniciar()">Reinicia</button>
+    </div>
+
+    <div id="resultat"></div>
+  </div>
+
+  <script>
+    function corregir() {
+      const desplegables = document.querySelectorAll('select');
+      let correctes = 0;
+      let respostes = 0;
+
+      desplegables.forEach(select => {
+        const respostaCorrecta = select.dataset.answer;
+        const respostaUsuari = select.value;
+
+        select.classList.remove('correct', 'incorrect');
+
+        if (respostaUsuari !== '') {
+          respostes++;
+        }
+
+        if (respostaUsuari === respostaCorrecta) {
+          select.classList.add('correct');
+          correctes++;
+        } else {
+          select.classList.add('incorrect');
+        }
+      });
+
+      const total = desplegables.length;
+      const resultat = document.getElementById('resultat');
+
+      if (respostes < total) {
+        resultat.textContent = `Has respost ${respostes} de ${total} preguntes. Resultat provisional: ${correctes}/${total}.`;
+      } else {
+        resultat.textContent = `Resultat final: ${correctes}/${total}.`;
+      }
+    }
+
+    function reiniciar() {
+      const desplegables = document.querySelectorAll('select');
+      desplegables.forEach(select => {
+        select.value = '';
+        select.classList.remove('correct', 'incorrect');
+      });
+      document.getElementById('resultat').textContent = '';
+    }
+  </script>
+</body>
+</html>

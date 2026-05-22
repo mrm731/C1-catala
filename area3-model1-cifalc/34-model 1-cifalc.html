@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exercici 3.4 - Sinònims</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 24px;
+      background: #f7f7f7;
+      color: #222;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 28px;
+      border-radius: 14px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+    }
+
+    h1 {
+      margin-top: 0;
+      font-size: 1.8rem;
+    }
+
+    .instructions {
+      background: #eef5ff;
+      border-left: 5px solid #1f4e79;
+      padding: 16px 18px;
+      border-radius: 10px;
+      margin-bottom: 24px;
+      color: #1f2d3d;
+      line-height: 1.5;
+    }
+
+    .example {
+      background: #f1f4f8;
+      border-left: 4px solid #1f4e79;
+      padding: 12px 16px;
+      margin-bottom: 22px;
+      border-radius: 8px;
+    }
+
+    .text-box {
+      background: #fafafa;
+      border: 1px solid #ddd;
+      padding: 18px;
+      border-radius: 10px;
+      margin-bottom: 24px;
+    }
+
+    .item {
+      margin-bottom: 14px;
+    }
+
+    .item-number {
+      font-weight: bold;
+      margin-right: 4px;
+    }
+
+    input[type="text"] {
+      font-size: 1rem;
+      padding: 5px 8px;
+      margin: 0 3px;
+      border: 2px solid #bbb;
+      border-radius: 6px;
+      background: #fff;
+      min-width: 150px;
+    }
+
+    input.correct {
+      border-color: #2e7d32;
+      background: #e8f5e9;
+    }
+
+    input.incorrect {
+      border-color: #c62828;
+      background: #ffebee;
+    }
+
+    input.empty {
+      border-color: #bbb;
+      background: #fff;
+    }
+
+    .buttons {
+      margin-top: 24px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      font-size: 1rem;
+      padding: 10px 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background: #1f4e79;
+      color: white;
+    }
+
+    button.secondary {
+      background: #666;
+    }
+
+    #resultat {
+      margin-top: 18px;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    .font {
+      margin-top: 24px;
+      font-size: 0.9rem;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <div class="instructions">
+      <strong>
+        Busqueu en el text un sinònim dels mots que es proposen. Cliqueu <em>Comprova</em> per validar les respostes.
+      </strong>
+    </div>
+
+    <div class="example">
+      <strong>Exemple:</strong><br />
+      a pesar de: <strong>malgrat</strong>
+    </div>
+
+    <h2>Junil a les terres dels bàrbars</h2>
+
+    <div class="text-box">
+      <p>
+        Eren cinc i vivien prop de la frontera, en un poble de mercats de molta anomenada que servien per mantenir la pau entre l’imperi al sud i els bàrbars al nord. Un poble menut que hauria estat gairebé pròsper si, a banda i banda de la ratlla, no hi haguessin campat bandes d’assaltadors que vivien a costa dels habitants i els viatgers. La poca tropa que hi enviava l’imperi les empaitava sense coratge ni ambició, i així poc impedien que baixessin de les muntanyes en nits de lluna magra, corrent pels senders a matadegolla, i irrompessin a qualsevol poble per devastar-lo en un parell d’hores. A la capital de la província, la notícia de l’atac arribava dies més tard, esmorteïda i deformada, i tan sols de tant en tant despertava en algun funcionari la idea d’organitzar una batuda contra els lladres, idea que tot sovint acabava diluint-se en les dificultats per convèncer el governador o els seus apoderats. Al cantó nord de la frontera, a la banda dels bàrbars, el poder polític era un concepte difús.
+      </p>
+
+      <p>
+        En definitiva, les fronteres semblaven prou estables; haver de preocupar-se de vigilar-les era una font de mandra. I els lladres, una vegada entès que no hi hauria reaccions brutals si no duien una activitat exagerada, sabien estar-se quiets prou temps perquè se’ls considerés una nosa acceptable.
+      </p>
+    </div>
+
+    <p class="font">Font: Joan-Lluís Lluís, <em>Junil a les terres dels bàrbars</em>, 2021 (text adaptat)</p>
+
+    <div class="item">
+      <span class="item-number">1.</span>
+      arrasar:
+      <input type="text" data-answer="devastar" aria-label="Resposta 1" />
+    </div>
+
+    <div class="item">
+      <span class="item-number">2.</span>
+      camí:
+      <input type="text" data-answer="senders" aria-label="Resposta 2" />
+    </div>
+
+    <div class="item">
+      <span class="item-number">3.</span>
+      molèstia:
+      <input type="text" data-answer="nosa" aria-label="Resposta 3" />
+    </div>
+
+    <div class="item">
+      <span class="item-number">4.</span>
+      perseguir:
+      <input type="text" data-answer="empaitava" aria-label="Resposta 4" />
+    </div>
+
+    <div class="item">
+      <span class="item-number">5.</span>
+      petit:
+      <input type="text" data-answer="menut" aria-label="Resposta 5" />
+    </div>
+
+    <div class="item">
+      <span class="item-number">6.</span>
+      vague:
+      <input type="text" data-answer="difús" aria-label="Resposta 6" />
+    </div>
+
+    <div class="buttons">
+      <button onclick="corregir()">Comprova</button>
+      <button class="secondary" onclick="reiniciar()">Reinicia</button>
+    </div>
+
+    <div id="resultat"></div>
+  </div>
+
+  <script>
+    function normalitzar(text) {
+      return text.trim().toLowerCase();
+    }
+
+    function corregir() {
+      const camps = document.querySelectorAll('input[type="text"]');
+      let correctes = 0;
+      let respostes = 0;
+
+      camps.forEach(camp => {
+        const respostesCorrectes = camp.dataset.answer.split('|').map(normalitzar);
+        const respostaUsuari = normalitzar(camp.value);
+
+        camp.classList.remove('correct', 'incorrect', 'empty');
+
+        if (respostaUsuari === '') {
+          camp.classList.add('empty');
+          return;
+        }
+
+        respostes++;
+
+        if (respostesCorrectes.includes(respostaUsuari)) {
+          camp.classList.add('correct');
+          correctes++;
+        } else {
+          camp.classList.add('incorrect');
+        }
+      });
+
+      const total = camps.length;
+      const resultat = document.getElementById('resultat');
+      resultat.textContent = `Has respost ${respostes} de ${total} preguntes. Respostes correctes: ${correctes}/${total}.`;
+    }
+
+    function reiniciar() {
+      const camps = document.querySelectorAll('input[type="text"]');
+      camps.forEach(camp => {
+        camp.value = '';
+        camp.classList.remove('correct', 'incorrect', 'empty');
+      });
+      document.getElementById('resultat').textContent = '';
+    }
+  </script>
+</body>
+</html>

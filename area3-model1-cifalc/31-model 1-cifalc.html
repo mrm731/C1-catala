@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exercici - Morfologia i sintaxi</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 24px;
+      background: #f7f7f7;
+      color: #222;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 28px;
+      border-radius: 14px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+    }
+
+    h1 {
+      margin-top: 0;
+      font-size: 1.8rem;
+    }
+
+    h2 {
+      margin-top: 0;
+      color: #1f2d3d;
+    }
+
+    .instructions {
+      background: #eef5ff;
+      border-left: 5px solid #1f4e79;
+      padding: 16px 18px;
+      border-radius: 10px;
+      margin-bottom: 24px;
+      color: #1f2d3d;
+      line-height: 1.5;
+    }
+
+    select {
+      font-size: 1rem;
+      padding: 4px 8px;
+      margin: 0 3px;
+      border: 2px solid #bbb;
+      border-radius: 6px;
+      background: #fff;
+      max-width: 100%;
+    }
+
+    select.correct {
+      border-color: #2e7d32;
+      background: #e8f5e9;
+    }
+
+    select.incorrect {
+      border-color: #c62828;
+      background: #ffebee;
+    }
+
+    .blank-number {
+      font-size: 0.85rem;
+      color: #555;
+      margin-right: 2px;
+      font-weight: bold;
+    }
+
+    .buttons {
+      margin-top: 24px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      font-size: 1rem;
+      padding: 10px 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background: #1f4e79;
+      color: white;
+    }
+
+    button.secondary {
+      background: #666;
+    }
+
+    .resultat {
+      margin-top: 18px;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    .font {
+      margin-top: 24px;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    .exercise {
+      margin-top: 28px;
+      padding-top: 8px;
+    }
+
+    .exercise + .exercise {
+      margin-top: 36px;
+      padding-top: 28px;
+      border-top: 2px solid #e6e6e6;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 12px;
+      }
+
+      .container {
+        padding: 18px;
+      }
+
+      select {
+        margin-top: 4px;
+        margin-bottom: 4px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="instructions">
+      <strong>Trieu l’opció correcta en cada desplegable. Cliqueu <em>Comprova</em> per validar les respostes.</strong>
+    </div>
+
+    <section class="exercise" aria-labelledby="exercici-1">
+      <h2 id="exercici-1">Text 1</h2>
+      <h2>La vida seria més senzilla si els forats negres no existissin</h2>
+
+      <p>Són extrems, misteriosos i problemàtics.
+        <span class="blank-number">(0)</span><select data-answer="S’hi" aria-label="Pregunta 0"><option value="">— tria —</option><option>Es</option><option>Se’n</option><option>S’hi</option></select>
+        concentra la matèria equivalent a milions d’estrelles però no
+        <span class="blank-number">(1)</span><select data-answer="en" aria-label="Pregunta 1"><option value="">— tria —</option><option>---</option><option>en</option><option>hi</option></select>
+        sabem res, dels forats negres, ja que no deixen anar cap pista. Res del que hi entra en pot sortir, o sigui que no tenim manera humana ni tecnològica de saber com són per
+        <span class="blank-number">(2)</span><select data-answer="dins" aria-label="Pregunta 2"><option value="">— tria —</option><option>cap endins</option><option>dins</option><option>endins</option></select>.
+        I això és un maldecap. Parlem, evidentment, de forats negres com el que hi ha al centre de la nostra galàxia, presentat al món en forma d’imatge per la col·laboració Event Horizon Telescope (EHT) aquesta setmana. “El simple fet que existeixin els forats negres ja porta problemes
+        <span class="blank-number">(3)</span><select data-answer="perquè" aria-label="Pregunta 3"><option value="">— tria —</option><option>perquè</option><option>doncs</option><option>posat que</option></select>
+        posa un interrogant als fonaments de la física moderna”, explica Diego Blas, físic teòric de l’Institut de Física d’Altes Energies (IFAE).</p>
+
+      <p>Els forats negres podrien no existir, efectivament. De fet, això és el que es va pensar durant molts anys
+        <span class="blank-number">(4)</span><select data-answer="encara que" aria-label="Pregunta 4"><option value="">— tria —</option><option>encara que</option><option>quan</option><option>quant</option></select>
+        el 22 de desembre del 1915 el tinent Karl Schwarzschild trobés la primera solució exacta a les equacions d’Einstein, publicades un mes abans. Aquell desenvolupament preveia la possibilitat d’una massa tan concentrada que exercís una gravetat capaç de retenir
+        <span class="blank-number">(5)</span><select data-answer="la mateixa llum" aria-label="Pregunta 5"><option value="">— tria —</option><option>el mateix llum</option><option>els mateixos llums</option><option>la mateixa llum</option></select>.
+        L’elucubració que Schwarzschild havia fet a les trinxeres del front rus
+        <span class="blank-number">(6)</span><select data-answer="podria haver sigut" aria-label="Pregunta 6"><option value="">— tria —</option><option>deuria d’haver sigut</option><option>deuria ser</option><option>podria haver sigut</option></select>
+        una mera extravagància matemàtica sense cap relació amb la realitat, però, tal com han demostrat els resultats dels detectors d’ones gravitatòries i les dues imatges captades per l’EHT, els forats negres són reals. “Els teòrics,
+        <span class="blank-number">(7)</span><select data-answer="doncs" aria-label="Pregunta 7"><option value="">— tria —</option><option>d’altra banda</option><option>doncs</option><option>així mateix</option></select>,
+        ho hem d’assumir i posar-nos a treballar”, conclou Blas amb el seu accent aragonès.</p>
+
+      <p class="font">Font: Toni Pou, <em>Ara</em>, 13/05/2022 (text adaptat)</p>
+
+      <div class="buttons">
+        <button type="button" onclick="comprovaText('exercici-1', 'resultat-1')"><em>Comprova</em></button>
+        <button type="button" class="secondary" onclick="reiniciaText('exercici-1', 'resultat-1')">Reinicia</button>
+      </div>
+      <div id="resultat-1" class="resultat" aria-live="polite"></div>
+    </section>
+
+    <section class="exercise" aria-labelledby="exercici-2">
+      <h2 id="exercici-2">Text 2</h2>
+
+      <p>A casa d’en Marcel treballaven en una empresa tèxtil força important. El seu pare
+        <span class="blank-number">(8)</span><select data-answer="n’" aria-label="Pregunta 8"><option value="">— tria —</option><option>---</option><option>l’</option><option>n’</option></select>
+        era el gerent. S’havia guanyat la confiança dels amos treballant de valent i, sobretot, demostrant una lleialtat inqüestionable. Era un home apreciat a l’empresa i molt respectat
+        <span class="blank-number">(9)</span><select data-answer="tant" aria-label="Pregunta 9"><option value="">— tria —</option><option>tal com</option><option>tan</option><option>tant</option></select>
+        pels treballadors com pels amos. En Marcel en sentia parlar molt, de tota aquella gent. Especialment d’un: l’Enrique,
+        <span class="blank-number">(10)</span><select data-answer="que" aria-label="Pregunta 10"><option value="">— tria —</option><option>de qui</option><option>que</option><option>qui</option></select>
+        era l’home de confiança del pare. Havia anat a casa seva sovint per fer reunions amb el pare,
+        <span class="blank-number">(11)</span><select data-answer="encara que" aria-label="Pregunta 11"><option value="">— tria —</option><option>malgrat</option><option>encara que</option><option>ja que</option></select>
+        fins i tot alguna vegada s’hi havia quedat a sopar.
+        <span class="blank-number">(12)</span><select data-answer="A en" aria-label="Pregunta 12"><option value="">— tria —</option><option>A en</option><option>El</option><option>En</option></select>
+        Marcel li feia molta gràcia com xerrava aquell home: pels descosits i movent les mans de manera exagerada, com si
+        <span class="blank-number">(13)</span><select data-answer="s’hagués" aria-label="Pregunta 13"><option value="">— tria —</option><option>s’hagués</option><option>es tingués</option><option>s’hauria</option></select>
+        de posar a volar en qualsevol moment.</p>
+
+      <p>Un vespre va sentir els pares
+        <span class="blank-number">(14)</span><select data-answer="que" aria-label="Pregunta 14"><option value="">— tria —</option><option>els quals</option><option>que</option><option>què</option></select>
+        deien que l’Enrique havia anat a passar uns dies a Galícia per veure
+        <span class="blank-number">(15)</span><select data-answer="el seu" aria-label="Pregunta 15"><option value="">— tria —</option><option>al seu</option><option>el seu</option><option>en el seu</option></select>
+        amic. Ho van dir així, remarcant molt la paraula amic. Però també ho van dir en veu baixa, com si
+        <span class="blank-number">(16)</span><select data-answer="fos" aria-label="Pregunta 16"><option value="">— tria —</option><option>era</option><option>fos</option><option>seria</option></select>
+        un secret que no podia sentir ningú. El pare va comentar-li a la mare que quan l’Enrique tornava de Galícia sempre estava uns quants dies afligit i malhumorat. Que no “sabia com consolar<span class="blank-number">(17)</span><select data-answer="-lo" aria-label="Pregunta 17"><option value="">— tria —</option><option>-ho</option><option>-lo</option><option>-li</option></select>”.
+        La mare li responia amb un sospir i deia al pare que “quina pena tan gran no poder ser a prop de la persona que estimes, haver-ho d’amagar”. En Marcel,
+        <span class="blank-number">(18)</span><select data-answer="mentrestant" aria-label="Pregunta 18"><option value="">— tria —</option><option>mentre</option><option>mentre que</option><option>mentrestant</option></select>,
+        també intentava donar significat a aquelles paraules que sentia i posar ordre a unes sensacions que unien la pena amb la diferència, amb el fet d’estimar d’amagat, de tenir un amic en veu baixa. No
+        <span class="blank-number">(19)</span><select data-answer="els ho" aria-label="Pregunta 19"><option value="">— tria —</option><option>els</option><option>els hi</option><option>els ho</option></select>
+        va arribar a demanar mai, però també va aprendre que hi ha preguntes incòmodes amb respostes que encara ho són més i que
+        <span class="blank-number">(20)</span><select data-answer="per a" aria-label="Pregunta 20"><option value="">— tria —</option><option>per</option><option>per a</option><option>per tal d’</option></select>
+        aquestes preguntes i respostes no hi sol haver un moment oportú.</p>
+
+      <p class="font">Font: Marta Vives, <em>Diguem-ne amor</em>, 2022 (text adaptat)</p>
+
+      <div class="buttons">
+        <button type="button" onclick="comprovaText('exercici-2', 'resultat-2')"><em>Comprova</em></button>
+        <button type="button" class="secondary" onclick="reiniciaText('exercici-2', 'resultat-2')">Reinicia</button>
+      </div>
+      <div id="resultat-2" class="resultat" aria-live="polite"></div>
+    </section>
+  </div>
+
+  <script>
+    function normalitza(text) {
+      return text.trim().toLowerCase().replace(/\s+/g, ' ');
+    }
+
+    function comprovaText(sectionId, resultatId) {
+      const section = document.getElementById(sectionId).closest('section');
+      const selects = section.querySelectorAll('select[data-answer]');
+      let correctes = 0;
+
+      selects.forEach(select => {
+        const respostaUsuari = normalitza(select.value);
+        const respostaCorrecta = normalitza(select.dataset.answer);
+        select.classList.remove('correct', 'incorrect');
+
+        if (respostaUsuari === respostaCorrecta) {
+          select.classList.add('correct');
+          correctes++;
+        } else {
+          select.classList.add('incorrect');
+        }
+      });
+
+      const resultat = document.getElementById(resultatId);
+      resultat.textContent = `Has encertat ${correctes} de ${selects.length} respostes.`;
+    }
+
+    function reiniciaText(sectionId, resultatId) {
+      const section = document.getElementById(sectionId).closest('section');
+      const selects = section.querySelectorAll('select[data-answer]');
+
+      selects.forEach(select => {
+        select.value = '';
+        select.classList.remove('correct', 'incorrect');
+      });
+
+      document.getElementById(resultatId).textContent = '';
+    }
+  </script>
+</body>
+</html>
