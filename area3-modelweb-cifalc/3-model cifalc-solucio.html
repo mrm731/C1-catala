@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+
+<html lang="ca">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Àrea  - Model web CIFALC</title>
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 24px;
+      background: #f7f7f7;
+      color: #222;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .main-header {
+      background: #1f4e79;
+      color: white;
+      padding: 28px;
+      border-radius: 14px;
+      margin-bottom: 32px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+      text-align: center;
+    }
+
+    .main-header h1 {
+      margin: 0;
+      font-size: 2rem;
+      line-height: 1.3;
+    }
+
+    .exercise {
+      background: #fff;
+      padding: 28px;
+      border-radius: 14px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+      margin-bottom: 32px;
+    }
+
+    h1 {
+      margin-top: 0;
+      font-size: 1.8rem;
+    }
+
+    h2 {
+      margin-top: 0.8rem;
+    }
+
+    .intro {
+      margin-bottom: 20px;
+      color: #444;
+    }
+
+    .instructions {
+      background: #eef5ff;
+      border-left: 5px solid #1f4e79;
+      padding: 16px 18px;
+      border-radius: 10px;
+      margin-bottom: 24px;
+      color: #1f2d3d;
+      line-height: 1.5;
+    }
+
+    .example {
+      background: #f1f4f8;
+      border-left: 4px solid #1f4e79;
+      padding: 12px 16px;
+      margin-bottom: 22px;
+      border-radius: 8px;
+    }
+
+    .text-box,
+    .bank {
+      background: #fafafa;
+      border: 1px solid #ddd;
+      padding: 18px;
+      border-radius: 10px;
+      margin-bottom: 24px;
+    }
+
+    .bank ul {
+      columns: 2;
+      margin: 8px 0 0 0;
+      padding-left: 22px;
+    }
+
+    .item {
+      margin-bottom: 18px;
+    }
+
+    .item-number {
+      font-weight: bold;
+      margin-right: 4px;
+    }
+
+    select,
+    input[type="text"] {
+      font-size: 1rem;
+      padding: 5px 8px;
+      margin: 0 3px;
+      border: 2px solid #bbb;
+      border-radius: 6px;
+      background: #fff;
+      max-width: 100%;
+    }
+
+    input[type="text"] {
+      min-width: 150px;
+    }
+
+    select.correct,
+    input.correct {
+      border-color: #2e7d32;
+      background: #e8f5e9;
+    }
+
+    select.incorrect,
+    input.incorrect {
+      border-color: #c62828;
+      background: #ffebee;
+    }
+
+    input.empty {
+      border-color: #bbb;
+      background: #fff;
+    }
+
+    .blank-number {
+      font-size: 0.85rem;
+      color: #555;
+      margin-right: 2px;
+    }
+
+    .word {
+      color: #555;
+      font-size: 0.95rem;
+    }
+
+    .buttons {
+      margin-top: 24px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      font-size: 1rem;
+      padding: 10px 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background: #1f4e79;
+      color: white;
+    }
+
+    button.secondary {
+      background: #666;
+    }
+
+    button.solution {
+      background: #2e7d32;
+    }
+
+    .resultat,
+    #resultat,
+    #resultat-global-text {
+      margin-top: 18px;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    .font {
+      margin-top: 24px;
+      font-size: 0.9rem;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+<main class="container">
+<header class="main-header">
+<h1>Àrea 3 del model web de l’examen CIFALC de C1 i C1 per al PDI</h1>
+</header>
+<section aria-labelledby="exercici-1" class="exercise exam-exercise" data-exercise="1">
+<h1 id="exercici-1">Exercici 3.1 - Morfologia i sintaxi</h1>
+<div class="instructions">
+<strong>Trieu l’opció correcta en cada cas. Cliqueu <em>Comprova</em> per validar les respostes.</strong>
+</div>
+<section aria-labelledby="exercici-1" class="exercise">
+<h2 id="exercici-1">Text 1</h2>
+<div class="text-box">
+<h2>Els valors del paisatge</h2>
+<p>
+      El paisatge d’Olot és eminentment forestal i gaudeix de dues grans masses
+      boscoses <span class="blank-number">(0)</span>
+<select aria-label="Pregunta 0" data-answer="gairebé">
+<option value="">— tria —</option>
+<option>gaire bé</option>
+<option>gairebé</option>
+<option>quasi bé</option>
+</select>
+      contínues. L’element cabdal dels valors naturals i ecològics l’aporta el vulcanisme
+      de la zona, que ha llegat testimonis excepcionals que no es repeteixen a la península
+      Ibèrica. Aquest fet va afavorir que
+
+      <span class="blank-number">(1)</span>
+<select aria-label="Pregunta 1" data-answer="l’any">
+<option value="">— tria —</option>
+<option>a l’any</option>
+<option>al</option>
+<option>l’any</option>
+</select>
+      1982 la Generalitat de Catalunya
+
+      <span class="blank-number">(2)</span>
+<select aria-label="Pregunta 2" data-answer="declarés">
+<option value="">— tria —</option>
+<option>declarés</option>
+<option>declari</option>
+<option>es declari</option>
+</select>
+      parc natural la zona volcànica de la Garrotxa. El paisatge
+
+      <span class="blank-number">(3)</span>
+<select aria-label="Pregunta 3" data-answer="de les valls">
+<option value="">— tria —</option>
+<option>de les pendents</option>
+<option>de les valls</option>
+<option>dels valls</option>
+</select>
+      d’Olot ha servit
+
+      <span class="blank-number">(4)</span>
+<select aria-label="Pregunta 4" data-answer="com a">
+<option value="">— tria —</option>
+<option>com</option>
+<option>com a</option>
+<option>per</option>
+</select>
+      font d’inspiració per a l’obra de
+
+      <span class="blank-number">(5)</span>
+<select aria-label="Pregunta 5" data-answer="diversos">
+<option value="">— tria —</option>
+<option>diversos</option>
+<option>experts</option>
+<option>varis</option>
+</select>
+      pintors i literats. El paisatge volcànic format per cràters, colades basàltiques
+      o gredes també ha estat font d’inspiració de mites i llegendes fantasioses,
+
+      <span class="blank-number">(6)</span>
+<select aria-label="Pregunta 6" data-answer="fins i tot">
+<option value="">— tria —</option>
+<option>fins i tot</option>
+<option>inclòs</option>
+<option>sobre tot</option>
+</select>
+      sobrenaturals, que s’han transmès oralment, generació
+
+      <span class="blank-number">(7)</span>
+<select aria-label="Pregunta 7" data-answer="rere">
+<option value="">— tria —</option>
+<option>darrera</option>
+<option>enrere</option>
+<option>rere</option>
+</select>
+      generació fins a ser aplegades per escrit.
+    </p>
+<p>
+<span class="blank-number">(8)</span>
+<select aria-label="Pregunta 8" data-answer="Cal">
+<option value="">— tria —</option>
+<option>--</option>
+<option>Cal</option>
+<option>Cal que</option>
+</select>
+      esmentar també les potencialitats ecològiques del riu Fluvià, el curs alt
+
+      <span class="blank-number">(9)</span>
+<select aria-label="Pregunta 9" data-answer="del qual">
+<option value="">— tria —</option>
+<option>del qual</option>
+<option>del que</option>
+<option>pel qual</option>
+</select>
+      recorre el voltant d’Olot. L’interès d’aquest eix ecològic és divers. D’altra banda,
+      és l’únic gran riu de Catalunya que no presenta, en el seu recorregut, cap gran
+      embassament,
+
+      <span class="blank-number">(10)</span>
+<select aria-label="Pregunta 10" data-answer="cosa que">
+<option value="">— tria —</option>
+<option>cosa que</option>
+<option>el que</option>
+<option>el què</option>
+</select>
+      facilita el seu paper de connector ecològic. A més, la funció connectora va molt
+      més enllà
+
+      <span class="blank-number">(11)</span>
+<select aria-label="Pregunta 11" data-answer="per tal com">
+<option value="">— tria —</option>
+<option>per a què</option>
+<option>per què</option>
+<option>per tal com</option>
+</select>
+      el riu recorre, també, el nord del Pla de l’Estany i la plana empordanesa, i posa
+      en contacte els espais muntanyencs i forestals
+
+      <span class="blank-number">(12)</span>
+<select aria-label="Pregunta 12" data-answer="de l’">
+<option value="">— tria —</option>
+<option>de la</option>
+<option>de l’</option>
+<option>per</option>
+</select>
+      interior amb els espais litorals associats als Aiguamolls de l’Empordà.
+    </p>
+</div>
+<p class="font">Font: «Valls d’Olot». <em>El Temps</em> (text adaptat)</p>
+<div class="buttons">
+<button onclick="corregir(this)">Comprova</button>
+<button class="secondary" onclick="reiniciar(this)">Reinicia</button>
+<button class="solution" onclick="mostrarSolucions(this)">Solució</button>
+</div>
+<div aria-live="polite" class="resultat"></div>
+</section>
+<section aria-labelledby="exercici-2" class="exercise">
+<h2 id="exercici-2">Text 2</h2>
+<div class="text-box">
+<h2>La invasió subtil de les aranyes</h2>
+<p>
+      En tot text s’hi pot constatar una estructura, formada per una introducció, un
+      desenvolupament i un desenllaç. Aquesta seria l’estructura tradicional, però és
+      l’autor qui ens proporciona al llarg del text totes les claus
+
+      <span class="blank-number">(13)</span>
+<select aria-label="Pregunta 13" data-answer="perquè">
+<option value="">— tria —</option>
+<option>per</option>
+<option>per a què</option>
+<option>perquè</option>
+</select>
+
+      la nostra interpretació vagi en una direcció determinada. Donem el nom de tècnica
+      als mitjans utilitzats per l’autor per aconseguir la unitat narrativa i conduir-nos al
+      tema central. El punt de vista és la ment a través
+
+      <span class="blank-number">(14)</span>
+<select aria-label="Pregunta 14" data-answer="de la qual">
+<option value="">— tria —</option>
+<option>de la que</option>
+<option>de la qual</option>
+<option>del qual</option>
+</select>
+
+      es percep la narració.
+    </p>
+<p>
+      Hi ha moltes variacions i combinacions
+
+      <span class="blank-number">(15)</span>
+<select aria-label="Pregunta 15" data-answer="a l’hora">
+<option value="">— tria —</option>
+<option>a l’hora</option>
+<option>aleshores</option>
+<option>alhora</option>
+</select>
+
+      de narrar, però bàsicament
+
+      <span class="blank-number">(16)</span>
+<select aria-label="Pregunta 16" data-answer="se’n">
+<option value="">— tria —</option>
+<option>en</option>
+<option>es</option>
+<option>se’n</option>
+</select>
+
+      poden distingir tres. En primer lloc, el punt de vista omniscient, en què l’autor es
+      desplaça d’un personatge a l’altre, d’una part a
+
+      <span class="blank-number">(17)</span>
+<select aria-label="Pregunta 17" data-answer="l’altra">
+<option value="">— tria —</option>
+<option>el més enllà</option>
+<option>l’altra</option>
+<option>l’altre</option>
+</select>
+
+      , i d’un episodi a un altre amb absoluta llibertat. I s’atribueix a si mateix l’accés
+      als pensaments i sentiments dels personatges, sempre que li interessa, i proporciona
+      informació cada cop que vol. Un altre tipus de punt de vista és el de tercera persona:
+      l’autor tria un personatge i la història és
+
+      <span class="blank-number">(18)</span>
+<select aria-label="Pregunta 18" data-answer="contada">
+<option value="">— tria —</option>
+<option>composada</option>
+<option>comptada</option>
+<option>contada</option>
+</select>
+
+      amb paraules d’aquest personatge, de tal manera que el camp de visió està limitat.
+    </p>
+<p>
+      En tercer lloc, hi ha el punt de vista de la narració en primera persona; és a dir, la
+      història és coneguda en primera persona
+
+      <span class="blank-number">(19)</span>
+<select aria-label="Pregunta 19" data-answer="pel mateix">
+<option value="">— tria —</option>
+<option>pel mateix</option>
+<option>pel nomenat</option>
+<option>pel propi</option>
+</select>
+
+      protagonista, però no necessàriament. D’aquesta manera podem comprovar que la
+      intervenció de l’autor,
+
+      <span class="blank-number">(20)</span>
+<select aria-label="Pregunta 20" data-answer="doncs">
+<option value="">— tria —</option>
+<option>així mateix</option>
+<option>doncs</option>
+<option>però</option>
+</select>
+
+      , pot ser molt variada.
+    </p>
+</div>
+<p class="font">Font: <em>La invasió subtil de les aranyes</em> (text adaptat). Alfred Sargatal</p>
+<div class="buttons">
+<button onclick="corregir(this)">Comprova</button>
+<button class="secondary" onclick="reiniciar(this)">Reinicia</button>
+<button class="solution" onclick="mostrarSolucions(this)">Solució</button>
+</div>
+<div aria-live="polite" class="resultat"></div>
+</section>
+</section>
+<section aria-labelledby="exercici-2" class="exercise exam-exercise" data-exercise="2">
+<h1 id="exercici-2">Exercici 3.2 - Flexió gramatical</h1>
+<div class="instructions">
+<strong>
+        Ompliu els espais buits amb la forma adequada (noms, adjectius o verbs) a partir de la paraula que hi ha entre parèntesis. Tingueu en compte que es pot tractar de la mateixa paraula que es dona. Cliqueu <em>Comprova</em> per validar les respostes.
+      </strong>
+</div>
+<div class="example">
+<strong>Exemple:</strong><br/>
+      Cal que la Mercè <strong>reconegui</strong> <span class="word">(RECONÈIXER)</span> els seus errors.
+    </div>
+<div class="text-box">
+<div class="item">
+<span class="item-number">1.</span>
+      Organitzeu la conferència allà on vosaltres
+      <input aria-label="Resposta 1" data-answer="vulgueu" type="text"/>
+<span class="word">(voler)</span>, però, sobretot, convideu-hi els vostres professors i anuncieu-la amb prou antelació.
+    </div>
+<div class="item">
+<span class="item-number">2.</span>
+      El text d’Artur Bladé diu: «Ell duia l’escopeta i jo, el
+      <input aria-label="Resposta 2" data-answer="perdigot" type="text"/>
+<span class="word">(perdiu)</span> engabiat».
+    </div>
+<div class="item">
+<span class="item-number">3.</span>
+      Per poder començar la sessió de pràctiques, el metge va demanar a un estudiant que li apropés els
+      <input aria-label="Resposta 3" data-answer="bisturís" type="text"/>
+<span class="word">(bisturí)</span>.
+    </div>
+<div class="item">
+<span class="item-number">4.</span>
+      La llei de suport a l’emprenedor és força
+      <input aria-label="Resposta 4" data-answer="gasiva" type="text"/>
+<span class="word">(gasiu)</span> quant a incentius per a joves.
+    </div>
+<div class="item">
+<span class="item-number">5.</span>
+      El director els va dir: «Ei, nois, no us
+      <input aria-label="Resposta 5" data-answer="assegueu" type="text"/>
+<span class="word">(asseure’s)</span> als bancs que estan acabats de pintar!»
+    </div>
+<div class="item">
+<span class="item-number">6.</span>
+      Van fer el cicle de conferències sobre la poesia de Miquel Martí i Pol al Palau de Fires i
+      <input aria-label="Resposta 6" data-answer="Congressos" type="text"/>
+<span class="word">(congrés)</span>.
+    </div>
+<div class="item">
+<span class="item-number">7.</span>
+      Els
+      <input aria-label="Resposta 7" data-answer="annexos" type="text"/>
+<span class="word">(annex)</span> aporten materials complementaris o de suport que no s’han inclòs en el cos del treball per afavorir-ne la llegibilitat.
+    </div>
+<div class="item">
+<span class="item-number">8.</span>
+      No ens vam poder menjar el pastís, perquè tenia una cobertura feta amb ametlles
+      <input aria-label="Resposta 8" data-answer="amargants" type="text"/>
+<span class="word">(amargant)</span>.
+    </div>
+</div>
+<div class="buttons">
+<button onclick="corregir(this)">Comprova</button>
+<button class="secondary" onclick="reiniciar(this)">Reinicia</button>
+<button class="solution" onclick="mostrarSolucions(this)">Solució</button>
+</div>
+<div id="resultat"></div>
+</section>
+<section aria-labelledby="exercici-3" class="exercise exam-exercise" data-exercise="3">
+<h1 id="exercici-3">Exercici 3.3 - Derivació</h1>
+<div class="instructions">
+<strong>
+        Ompliu els espais buits amb la forma corresponent derivada de la paraula que hi ha entre parèntesis. Assegureu-vos que encaixa en el text. Cliqueu <em>Comprova</em> per validar les respostes.
+      </strong>
+</div>
+<div class="example">
+<strong>Exemple:</strong><br/>
+      A la <strong>xocolateria</strong> <span class="word">(XOCOLATA)</span> Cacau Sampaka fan maridatges amb bombons.
+    </div>
+<div class="text-box">
+<h2>Amb què bevem els bombons a l’estiu?</h2>
+<p>
+      L’encarregat de la botiga Cacau Sampaka de Barcelona, Miquel Manzano, es planteja com complementar, dissimular, ampliar o
+
+      <span class="blank-number">(1)</span>
+<input aria-label="Resposta 1" data-answer="matisar" type="text"/>
+<span class="word">(MATÍS)</span>
+
+      els gustos. «Si el cava és astringent i té un punt d’
+
+      <span class="blank-number">(2)</span>
+<input aria-label="Resposta 2" data-answer="acidesa" type="text"/>
+<span class="word">(ÀCID)</span>,
+
+      llavors buscaria rebaixar-la amb la xocolata. Però amb el cava jo ni diria que és un maridatge, sinó un
+
+      <span class="blank-number">(3)</span>
+<input aria-label="Resposta 3" data-answer="acompanyament" type="text"/>
+<span class="word">(COMPANY)</span>
+
+      de gustos.»
+    </p>
+<p>
+      El bombó de violetes mostra tons
+
+      <span class="blank-number">(4)</span>
+<input aria-label="Resposta 4" data-answer="florals" type="text"/>
+<span class="word">(FLOR)</span>
+
+      que, si van acompanyats amb carbònic, fan incrementar les aromes de la xocolata. En el bombó de pera i de vainilla, el cava fa aflorar les aromes volàtils i lleugeres de la fruita, i hi aporta
+
+      <span class="blank-number">(5)</span>
+<input aria-label="Resposta 5" data-answer="frescor" type="text"/>
+<span class="word">(FRESC)</span>.
+    </p>
+<p>
+      Un altre tast. Hem triat el vi de Glass de Gramona, amb un bombó de bergamota i pebre de Jamaica. El vi és dolç, però no és tan
+
+      <span class="blank-number">(6)</span>
+<input aria-label="Resposta 6" data-answer="embafador|embafós" type="text"/>
+<span class="word">(EMBAFAR)</span>
+
+      i també és fresc.
+    </p>
+<p>
+      Un maridatge habitual, bombó de trufa clàssica maridat amb rom. A la boca el rom és foc, però amb una textura
+
+      <span class="blank-number">(7)</span>
+<input aria-label="Resposta 7" data-answer="sedosa" type="text"/>
+<span class="word">(SEDA)</span>
+
+      podria fer recordar molt el whisky.
+    </p>
+<p>
+      Els maridatges de bombons amb cava, vi de Glass, rom i vermut es converteixen en una opció ideal per a l’estiu, que acostuma a relegar la xocolata a un segon terme per la
+
+      <span class="blank-number">(8)</span>
+<input aria-label="Resposta 8" data-answer="fragilitat" type="text"/>
+<span class="word">(FRÀGIL)</span>
+
+      que té per resistir les altes temperatures.
+    </p>
+</div>
+<p class="font">Font: Ara.cat, Productes de la terra, 12 de juliol de 2015</p>
+<div class="buttons">
+<button onclick="corregir(this)">Comprova</button>
+<button class="secondary" onclick="reiniciar(this)">Reinicia</button>
+<button class="solution" onclick="mostrarSolucions(this)">Solució</button>
+</div>
+<div id="resultat"></div>
+</section>
+<section aria-labelledby="exercici-4" class="exercise exam-exercise" data-exercise="4">
+<h1 id="exercici-4">Exercici 3.4 - Sinònims</h1>
+<div class="instructions">
+<strong>
+        Busqueu en el text un sinònim dels mots que es proposen. Cliqueu <em>Comprova</em> per validar les respostes.
+      </strong>
+</div>
+<div class="example">
+<strong>Exemple:</strong><br/>
+      a pesar de: <strong>malgrat</strong>
+</div>
+<div class="text-box">
+<h2>El violí d’Auswitch, de M. Àngels Anglada</h2>
+<p>
+        Després dels dies passats tancats a la cel·la, la llitotxa la va trobar fins i tot tova.
+        Els companys, poc o molt pollosos com ell, un suport càlid, conegut.
+      </p>
+<p>
+        El van despertar, aquesta vegada. No es podia tornar a quedar adormit! Aleshores
+        ningú no el salvaria dels agreujants temibles, i la mirada del metge Rascher no era
+        cap bon averany. Malgrat que encara se sentia dels cops, la nit li havia passat en
+        un son i, potser per la companyia, sense malsons. El «secretari» del barracot el va
+        treure d’un altre món. En somnis es trobava al seu taller, tan ben endreçat,
+        treballant en la construcció d’una viola, entre l’olor coneguda i agradable de la
+        fusta, les coles i els vernissos —no el baf del barracot. A dalt, la seva mare
+        cantussejava tot cuinant el dinar, que també feia una flaire deliciosa. Tot eren
+        sensacions delectables: el sol daurava les fustes, els arrencava reflexos com de
+        posta, càlids, d’or vell tenyits de vermell i, curiosament, de blau i tot. Contrastant
+        amb els seus tons, l’acer de la seva col·lecció de ganivets de violer resplendia amb
+        el seu fred brillant.
+      </p>
+<p>
+        Totes les peces sense obrar, tallades per a futurs instruments, lluïen les seves
+        aigües, oloroses, i entremig hi passava l’aire, assecant-les a poc a poc, amb el seu
+        germà, el temps. Ho havia après ja del pare, mai no feia servir una fusta que no fos
+        tallada de cinc anys. De bon avet de les muntanyes i d’erable, d’arbres on havien
+        niat els ocells. On el vent havia cantat —com després ho faria l’arquet. En el somni
+        cada peça i cada eina brillaven com joies, i de fet ho eren, les modestes joies de la
+        seva corona d’artesà. Somniant, es trobava en un dels punts més delicats del seu
+        treball.
+      </p>
+</div>
+<p class="font">Font: M. Àngels Anglada, <em>El violí d’Auswitch</em></p>
+<div class="item">
+<span class="item-number">1.</span>
+      deixat:
+      <input aria-label="Resposta 1" data-answer="pollosos" type="text"/>
+</div>
+<div class="item">
+<span class="item-number">2.</span>
+      flonjo:
+      <input aria-label="Resposta 2" data-answer="tova" type="text"/>
+</div>
+<div class="item">
+<span class="item-number">3.</span>
+      humil:
+      <input aria-label="Resposta 3" data-answer="modestes" type="text"/>
+</div>
+<div class="item">
+<span class="item-number">4.</span>
+      plaent:
+      <input aria-label="Resposta 4" data-answer="delectables|agradable" type="text"/>
+</div>
+<div class="item">
+<span class="item-number">5.</span>
+      auguri:
+      <input aria-label="Resposta 5" data-answer="averany" type="text"/>
+</div>
+<div class="item">
+<span class="item-number">6.</span>
+      tuf:
+      <input aria-label="Resposta 6" data-answer="baf" type="text"/>
+</div>
+<div class="buttons">
+<button onclick="corregir(this)">Comprova</button>
+<button class="secondary" onclick="reiniciar(this)">Reinicia</button>
+<button class="solution" onclick="mostrarSolucions(this)">Solució</button>
+</div>
+<div id="resultat"></div>
+</section>
+<section aria-labelledby="exercici-5" class="exercise exam-exercise" data-exercise="5">
+<h1 id="exercici-5">Exercici 3.5 - Expressions</h1>
+<div class="instructions">
+<strong>
+        Trieu l’expressió adequada per completar el significat de cada frase. Tingueu en compte que hi ha dues expressions que no fareu servir. Cliqueu <em>Comprova</em> per validar les respostes.
+      </strong>
+</div>
+<div class="example">
+<strong>Exemple:</strong><br/>
+      Vol aprendre a esquiar en una setmana perquè es pensa que això és <strong>bufar i fer ampolles</strong>.
+    </div>
+<div class="bank">
+<strong>Expressions:</strong>
+<ul>
+<li>estar dat i beneït</li>
+<li>treballar a preu fet</li>
+<li>fer-ne cinc cèntims</li>
+<li>passar per alt</li>
+<li>anar a mitges tintes</li>
+<li>anar amb peus de plom</li>
+<li>mossegar-se la llengua</li>
+<li>posar-hi el coll</li>
+<li>estar a l’aguait</li>
+<li>arribar a misses dites</li>
+</ul>
+</div>
+<div class="text-box">
+<div class="item">
+<span class="item-number">1.</span>
+      Com que ell sempre va
+      <select aria-label="Pregunta 1" data-answer="anar a mitges tintes">
+<option value="">— tria —</option>
+<option>estar dat i beneït</option>
+<option>treballar a preu fet</option>
+<option>fer-ne cinc cèntims</option>
+<option>passar per alt</option>
+<option>anar a mitges tintes</option>
+<option>anar amb peus de plom</option>
+<option>mossegar-se la llengua</option>
+<option>posar-hi el coll</option>
+<option>estar a l’aguait</option>
+<option>arribar a misses dites</option>
+</select>
+      mai es va arribar a saber tota la veritat.
+    </div>
+<div class="item">
+<span class="item-number">2.</span>
+      Cal
+      <select aria-label="Pregunta 2" data-answer="estar a l’aguait">
+<option value="">— tria —</option>
+<option>estar dat i beneït</option>
+<option>treballar a preu fet</option>
+<option>fer-ne cinc cèntims</option>
+<option>passar per alt</option>
+<option>anar a mitges tintes</option>
+<option>anar amb peus de plom</option>
+<option>mossegar-se la llengua</option>
+<option>posar-hi el coll</option>
+<option>estar a l’aguait</option>
+<option>arribar a misses dites</option>
+</select>
+      per quan s’obri el període d’inscripció, perquè els cursos s’omplen de seguida.
+    </div>
+<div class="item">
+<span class="item-number">3.</span>
+      No es van atrevir a fer cap proposta nova perquè sobre aquella qüestió tot semblava
+      <select aria-label="Pregunta 3" data-answer="estar dat i beneït">
+<option value="">— tria —</option>
+<option>estar dat i beneït</option>
+<option>treballar a preu fet</option>
+<option>fer-ne cinc cèntims</option>
+<option>passar per alt</option>
+<option>anar a mitges tintes</option>
+<option>anar amb peus de plom</option>
+<option>mossegar-se la llengua</option>
+<option>posar-hi el coll</option>
+<option>estar a l’aguait</option>
+<option>arribar a misses dites</option>
+</select>.
+    </div>
+<div class="item">
+<span class="item-number">4.</span>
+      Cal
+      <select aria-label="Pregunta 4" data-answer="anar amb peus de plom">
+<option value="">— tria —</option>
+<option>estar dat i beneït</option>
+<option>treballar a preu fet</option>
+<option>fer-ne cinc cèntims</option>
+<option>passar per alt</option>
+<option>anar a mitges tintes</option>
+<option>anar amb peus de plom</option>
+<option>mossegar-se la llengua</option>
+<option>posar-hi el coll</option>
+<option>estar a l’aguait</option>
+<option>arribar a misses dites</option>
+</select>
+      i a poc a poc per no equivocar-se a l’hora de plantejar aquesta qüestió.
+    </div>
+<div class="item">
+<span class="item-number">5.</span>
+      Per a aquella gent que no va poder anar a la reunió caldrà dedicar els primers quinze minuts a
+      <select aria-label="Pregunta 5" data-answer="fer-ne cinc cèntims">
+<option value="">— tria —</option>
+<option>estar dat i beneït</option>
+<option>treballar a preu fet</option>
+<option>fer-ne cinc cèntims</option>
+<option>passar per alt</option>
+<option>anar a mitges tintes</option>
+<option>anar amb peus de plom</option>
+<option>mossegar-se la llengua</option>
+<option>posar-hi el coll</option>
+<option>estar a l’aguait</option>
+<option>arribar a misses dites</option>
+</select>.
+    </div>
+<div class="item">
+<span class="item-number">6.</span>
+      Va dir que no havia vingut a la reunió perquè se n’havia oblidat; li va
+      <select aria-label="Pregunta 6" data-answer="passar per alt">
+<option value="">— tria —</option>
+<option>estar dat i beneït</option>
+<option>treballar a preu fet</option>
+<option>fer-ne cinc cèntims</option>
+<option>passar per alt</option>
+<option>anar a mitges tintes</option>
+<option>anar amb peus de plom</option>
+<option>mossegar-se la llengua</option>
+<option>posar-hi el coll</option>
+<option>estar a l’aguait</option>
+<option>arribar a misses dites</option>
+</select>.
+    </div>
+<div class="item">
+<span class="item-number">7.</span>
+      Quan li van dir que no havia treballat prou va haver de
+      <select aria-label="Pregunta 7" data-answer="mossegar-se la llengua">
+<option value="">— tria —</option>
+<option>estar dat i beneït</option>
+<option>treballar a preu fet</option>
+<option>fer-ne cinc cèntims</option>
+<option>passar per alt</option>
+<option>anar a mitges tintes</option>
+<option>anar amb peus de plom</option>
+<option>mossegar-se la llengua</option>
+<option>posar-hi el coll</option>
+<option>estar a l’aguait</option>
+<option>arribar a misses dites</option>
+</select>.
+    </div>
+<div class="item">
+<span class="item-number">8.</span>
+      Va ser el membre de l’equip que més va
+      <select aria-label="Pregunta 8" data-answer="posar-hi el coll">
+<option value="">— tria —</option>
+<option>estar dat i beneït</option>
+<option>treballar a preu fet</option>
+<option>fer-ne cinc cèntims</option>
+<option>passar per alt</option>
+<option>anar a mitges tintes</option>
+<option>anar amb peus de plom</option>
+<option>mossegar-se la llengua</option>
+<option>posar-hi el coll</option>
+<option>estar a l’aguait</option>
+<option>arribar a misses dites</option>
+</select>,
+      perquè el projecte tirés endavant.
+    </div>
+</div>
+<div class="buttons">
+<button onclick="corregir(this)">Comprova</button>
+<button class="secondary" onclick="reiniciar(this)">Reinicia</button>
+<button class="solution" onclick="mostrarSolucions(this)">Solució</button>
+</div>
+<div id="resultat"></div>
+</section>
+<section class="exercise" id="resultat-global"><h2>Resultat global</h2><div aria-live="polite" id="resultat-global-text">Has respost 0 de 51 preguntes. Resultat final: 0/51.</div></section>
+</main>
+<script>
+    function normalitzar(text) {
+      return text.trim().toLowerCase();
+    }
+
+    function getExercici(element) {
+      return element.closest('.exercise');
+    }
+
+    function corregir(boto) {
+      const exercici = getExercici(boto);
+      const camps = exercici.querySelectorAll('select, input[type="text"]');
+      const resultat = exercici.querySelector('.resultat, #resultat');
+      let correctes = 0;
+      let respostes = 0;
+
+      camps.forEach(camp => {
+        const respostesCorrectes = camp.dataset.answer.split('|').map(normalitzar);
+        const respostaUsuari = normalitzar(camp.value);
+
+        camp.classList.remove('correct', 'incorrect', 'empty');
+
+        if (respostaUsuari === '') {
+          if (camp.tagName.toLowerCase() === 'input') {
+            camp.classList.add('empty');
+          }
+          return;
+        }
+
+        respostes++;
+
+        if (respostesCorrectes.includes(respostaUsuari)) {
+          camp.classList.add('correct');
+          correctes++;
+        } else {
+          camp.classList.add('incorrect');
+        }
+      });
+
+      const total = camps.length;
+
+      if (respostes < total) {
+        resultat.textContent = `Has respost ${respostes} de ${total} preguntes. Resultat provisional: ${correctes}/${total}.`;
+      } else {
+        resultat.textContent = `Resultat final: ${correctes}/${total}.`;
+      }
+
+      actualitzarResultatGlobal();
+    }
+
+    function reiniciar(boto) {
+      const exercici = getExercici(boto);
+      const camps = exercici.querySelectorAll('select, input[type="text"]');
+      const resultat = exercici.querySelector('.resultat, #resultat');
+
+      camps.forEach(camp => {
+        camp.value = '';
+        camp.classList.remove('correct', 'incorrect', 'empty');
+      });
+
+      resultat.textContent = '';
+      actualitzarResultatGlobal();
+    }
+
+    function mostrarSolucions(boto) {
+      const exercici = getExercici(boto);
+      const camps = exercici.querySelectorAll('select, input[type="text"]');
+      const resultat = exercici.querySelector('.resultat, #resultat');
+
+      camps.forEach(camp => {
+        const respostaCorrecta = camp.dataset.answer.split('|')[0];
+        camp.value = respostaCorrecta;
+        camp.classList.remove('incorrect', 'empty');
+        camp.classList.add('correct');
+      });
+
+      resultat.textContent = 'S’han mostrat les solucions.';
+    }
+
+    function actualitzarResultatGlobal() {
+      const exercicis = document.querySelectorAll('.exam-exercise');
+      let totalPreguntes = 0;
+      let totalCorrectes = 0;
+      let respondudes = 0;
+
+      exercicis.forEach(exercici => {
+        const camps = exercici.querySelectorAll('select, input[type="text"]');
+
+        camps.forEach(camp => {
+          if (!camp.dataset.answer) {
+            return;
+          }
+
+          totalPreguntes++;
+
+          const respostesCorrectes = camp.dataset.answer
+            .split('|')
+            .map(normalitzar);
+
+          const respostaUsuari = normalitzar(camp.value);
+
+          if (respostaUsuari !== '') {
+            respondudes++;
+          }
+
+          if (respostesCorrectes.includes(respostaUsuari)) {
+            totalCorrectes++;
+          }
+        });
+      });
+
+      const resultatGlobal = document.getElementById('resultat-global-text');
+      if (resultatGlobal) {
+        resultatGlobal.textContent = `Has respost ${respondudes} de ${totalPreguntes} preguntes. Resultat final: ${totalCorrectes}/${totalPreguntes}.`;
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', actualitzarResultatGlobal);
+
+</script>
+</body>
+</html>
