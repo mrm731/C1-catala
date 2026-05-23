@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exercici 3.1 - Morfologia i sintaxi</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 24px;
+      background: #f7f7f7;
+      color: #222;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 28px;
+      border-radius: 14px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+    }
+
+    h1 {
+      margin-top: 0;
+      font-size: 1.8rem;
+    }
+
+    .instructions {
+      background: #eef5ff;
+      border-left: 5px solid #1f4e79;
+      padding: 16px 18px;
+      border-radius: 10px;
+      margin-bottom: 24px;
+      color: #1f2d3d;
+      line-height: 1.5;
+    }
+
+    .text-box {
+      background: #fafafa;
+      border: 1px solid #ddd;
+      padding: 18px;
+      border-radius: 10px;
+      margin-bottom: 24px;
+    }
+
+    select {
+      font-size: 1rem;
+      padding: 4px 8px;
+      margin: 0 3px;
+      border: 2px solid #bbb;
+      border-radius: 6px;
+      background: #fff;
+      max-width: 100%;
+    }
+
+    select.correct {
+      border-color: #2e7d32;
+      background: #e8f5e9;
+    }
+
+    select.incorrect {
+      border-color: #c62828;
+      background: #ffebee;
+    }
+
+    .blank-number {
+      font-size: 0.85rem;
+      color: #555;
+      margin-right: 2px;
+    }
+
+    .buttons {
+      margin-top: 24px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      font-size: 1rem;
+      padding: 10px 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background: #1f4e79;
+      color: white;
+    }
+
+    button.secondary {
+      background: #666;
+    }
+
+    .resultat {
+      margin-top: 18px;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    .font {
+      margin-top: 24px;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    .exercise {
+      margin-top: 28px;
+      padding-top: 8px;
+    }
+
+    .exercise + .exercise {
+      margin-top: 36px;
+      padding-top: 28px;
+      border-top: 2px solid #e6e6e6;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 12px;
+      }
+
+      .container {
+        padding: 18px;
+      }
+
+      select {
+        margin-top: 4px;
+        margin-bottom: 4px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <div class="instructions">
+      <strong>Trieu l’opció correcta en cada cas. Cliqueu <em>Comprova</em> per validar les respostes.</strong>
+    </div>
+
+    <section class="exercise" aria-labelledby="exercici-1">
+      <h2 id="exercici-1">Text 1</h2>
+      <div class="text-box">
+        <h2>Quina pintora va obtenir un permís policial per portar pantalons en actes públics?</h2>
+
+        <p>
+          Sense raó aparent, durant segles l’art ha estat reservat als
+          <span class="blank-number">(0)</span>
+          <select data-answer="als" aria-label="Pregunta 0">
+            <option value="">— tria —</option>
+            <option>als</option>
+            <option>els</option>
+            <option>pels</option>
+          </select>
+          homes. En l’àmbit europeu i fins fa poc més d’un segle, les dones que es volien formar
+          <span class="blank-number">(1)</span>
+          <select data-answer="com a" aria-label="Pregunta 1">
+            <option value="">— tria —</option>
+            <option>com</option>
+            <option>com a</option>
+            <option>per</option>
+          </select>
+          artistes encara topaven amb les convencions socials. La pintora Rosa Bonheur, que va viure a la França de mitjan segle XIX, tenia vedat l’ingrés a les acadèmies d’art.
+          <span class="blank-number">(2)</span>
+          <select data-answer="Tanmateix" aria-label="Pregunta 2">
+            <option value="">— tria —</option>
+            <option>Així mateix</option>
+            <option>Atès que</option>
+            <option>Tanmateix</option>
+          </select>,
+          va tenir la sort de rebre el suport del pare, una persona de mentalitat molt oberta que,
+          <span class="blank-number">(3)</span>
+          <select data-answer="a més" aria-label="Pregunta 3">
+            <option value="">— tria —</option>
+            <option>a més</option>
+            <option>altrament</option>
+            <option>més a més</option>
+          </select>,
+          també era pintor i va ensenyar la tècnica a la seva filla. Rosa Bonheur es va formar passant llargues hores al Museu del Louvre, copiant les obres exposades.
+        </p>
+
+        <p>
+          Però la gran passió de Bonheur eren els animals. Tothora pintava cavalls, vaques, gossos, conills, toros, ovelles... No en tenia prou d’observar-los al camp: algunes bèsties les disseccionava al seu taller per
+          <span class="blank-number">(4)</span>
+          <select data-answer="estudiar-ne" aria-label="Pregunta 4">
+            <option value="">— tria —</option>
+            <option>estudiar</option>
+            <option>estudiar-ne</option>
+            <option>estudiar-hi</option>
+          </select>
+          l’anatomia i també freqüentava
+          <span class="blank-number">(5)</span>
+          <select data-answer="els" aria-label="Pregunta 5">
+            <option value="">— tria —</option>
+            <option>als</option>
+            <option>els</option>
+            <option>en els</option>
+          </select>
+          escorxadors, estables i cavallerisses de París, en
+          <span class="blank-number">(6)</span>
+          <select data-answer="els quals" aria-label="Pregunta 6">
+            <option value="">— tria —</option>
+            <option>els quals</option>
+            <option>els que</option>
+            <option>que</option>
+          </select>
+          prenia apunts.
+        </p>
+
+        <p>
+          Ara bé, en aquests ambients una dona no era ben rebuda i Bonheur va haver de suportar les grolleries constants dels mossos, fins que va prendre una determinació: s’acostava la fira eqüestre de París, un esdeveniment que no es volia perdre, i no podia arriscar-se a quedar-ne fora només pel fet de ser dona. Bonheur va exposar el seu cas a la policia i va obtenir un permís especial, el <em>permission de travestissement</em>,
+          <span class="blank-number">(7)</span>
+          <select data-answer="que li permetia" aria-label="Pregunta 7">
+            <option value="">— tria —</option>
+            <option>permetent</option>
+            <option>permetent-li</option>
+            <option>que li permetia</option>
+          </select>
+          portar pantalons en actes públics. Així, es va poder dedicar a fer esbossos entre els homes sense cridar l’atenció.
+        </p>
+      </div>
+
+      <p class="font">Font: Montse Armengol, <em>Sàpiens</em> (text adaptat)</p>
+
+      <div class="buttons">
+        <button onclick="corregir(this)">Comprova</button>
+        <button class="secondary" onclick="reiniciar(this)">Reinicia</button>
+      </div>
+      <div class="resultat" aria-live="polite"></div>
+    </section>
+
+    <section class="exercise" aria-labelledby="exercici-2">
+      <h2 id="exercici-2">Text 2</h2>
+      <div class="text-box">
+        <h2>Sabó de residu zero</h2>
+
+        <p>
+          Si les àvies i besàvies veiessin com una pràctica d’aprofitament s'ha recuperat i convertit en una activitat lúdica,
+          <span class="blank-number">(8)</span>
+          <select data-answer="potser" aria-label="Pregunta 8">
+            <option value="">— tria —</option>
+            <option>pot ser</option>
+            <option>pot ser que</option>
+            <option>potser</option>
+          </select>
+          no s’ho creurien, perquè en èpoques no
+          <span class="blank-number">(9)</span>
+          <select data-answer="tan" aria-label="Pregunta 9">
+            <option value="">— tria —</option>
+            <option>menys</option>
+            <option>tan</option>
+            <option>tant</option>
+          </select>
+          pretèrites no
+          <span class="blank-number">(10)</span>
+          <select data-answer="hi" aria-label="Pregunta 10">
+            <option value="">— tria —</option>
+            <option>hi</option>
+            <option>n’</option>
+            <option>n’hi</option>
+          </select>
+          havia cap
+          <span class="blank-number">(11)</span>
+          <select data-answer="altra" aria-label="Pregunta 11">
+            <option value="">— tria —</option>
+            <option>altra</option>
+            <option>altre</option>
+            <option>altri</option>
+          </select>
+          opció que arremangar-se i barrejar olis i greixos amb cendra i sosa. Ara, però, la saponificació és una excusa per entendre una reacció química en
+          <span class="blank-number">(12)</span>
+          <select data-answer="què" aria-label="Pregunta 12">
+            <option value="">— tria —</option>
+            <option>la que</option>
+            <option>que</option>
+            <option>què</option>
+          </select>,
+          amb totes les precaucions i vigilància, poden participar-hi les criatures.
+        </p>
+
+        <p>
+          Ara bé, d’on va sorgir el sabó? La resposta és difícil de donar però moltes veus
+          <span class="blank-number">(13)</span>
+          <select data-answer="en" aria-label="Pregunta 13">
+            <option value="">— tria —</option>
+            <option>en</option>
+            <option>hi</option>
+            <option>n’hi</option>
+          </select>
+          situen l’origen a l’antiga Babilònia,
+          <span class="blank-number">(14)</span>
+          <select data-answer="cap a" aria-label="Pregunta 14">
+            <option value="">— tria —</option>
+            <option>cap</option>
+            <option>cap a</option>
+            <option>per a</option>
+          </select>
+          l’any 2800 abans de Crist, quan segurament per atzar es
+          <span class="blank-number">(15)</span>
+          <select data-answer="devien barrejar" aria-label="Pregunta 15">
+            <option value="">— tria —</option>
+            <option>barrejarien</option>
+            <option>barregessin</option>
+            <option>devien barrejar</option>
+          </select>
+          les cendres d’una foguera amb el greix d’un animal i es va produir una reacció química miraculosa que aconseguia eliminar taques.
+          <span class="blank-number">(16)</span>
+          <select data-answer="Arran de" aria-label="Pregunta 16">
+            <option value="">— tria —</option>
+            <option>Arran de</option>
+            <option>Arrel de</option>
+            <option>Enfront</option>
+          </select>
+          l’èxit, es va escampar cap a Egipte, Mesopotàmia, la Grècia clàssica i, ja des de Roma, cap al món. Amb els anys, la tècnica s’ha anat perfeccionant, i s’hi han introduït essències i colors de tota mena, però el sabó tradicional bàsicament segueix la mateixa recepta que
+          <span class="blank-number">(17)</span>
+          <select data-answer="aleshores" aria-label="Pregunta 17">
+            <option value="">— tria —</option>
+            <option>a les hores</option>
+            <option>aleshores</option>
+            <option>alhora</option>
+          </select>,
+          únicament canviant la cendra per la polivalent sosa càustica.
+        </p>
+
+        <p>
+          La generació mil·lennista ha recuperat una tradició que havia decaigut en favor dels productes de supermercat o de franquícies amb formes i olors increïbles. Però l’ecologisme i la curiositat pel que feien les àvies –sense por de caure en l’estereotip de gènere–, ha fet que escoles, tallers, famílies i grups d’amics s’animin a fer-se les seves
+          <span class="blank-number">(18)</span>
+          <select data-answer="pròpies" aria-label="Pregunta 18">
+            <option value="">— tria —</option>
+            <option>dites</option>
+            <option>mateixes</option>
+            <option>pròpies</option>
+          </select>
+          pastilles. Segurament no es tracta, com en les generacions anteriors, d’estalviar,
+          <span class="blank-number">(19)</span>
+          <select data-answer="sinó" aria-label="Pregunta 19">
+            <option value="">— tria —</option>
+            <option>ans</option>
+            <option>si no</option>
+            <option>sinó</option>
+          </select>
+          de valorar un producte casolà, fet en col·lectivitat i que ajuda a donar una segona vida als residus. Animeu-vos i proveu-ho
+          <span class="blank-number">(20)</span>
+          <select data-answer="perquè" aria-label="Pregunta 20">
+            <option value="">— tria —</option>
+            <option>doncs</option>
+            <option>per què</option>
+            <option>perquè</option>
+          </select>
+          val la pena.
+        </p>
+      </div>
+
+      <p class="font">Font: Marta Rodríguez Carrera i Eduard Forroll, <em>Ara diumenge</em> (text adaptat)</p>
+
+      <div class="buttons">
+        <button onclick="corregir(this)">Comprova</button>
+        <button class="secondary" onclick="reiniciar(this)">Reinicia</button>
+      </div>
+      <div class="resultat" aria-live="polite"></div>
+    </section>
+  </div>
+
+  <script>
+    function corregir(boto) {
+      const exercici = boto.closest('.exercise');
+      const desplegables = exercici.querySelectorAll('select');
+      const resultat = exercici.querySelector('.resultat');
+      let correctes = 0;
+      let respostes = 0;
+
+      desplegables.forEach(select => {
+        const respostaCorrecta = select.dataset.answer;
+        const respostaUsuari = select.value;
+
+        select.classList.remove('correct', 'incorrect');
+
+        if (respostaUsuari !== '') {
+          respostes++;
+        }
+
+        if (respostaUsuari === respostaCorrecta) {
+          select.classList.add('correct');
+          correctes++;
+        } else if (respostaUsuari !== '') {
+          select.classList.add('incorrect');
+        }
+      });
+
+      const total = desplegables.length;
+
+      if (respostes < total) {
+        resultat.textContent = `Has respost ${respostes} de ${total} preguntes. Resultat provisional: ${correctes}/${total}.`;
+      } else {
+        resultat.textContent = `Resultat final: ${correctes}/${total}.`;
+      }
+    }
+
+    function reiniciar(boto) {
+      const exercici = boto.closest('.exercise');
+      const desplegables = exercici.querySelectorAll('select');
+      desplegables.forEach(select => {
+        select.value = '';
+        select.classList.remove('correct', 'incorrect');
+      });
+      exercici.querySelector('.resultat').textContent = '';
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exercici 3.4 - Sinònims</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 24px;
+      background: #f7f7f7;
+      color: #222;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 28px;
+      border-radius: 14px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+    }
+
+    h1 {
+      margin-top: 0;
+      font-size: 1.8rem;
+    }
+
+    .instructions {
+      background: #eef5ff;
+      border-left: 5px solid #1f4e79;
+      padding: 16px 18px;
+      border-radius: 10px;
+      margin-bottom: 24px;
+      color: #1f2d3d;
+      line-height: 1.5;
+    }
+
+    .example {
+      background: #f1f4f8;
+      border-left: 4px solid #1f4e79;
+      padding: 12px 16px;
+      margin-bottom: 22px;
+      border-radius: 8px;
+    }
+
+    .text-box {
+      background: #fafafa;
+      border: 1px solid #ddd;
+      padding: 18px;
+      border-radius: 10px;
+      margin-bottom: 24px;
+    }
+
+    .item {
+      margin-bottom: 14px;
+    }
+
+    .item-number {
+      font-weight: bold;
+      margin-right: 4px;
+    }
+
+    input[type="text"] {
+      font-size: 1rem;
+      padding: 5px 8px;
+      margin: 0 3px;
+      border: 2px solid #bbb;
+      border-radius: 6px;
+      background: #fff;
+      min-width: 150px;
+    }
+
+    input.correct {
+      border-color: #2e7d32;
+      background: #e8f5e9;
+    }
+
+    input.incorrect {
+      border-color: #c62828;
+      background: #ffebee;
+    }
+
+    input.empty {
+      border-color: #bbb;
+      background: #fff;
+    }
+
+    .buttons {
+      margin-top: 24px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      font-size: 1rem;
+      padding: 10px 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background: #1f4e79;
+      color: white;
+    }
+
+    button.secondary {
+      background: #666;
+    }
+
+    #resultat {
+      margin-top: 18px;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    .font {
+      margin-top: 24px;
+      font-size: 0.9rem;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <div class="instructions">
+      <strong>
+        Busqueu en el text un sinònim dels mots que es proposen. Cliqueu <em>Comprova</em> per validar les respostes.
+      </strong>
+    </div>
+
+    <div class="example">
+      <strong>Exemple:</strong><br />
+      a pesar de: <strong>malgrat</strong>
+    </div>
+
+    <div class="text-box">
+      <p>
+        El seu pare el recorda sempre marxant. D’esquena. Pujant al cotxe i arrencant de seguida.
+        La memòria guarda detalls com ara el seu gest despreocupat en el moment de travessar
+        el llindar de l’entrada, com si sortís de casa per tornar-hi al cap d’una estona, quan tots
+        sabien que potser passarien mesos, qui sap si més d’un any. I encara veu la seva última
+        picada d’ullet, adreçada especialment a ell, al nen dels cabells quasi blancs amb pinta de
+        guiri, que li feia adeu amb la mà amb un moviment que, de tan trist, semblava comèdia i
+        feia una mica de riure.
+      </p>
+
+      <p>
+        Quan pensa en el seu pare, en Jim només el veu anant-se’n i torna a notar aquell
+        desassossec, com si alguna cosa més interna encara que els òrgans vitals es posés a
+        tremolar i no hi hagués manera d’aturar-ho.
+      </p>
+
+      <p>
+        Els primers deu anys, el devia veure unes vint-i-cinc vegades, trenta a tot estirar. Després,
+        el pare va continuar venint, però en Jim ja no el volia veure i tan bon punt el veia baixar
+        del cotxe, sortia de casa pel darrere i no hi tornava fins a estar ben segur que ja no hi era.
+        La primera vegada que ho va fer va ser un mes de desembre, un parell de setmanes abans
+        de Nadal. La mare encara plorava alguns matins escoltant «Imagine» perquè, dies enrere,
+        un psicòpata havia matat John Lennon davant de casa seva. En Jim va veure arribar el
+        cotxe del seu pare i va imaginar-se l’escena: la mare acceptant de bon grat l’abraçada
+        consoladora del nouvingut. I, per alguna raó, va decidir que ja no volia suportar-ho més.
+      </p>
+    </div>
+
+    <p class="font">Font: Sílvia Soler. <em>Nosaltres, després</em>, 2021 (text adaptat)</p>
+
+    <div class="item">
+      <span class="item-number">1.</span>
+      afligit:
+      <input type="text" data-answer="trist" aria-label="Resposta 1" />
+    </div>
+
+    <div class="item">
+      <span class="item-number">2.</span>
+      reconfortant:
+      <input type="text" data-answer="consoladora" aria-label="Resposta 2" />
+    </div>
+
+    <div class="item">
+      <span class="item-number">3.</span>
+      inquietud:
+      <input type="text" data-answer="desassossec" aria-label="Resposta 3" />
+    </div>
+
+    <div class="item">
+      <span class="item-number">4.</span>
+      aspecte:
+      <input type="text" data-answer="pinta" aria-label="Resposta 4" />
+    </div>
+
+    <div class="item">
+      <span class="item-number">5.</span>
+      custodiar:
+      <input type="text" data-answer="guarda" aria-label="Resposta 5" />
+    </div>
+
+    <div class="item">
+      <span class="item-number">6.</span>
+      tolerar:
+      <input type="text" data-answer="suportar|acceptant" aria-label="Resposta 6" />
+    </div>
+
+    <div class="buttons">
+      <button onclick="corregir()">Comprova</button>
+      <button class="secondary" onclick="reiniciar()">Reinicia</button>
+    </div>
+
+    <div id="resultat" aria-live="polite"></div>
+  </div>
+
+  <script>
+    function normalitzar(text) {
+      return text.trim().toLowerCase().replace(/\s+/g, ' ');
+    }
+
+    function corregir() {
+      const camps = document.querySelectorAll('input[type="text"]');
+      let correctes = 0;
+      let respostes = 0;
+
+      camps.forEach(camp => {
+        const respostesCorrectes = camp.dataset.answer.split('|').map(normalitzar);
+        const respostaUsuari = normalitzar(camp.value);
+
+        camp.classList.remove('correct', 'incorrect', 'empty');
+
+        if (respostaUsuari === '') {
+          camp.classList.add('empty');
+          return;
+        }
+
+        respostes++;
+
+        if (respostesCorrectes.includes(respostaUsuari)) {
+          camp.classList.add('correct');
+          correctes++;
+        } else {
+          camp.classList.add('incorrect');
+        }
+      });
+
+      const total = camps.length;
+      const resultat = document.getElementById('resultat');
+      resultat.textContent = `Has respost ${respostes} de ${total} preguntes. Respostes correctes: ${correctes}/${total}.`;
+    }
+
+    function reiniciar() {
+      const camps = document.querySelectorAll('input[type="text"]');
+      camps.forEach(camp => {
+        camp.value = '';
+        camp.classList.remove('correct', 'incorrect', 'empty');
+      });
+      document.getElementById('resultat').textContent = '';
+    }
+  </script>
+</body>
+</html>
