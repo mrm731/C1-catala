@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exercici 3.1 - Morfologia i sintaxi</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 24px;
+      background: #f7f7f7;
+      color: #222;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 28px;
+      border-radius: 14px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+    }
+
+    h1 {
+      margin-top: 0;
+      font-size: 1.8rem;
+    }
+
+    .instructions {
+      background: #eef5ff;
+      border-left: 5px solid #1f4e79;
+      padding: 16px 18px;
+      border-radius: 10px;
+      margin-bottom: 24px;
+      color: #1f2d3d;
+      line-height: 1.5;
+    }
+
+    .text-box {
+      background: #fafafa;
+      border: 1px solid #ddd;
+      padding: 18px;
+      border-radius: 10px;
+      margin-bottom: 24px;
+    }
+
+    select {
+      font-size: 1rem;
+      padding: 4px 8px;
+      margin: 0 3px;
+      border: 2px solid #bbb;
+      border-radius: 6px;
+      background: #fff;
+      max-width: 100%;
+    }
+
+    select.correct {
+      border-color: #2e7d32;
+      background: #e8f5e9;
+    }
+
+    select.incorrect {
+      border-color: #c62828;
+      background: #ffebee;
+    }
+
+    .blank-number {
+      font-size: 0.85rem;
+      color: #555;
+      margin-right: 2px;
+    }
+
+    .buttons {
+      margin-top: 24px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      font-size: 1rem;
+      padding: 10px 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background: #1f4e79;
+      color: white;
+    }
+
+    button.secondary {
+      background: #666;
+    }
+
+    .resultat {
+      margin-top: 18px;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    .font {
+      margin-top: 24px;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    .exercise {
+      margin-top: 28px;
+      padding-top: 8px;
+    }
+
+    .exercise + .exercise {
+      margin-top: 36px;
+      padding-top: 28px;
+      border-top: 2px solid #e6e6e6;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 12px;
+      }
+
+      .container {
+        padding: 18px;
+      }
+
+      select {
+        margin-top: 4px;
+        margin-bottom: 4px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <div class="instructions">
+      <strong>Trieu l’opció correcta en cada cas. Cliqueu <em>Comprova</em> per validar les respostes.</strong>
+    </div>
+
+    <section class="exercise" aria-labelledby="exercici-1">
+      <h2 id="exercici-1">Text 1</h2>
+      <div class="text-box">
+        <h2>La tercera persona</h2>
+
+        <p>
+          «<span class="blank-number">(0)</span>
+          <select data-answer="c" aria-label="Pregunta 0">
+            <option value="">— tria —</option>
+<option value="a">Tota la gent</option>
+<option value="b">Tothom</option>
+<option value="c">Tots</option>
+          </select> sabem que Oscar Wilde no parlaria mai d’ell mateix en tercera persona», va dir Oscar Wilde. Aquest estrany costum de referir-se a un mateix com si es parlés d’algú altre està clarament vinculat al narcisisme extrem. Se’n diu <span class="blank-number">(1)</span>
+          <select data-answer="b" aria-label="Pregunta 1">
+            <option value="">— tria —</option>
+<option value="a">igual</option>
+<option value="b">també</option>
+<option value="c">tanmateix</option>
+          </select> síndrome del famós, <span class="blank-number">(2)</span>
+          <select data-answer="a" aria-label="Pregunta 2">
+            <option value="">— tria —</option>
+<option value="a">perquè</option>
+<option value="b">per què</option>
+<option value="c">per a què</option>
+          </select> és habitual en algunes celebritats quan s’adrecen a la seva audiència. És una manera de donar-se importància. L’individu considera que la seva figura està <span class="blank-number">(3)</span>
+          <select data-answer="b" aria-label="Pregunta 3">
+            <option value="">— tria —</option>
+<option value="a">més</option>
+<option value="b">tan</option>
+<option value="c">tant</option>
+          </select> per damunt de la resta que ell mateix posa de manifest aquesta distància. No parla en primera persona perquè delata la proximitat física o emocional respecte als altres, els parlaria de tu a tu. La persona <span class="blank-number">(4)</span>
+          <select data-answer="b" aria-label="Pregunta 4">
+            <option value="">— tria —</option>
+<option value="a">la qual</option>
+<option value="b">que</option>
+<option value="c">qui</option>
+          </select> més ha popularitzat aquest hàbit és Donald Trump, <span class="blank-number">(5)</span>
+          <select data-answer="b" aria-label="Pregunta 5">
+            <option value="">— tria —</option>
+<option value="a">doncs</option>
+<option value="b">malgrat que</option>
+<option value="c">posat que</option>
+          </select> ja ho feia abans de ser president dels Estats Units. Fa anys, en un concurs de bellesa, va felicitar <span class="blank-number">(6)</span>
+          <select data-answer="a" aria-label="Pregunta 6">
+            <option value="">— tria —</option>
+<option value="a">Ø</option>
+<option value="b">a</option>
+<option value="c">en</option>
+          </select> una de les models per les seves virtuts i finalment va afegir: «Donald Trump <span class="blank-number">(7)</span>
+          <select data-answer="c" aria-label="Pregunta 7">
+            <option value="">— tria —</option>
+<option value="a">se n’ha</option>
+<option value="b">s’ha</option>
+<option value="c">s’hi ha</option>
+          </select> fixat».
+        </p>
+
+        <p>
+          Ara un estudi de la Universitat de Michigan ha arribat a la conclusió que parlar d’un mateix en tercera persona resulta terapèutic. Jason Moser, professor associat de psicologia de la Universitat de Michigan, ha demostrat que la manera de referir-te a tu mateix com si fossis algú altre permet relativitzar els problemes. Moser i els seus col·legues de Michigan consideren que és un mètode que no té <span class="blank-number">(8)</span>
+          <select data-answer="c" aria-label="Pregunta 8">
+            <option value="">— tria —</option>
+<option value="a">poc que</option>
+<option value="b">molt a</option>
+<option value="c">res a</option>
+          </select> veure amb l’egocentrisme com amb la necessitat d’agafar distància emocional respecte als fets. Posar-ho en pràctica potser va bé per <span class="blank-number">(9)</span>
+          <select data-answer="a" aria-label="Pregunta 9">
+            <option value="">— tria —</option>
+<option value="a">afrontar</option>
+<option value="b">enfredar</option>
+<option value="c">enfrontar</option>
+          </select> amb més equilibri els conflictes, però segur que és infal·lible a l’hora d’allunyar-te dels que t’escolten.
+        </p>
+      </div>
+
+      <p class="font">Font: Mònica Planas. <em>Ara</em>, 10 de desembre de 2017 (text adaptat).</p>
+
+      <div class="buttons">
+        <button onclick="corregir(this)">Comprova</button>
+        <button class="secondary" onclick="reiniciar(this)">Reinicia</button>
+      </div>
+      <div class="resultat" aria-live="polite"></div>
+    </section>
+
+    <section class="exercise" aria-labelledby="exercici-2">
+      <h2 id="exercici-2">Text 2</h2>
+      <div class="text-box">
+        <h2>Vacuna de la grip</h2>
+
+        <p>
+          L’altre dia, mentre em vacunava de la grip, la infermera em va preguntar a què em dedicava. Suposo que estava sorpresa <span class="blank-number">(10)</span>
+          <select data-answer="c" aria-label="Pregunta 10">
+            <option value="">— tria —</option>
+<option value="a">del que</option>
+<option value="b">de què</option>
+<option value="c">que</option>
+          </select> em vacunés «tan jove» (ai! d’aquí uns anys ja ningú se’n sorprendrà). «Soc metge». «No tots <span class="blank-number">(11)</span>
+          <select data-answer="c" aria-label="Pregunta 11">
+            <option value="">— tria —</option>
+<option value="a">ho</option>
+<option value="b">hi</option>
+<option value="c">n’</option>
+          </select> estaven conscienciats», vaig dir amb un somriure. És veritat. Fa uns anys jo no ho tenia en compte, perquè no recordo, mai a la vida, haver passat una grip forta. <span class="blank-number">(12)</span>
+          <select data-answer="a" aria-label="Pregunta 12">
+            <option value="">— tria —</option>
+<option value="a">Dec haver</option>
+<option value="b">Hauré</option>
+<option value="c">He d’haver</option>
+          </select> passat la grip molts cops, com tothom, però es veu que l’agafo fluixeta i no la distingeixo d’altres virus sense importància. Però, <span class="blank-number">(13)</span>
+          <select data-answer="c" aria-label="Pregunta 13">
+            <option value="">— tria —</option>
+<option value="a">sobre de tot</option>
+<option value="b">sobre tot</option>
+<option value="c">sobretot</option>
+          </select>, perquè jo pensava que l’única raó per vacunar <span class="blank-number">(14)</span>
+          <select data-answer="c" aria-label="Pregunta 14">
+            <option value="">— tria —</option>
+<option value="a">a</option>
+<option value="b">al</option>
+<option value="c">el</option>
+          </select> personal sanitari era impedir que tots els professionals que treballen en un centre de salut es posessin malalts <span class="blank-number">(15)</span>
+          <select data-answer="c" aria-label="Pregunta 15">
+            <option value="">— tria —</option>
+<option value="a">a l’hora</option>
+<option value="b">aleshores</option>
+<option value="c">alhora</option>
+          </select>. Rebutjava la vacuna amb una broma: «Prefereixo agafar la grip i estar de baixa una setmaneta.» Era broma, mai he agafat la baixa per una grip.
+        </p>
+
+        <p>
+          Només fa vuit anys que em vacuno regularment contra la grip. Només quan em documentava per escriure el meu llibre sobre vacunes vaig entendre que el perill és que el <span class="blank-number">(16)</span>
+          <select data-answer="b" aria-label="Pregunta 16">
+            <option value="">— tria —</option>
+<option value="a">esmentat</option>
+<option value="b">mateix</option>
+<option value="c">propi</option>
+          </select> sanitari pugui transmetre la grip als seus pacients. I això ho puc fer encara que la meva malaltia <span class="blank-number">(17)</span>
+          <select data-answer="c" aria-label="Pregunta 17">
+            <option value="">— tria —</option>
+<option value="a">era</option>
+<option value="b">fos</option>
+<option value="c">sigui</option>
+          </select> fluixeta i em permeti continuar treballant. La grip és una malaltia habitualment benigna <span class="blank-number">(18)</span>
+          <select data-answer="c" aria-label="Pregunta 18">
+            <option value="">— tria —</option>
+<option value="a">pels</option>
+<option value="b">per</option>
+<option value="c">per als</option>
+          </select> adults sans, però pot tenir greus complicacions en persones febles o malaltes, o durant l’embaràs. Ningú m’havia fet veure la responsabilitat que tenia respecte als meus pacients. <span class="blank-number">(19)</span>
+          <select data-answer="b" aria-label="Pregunta 19">
+            <option value="">— tria —</option>
+<option value="a">Com</option>
+<option value="b">Com a</option>
+<option value="c">Tant que</option>
+          </select> pediatre, veig molts nadons i embarassades, que tenen un risc especialment alt de patir complicacions de la grip. Altres professionals veuen pacients ancians o immunodeprimits, amb càncer, asma o bronquitis crònica. Cal que els professionals ens en conscienciem, no només per protegir-nos nosaltres, <span class="blank-number">(20)</span>
+          <select data-answer="c" aria-label="Pregunta 20">
+            <option value="">— tria —</option>
+<option value="a">no obstant</option>
+<option value="b">si no</option>
+<option value="c">sinó</option>
+          </select> per protegir els nostres pacients.
+        </p>
+      </div>
+
+      <p class="font">Font: Carlos González. <em>Criatures</em>, 16 de desembre de 2017 (text adaptat).</p>
+
+      <div class="buttons">
+        <button onclick="corregir(this)">Comprova</button>
+        <button class="secondary" onclick="reiniciar(this)">Reinicia</button>
+      </div>
+      <div class="resultat" aria-live="polite"></div>
+    </section>
+  </div>
+
+  <script>
+    function corregir(boto) {
+      const exercici = boto.closest('.exercise');
+      const desplegables = exercici.querySelectorAll('select');
+      const resultat = exercici.querySelector('.resultat');
+      let correctes = 0;
+      let respostes = 0;
+
+      desplegables.forEach(select => {
+        const respostaCorrecta = select.dataset.answer;
+        const respostaUsuari = select.value;
+
+        select.classList.remove('correct', 'incorrect');
+
+        if (respostaUsuari !== '') {
+          respostes++;
+        }
+
+        if (respostaUsuari === respostaCorrecta) {
+          select.classList.add('correct');
+          correctes++;
+        } else if (respostaUsuari !== '') {
+          select.classList.add('incorrect');
+        }
+      });
+
+      const total = desplegables.length;
+
+      if (respostes < total) {
+        resultat.textContent = `Has respost ${respostes} de ${total} preguntes. Resultat provisional: ${correctes}/${total}.`;
+      } else {
+        resultat.textContent = `Resultat final: ${correctes}/${total}.`;
+      }
+    }
+
+    function reiniciar(boto) {
+      const exercici = boto.closest('.exercise');
+      const desplegables = exercici.querySelectorAll('select');
+      desplegables.forEach(select => {
+        select.value = '';
+        select.classList.remove('correct', 'incorrect');
+      });
+      exercici.querySelector('.resultat').textContent = '';
+    }
+  </script>
+</body>
+</html>
