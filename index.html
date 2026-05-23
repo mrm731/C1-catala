@@ -5,159 +5,160 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Àrea 3 - Models CIFALC</title>
+
 <style>
-    body {
-        margin: 0;
-        font-family: Arial, Helvetica, sans-serif;
-        background: #f3f4f6;
-        color: #1f2937;
-        line-height: 1.5;
-    }
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f3f4f6;
+    color: #1f2937;
+}
 
-    .container {
-        max-width: 980px;
-        margin: 0 auto;
-        padding: 32px 18px;
-    }
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 28px 16px 40px;
+}
 
-    header {
-        background: #ffffff;
-        border-radius: 16px;
-        padding: 28px;
-        margin-bottom: 28px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-        text-align: center;
+header {
+    background: white;
+    border-radius: 12px;
+    padding: 22px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+h1 {
+    margin: 0 0 8px;
+    font-size: 1.8rem;
+}
+
+.subtitle {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 16px 18px;
+    border-left: 6px solid #9ca3af;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+h2 {
+    margin: 0 0 10px;
+    font-size: 1.05rem;
+}
+
+ul {
+    margin: 0;
+    padding-left: 1rem;
+}
+
+li {
+    margin-bottom: 6px;
+}
+
+a {
+    color: #1d4ed8;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    .grid {
+        grid-template-columns: 1fr;
     }
 
     h1 {
-        margin: 0 0 10px;
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
-
-    .subtitle {
-        margin: 0;
-        font-size: 1.1rem;
-    }
-
-    .grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: 20px;
-    }
-
-    .featured {
-        grid-column: 1 / -1;
-        border-left: 8px solid #2563eb;
-    }
-
-    .card {
-        background: #ffffff;
-        border-radius: 16px;
-        padding: 24px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    }
-
-    h2 {
-        margin-top: 0;
-        font-size: 1.35rem;
-    }
-
-    ul {
-        margin: 0;
-        padding-left: 1.2rem;
-    }
-
-    li {
-        margin: 10px 0;
-    }
-
-    a {
-        color: #1d4ed8;
-        font-weight: 700;
-        text-decoration: none;
-    }
-
-    a:hover,
-    a:focus {
-        text-decoration: underline;
-    }
-
-    @media (max-width: 600px) {
-        .container {
-            padding: 18px 12px;
-        }
-
-        header,
-        .card {
-            padding: 20px;
-        }
-
-        h1 {
-            font-size: 1.6rem;
-        }
-    }
+}
 </style>
 </head>
+
 <body>
-    <main class="container">
-        <header>
-            <h1>Àrea 3 - Models CIFALC</h1>
-            <p class="subtitle">Índex d’activitats interactives de gramàtica i lèxic.</p>
-        </header>
 
-        <div class="grid">
+<main class="container">
 
-        <section class="card featured">
-            <h2>Model web CIFALC</h2>
-            <ul>
-            <li><a href="https://mrm731.github.io/C1-catala/area3-modelweb-cifalc/31-model%20cifalc.html" target="_blank" rel="noopener">Activitat 3.1. Morfologia i sintaxi</a></li>
-            <li><a href="https://mrm731.github.io/C1-catala/area3-modelweb-cifalc/32-model%20cifalc.html" target="_blank" rel="noopener">Activitat 3.2. Flexió gramatical</a></li>
-            <li><a href="https://mrm731.github.io/C1-catala/area3-modelweb-cifalc/33-model%20cifalc.html" target="_blank" rel="noopener">Activitat 3.3. Derivació</a></li>
-            <li><a href="https://mrm731.github.io/C1-catala/area3-modelweb-cifalc/34-model%20cifalc.html" target="_blank" rel="noopener">Activitat 3.4. Sinonímia</a></li>
-            <li><a href="https://mrm731.github.io/C1-catala/area3-modelweb-cifalc/35-model%20cifalc.html" target="_blank" rel="noopener">Activitat 3.5. Expressions</a></li>
-            </ul>
-        </section>
-        <section class="card">
-            <h2>Model 1 CIFALC</h2>
-            <ul>
-            <li><a href="https://mrm731.github.io/C1-catala/area3-model1-cifalc/31-model%201-cifalc.html" target="_blank" rel="noopener">Activitat 3.1. Morfologia i sintaxi</a></li>
-            <li><a href="https://mrm731.github.io/C1-catala/area3-model1-cifalc/32-model%201-cifalc.html" target="_blank" rel="noopener">Activitat 3.2. Flexió gramatical</a></li>
-            <li><a href="https://mrm731.github.io/C1-catala/area3-model1-cifalc/33-model%201-cifalc.html" target="_blank" rel="noopener">Activitat 3.3. Derivació</a></li>
-            <li><a href="https://mrm731.github.io/C1-catala/area3-model1-cifalc/34-model%201-cifalc.html" target="_blank" rel="noopener">Activitat 3.4. Sinonímia</a></li>
-            <li><a href="https://mrm731.github.io/C1-catala/area3-model1-cifalc/35-model%201-cifalc.html" target="_blank" rel="noopener">Activitat 3.5. Expressions</a></li>
-            </ul>
-        </section>
-        <section class="card">
-            <h2>Model 2 CIFALC</h2>
-            <ul>
-            <li><a href="https://mrm731.github.io/C1-catala/area3-model2-cifalc/31-model%202-cifalc.html" target="_blank" rel="noopener">Activitat 3.1. Morfologia i sintaxi</a></li>
-            <li><a href="https://mrm731.github.io/C1-catala/area3-model2-cifalc/32-model%202-cifalc.html" target="_blank" rel="noopener">Activitat 3.2. Flexió gramatical</a></li>
-            <li><a href="https://mrm731.github.io/C1-catala/area3-model2-cifalc/33-model%202-cifalc.html" target="_blank" rel="noopener">Activitat 3.3. Derivació</a></li>
-            <li><a href="https://mrm731.github.io/C1-catala/area3-model2-cifalc/34-model%202-cifalc.html" target="_blank" rel="noopener">Activitat 3.4. Sinonímia</a></li>
-            <li><a href="https://mrm731.github.io/C1-catala/area3-model2-cifalc/35-model%202-cifalc.html" target="_blank" rel="noopener">Activitat 3.5. Expressions</a></li>
-            </ul>
-        </section>
-        <section class="card">
-            <h2>Model prova 1 CIFALC</h2>
-            <ul>
-            <li><a href="https://mrm731.github.io/C1-catala/area3-modelprova1-cifalc/31-model%20prova%201-cifalc.html" target="_blank" rel="noopener">Activitat 3.1. Morfologia i sintaxi</a></li>
-            <li><a href="https://mrm731.github.io/C1-catala/area3-modelprova1-cifalc/32-model%20prova%201-cifalc.html" target="_blank" rel="noopener">Activitat 3.2. Flexió gramatical</a></li>
-            <li><a href="https://mrm731.github.io/C1-catala/area3-modelprova1-cifalc/33-model%20prova%201-cifalc.html" target="_blank" rel="noopener">Activitat 3.3. Derivació</a></li>
-            <li><a href="https://mrm731.github.io/C1-catala/area3-modelprova1-cifalc/34-model%20prova%201-cifalc.html" target="_blank" rel="noopener">Activitat 3.4. Sinonímia</a></li>
-            <li><a href="https://mrm731.github.io/C1-catala/area3-modelprova1-cifalc/35-model%20prova%201-cifalc.html" target="_blank" rel="noopener">Activitat 3.5. Expressions</a></li>
-            </ul>
-        </section>
-        <section class="card">
-            <h2>Model prova 2 CIFALC</h2>
-            <ul>
-            <li><a href="https://mrm731.github.io/C1-catala/area3-modelprova2-cifalc/31-model%20prova%202-cifalc.html" target="_blank" rel="noopener">Activitat 3.1. Morfologia i sintaxi</a></li>
-            <li><a href="https://mrm731.github.io/C1-catala/area3-modelprova2-cifalc/32-model%20prova%202-cifalc.html" target="_blank" rel="noopener">Activitat 3.2. Flexió gramatical</a></li>
-            <li><a href="https://mrm731.github.io/C1-catala/area3-modelprova2-cifalc/33-model%20prova%202-cifalc.html" target="_blank" rel="noopener">Activitat 3.3. Derivació</a></li>
-            <li><a href="https://mrm731.github.io/C1-catala/area3-modelprova2-cifalc/34-model%20prova%202-cifalc.html" target="_blank" rel="noopener">Activitat 3.4. Sinonímia</a></li>
-            <li><a href="https://mrm731.github.io/C1-catala/area3-modelprova2-cifalc/35-model%20prova%202-cifalc.html" target="_blank" rel="noopener">Activitat 3.5. Expressions</a></li>
-            </ul>
-        </section>
-        </div>
-    </main>
+<header>
+    <h1>Àrea 3 - Models CIFALC</h1>
+    <p class="subtitle">Índex d’activitats interactives de gramàtica i lèxic.</p>
+</header>
+
+<div class="grid">
+
+<section class="card">
+    <h2>Model web CIFALC</h2>
+    <ul>
+        <li><a href="https://mrm731.github.io/C1-catala/area3-modelweb-cifalc/31-model%20cifalc.html" target="_blank">Activitat 3.1</a></li>
+        <li><a href="https://mrm731.github.io/C1-catala/area3-modelweb-cifalc/32-model%20cifalc.html" target="_blank">Activitat 3.2</a></li>
+        <li><a href="https://mrm731.github.io/C1-catala/area3-modelweb-cifalc/33-model%20cifalc.html" target="_blank">Activitat 3.3</a></li>
+        <li><a href="https://mrm731.github.io/C1-catala/area3-modelweb-cifalc/34-model%20cifalc.html" target="_blank">Activitat 3.4</a></li>
+        <li><a href="https://mrm731.github.io/C1-catala/area3-modelweb-cifalc/35-model%20cifalc.html" target="_blank">Activitat 3.5</a></li>
+    </ul>
+</section>
+
+<section class="card">
+    <h2>Model 1 CIFALC</h2>
+    <ul>
+        <li><a href="https://mrm731.github.io/C1-catala/area3-model1-cifalc/31-model%201-cifalc.html" target="_blank">Activitat 3.1</a></li>
+        <li><a href="https://mrm731.github.io/C1-catala/area3-model1-cifalc/32-model%201-cifalc.html" target="_blank">Activitat 3.2</a></li>
+        <li><a href="https://mrm731.github.io/C1-catala/area3-model1-cifalc/33-model%201-cifalc.html" target="_blank">Activitat 3.3</a></li>
+        <li><a href="https://mrm731.github.io/C1-catala/area3-model1-cifalc/34-model%201-cifalc.html" target="_blank">Activitat 3.4</a></li>
+        <li><a href="https://mrm731.github.io/C1-catala/area3-model1-cifalc/35-model%201-cifalc.html" target="_blank">Activitat 3.5</a></li>
+    </ul>
+</section>
+
+<section class="card">
+    <h2>Model 2 CIFALC</h2>
+    <ul>
+        <li><a href="https://mrm731.github.io/C1-catala/area3-model2-cifalc/31-model%202-cifalc.html" target="_blank">Activitat 3.1</a></li>
+        <li><a href="https://mrm731.github.io/C1-catala/area3-model2-cifalc/32-model%202-cifalc.html" target="_blank">Activitat 3.2</a></li>
+        <li><a href="https://mrm731.github.io/C1-catala/area3-model2-cifalc/33-model%202-cifalc.html" target="_blank">Activitat 3.3</a></li>
+        <li><a href="https://mrm731.github.io/C1-catala/area3-model2-cifalc/34-model%202-cifalc.html" target="_blank">Activitat 3.4</a></li>
+        <li><a href="https://mrm731.github.io/C1-catala/area3-model2-cifalc/35-model%202-cifalc.html" target="_blank">Activitat 3.5</a></li>
+    </ul>
+</section>
+
+<section class="card">
+    <h2>Model prova 1 CIFALC</h2>
+    <ul>
+        <li><a href="https://mrm731.github.io/C1-catala/area3-modelprova1-cifalc/31-model%20prova%201-cifalc.html" target="_blank">Activitat 3.1</a></li>
+        <li><a href="https://mrm731.github.io/C1-catala/area3-modelprova1-cifalc/32-model%20prova%201-cifalc.html" target="_blank">Activitat 3.2</a></li>
+        <li><a href="https://mrm731.github.io/C1-catala/area3-modelprova1-cifalc/33-model%20prova%201-cifalc.html" target="_blank">Activitat 3.3</a></li>
+        <li><a href="https://mrm731.github.io/C1-catala/area3-modelprova1-cifalc/34-model%20prova%201-cifalc.html" target="_blank">Activitat 3.4</a></li>
+        <li><a href="https://mrm731.github.io/C1-catala/area3-modelprova1-cifalc/35-model%20prova%201-cifalc.html" target="_blank">Activitat 3.5</a></li>
+    </ul>
+</section>
+
+<section class="card">
+    <h2>Model prova 2 CIFALC</h2>
+    <ul>
+        <li><a href="https://mrm731.github.io/C1-catala/area3-modelprova2-cifalc/31-model%20prova%202-cifalc.html" target="_blank">Activitat 3.1</a></li>
+        <li><a href="https://mrm731.github.io/C1-catala/area3-modelprova2-cifalc/32-model%20prova%202-cifalc.html" target="_blank">Activitat 3.2</a></li>
+        <li><a href="https://mrm731.github.io/C1-catala/area3-modelprova2-cifalc/33-model%20prova%202-cifalc.html" target="_blank">Activitat 3.3</a></li>
+        <li><a href="https://mrm731.github.io/C1-catala/area3-modelprova2-cifalc/34-model%20prova%202-cifalc.html" target="_blank">Activitat 3.4</a></li>
+        <li><a href="https://mrm731.github.io/C1-catala/area3-modelprova2-cifalc/35-model%20prova%202-cifalc.html" target="_blank">Activitat 3.5</a></li>
+    </ul>
+</section>
+
+</div>
+
+</main>
+
 </body>
 </html>
