@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exercici 3.4 - Sinònims</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 24px;
+      background: #f7f7f7;
+      color: #222;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 28px;
+      border-radius: 14px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+    }
+
+    h1 {
+      margin-top: 0;
+      font-size: 1.8rem;
+    }
+
+    .instructions {
+      background: #eef5ff;
+      border-left: 5px solid #1f4e79;
+      padding: 16px 18px;
+      border-radius: 10px;
+      margin-bottom: 24px;
+      color: #1f2d3d;
+      line-height: 1.5;
+    }
+
+    .example {
+      background: #f1f4f8;
+      border-left: 4px solid #1f4e79;
+      padding: 12px 16px;
+      margin-bottom: 22px;
+      border-radius: 8px;
+    }
+
+    .text-box {
+      background: #fafafa;
+      border: 1px solid #ddd;
+      padding: 18px;
+      border-radius: 10px;
+      margin-bottom: 24px;
+    }
+
+    .item {
+      margin-bottom: 14px;
+    }
+
+    .item-number {
+      font-weight: bold;
+      margin-right: 4px;
+    }
+
+    input[type="text"] {
+      font-size: 1rem;
+      padding: 5px 8px;
+      margin: 0 3px;
+      border: 2px solid #bbb;
+      border-radius: 6px;
+      background: #fff;
+      min-width: 150px;
+    }
+
+    input.correct {
+      border-color: #2e7d32;
+      background: #e8f5e9;
+    }
+
+    input.incorrect {
+      border-color: #c62828;
+      background: #ffebee;
+    }
+
+    input.empty {
+      border-color: #bbb;
+      background: #fff;
+    }
+
+    .buttons {
+      margin-top: 24px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      font-size: 1rem;
+      padding: 10px 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background: #1f4e79;
+      color: white;
+    }
+
+    button.secondary {
+      background: #666;
+    }
+
+    #resultat {
+      margin-top: 18px;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    .font {
+      margin-top: 24px;
+      font-size: 0.9rem;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <div class="instructions">
+      <strong>
+        Busqueu en el text un sinònim dels mots que es proposen. Cliqueu <em>Comprova</em> per validar les respostes.
+      </strong>
+    </div>
+
+    <div class="example">
+      <strong>Exemple:</strong><br />
+      a pesar de: <strong>malgrat</strong>
+    </div>
+
+    <div class="text-box">
+      <h2>Els estranys</h2>
+
+      <p>
+        Wielemann mirava amb uns ulls sorpresos i lents, que Miquel Foraster va prendre per
+        un indici d’expectació. A Wielemann se li va rebregar la cara un moment i de seguida
+        es va asseure a la butaca; una punxada el travessava des de l'espatlla esquerra fins
+        al ronyó dret. Adoptant instintivament l'aire del professional, Foraster li va preguntar
+        si estava marejat mentre li prenia el pols. El prussià no trobava paraules per explicar
+        què li passava, tampoc en alemany, i es limitava a confessar-se abatut. La boca se li
+        omplia d'una saliva densa que només tornava a baixar a força de mastegar-la. Va
+        callar més llargament que de costum, fent servir el silenci de cuirassa contra alguna
+        cosa indefinida. Foraster li observava el color esblanqueït de la pell sense gosar dir
+        res més; va posar-se a caminar per la sala, amb uns passos que devien sentir-se des
+        de la cuina adjacent, o almenys hi devia arribar el desconcert del metge, perquè a la
+        fi en va sorgir una veu segura i vellutada alhora, neutra però amb una lleu inflexió
+        condescendent a les últimes síl·labes, com pronunciada amb una infinita paciència
+        davant la ignorància dels homes amb estudis:
+      </p>
+
+      <p>
+        —Nen, aquest home està espatllat.
+      </p>
+
+      <p>
+        Foraster es va girar cap a la vella d’una batzegada, alliberat de dubtes. Va abraçar
+        Wielemann per l’esquena i el va aixecar suaument. Passant per davant de la cuina,
+        on l’anciana i l’olla ancestral continuaven immòbils, absents, com si no haguessin
+        tingut res a veure amb la conversa, van baixar al carrer.
+      </p>
+    </div>
+
+    <p class="font">Font: Raül Garrigasait. <em>Els estranys</em>, 2017 (text adaptat)</p>
+
+    <div class="item">
+      <span class="item-number">1.</span>
+      arrugar:
+      <input type="text" data-answer="rebregar" aria-label="Resposta 1" />
+    </div>
+
+    <div class="item">
+      <span class="item-number">2.</span>
+      atrevir-se:
+      <input type="text" data-answer="gosar" aria-label="Resposta 2" />
+    </div>
+
+    <div class="item">
+      <span class="item-number">3.</span>
+      difús:
+      <input type="text" data-answer="indefinida" aria-label="Resposta 3" />
+    </div>
+
+    <div class="item">
+      <span class="item-number">4.</span>
+      fiblada:
+      <input type="text" data-answer="punxada" aria-label="Resposta 4" />
+    </div>
+
+    <div class="item">
+      <span class="item-number">5.</span>
+      protecció:
+      <input type="text" data-answer="cuirassa" aria-label="Resposta 5" />
+    </div>
+
+    <div class="item">
+      <span class="item-number">6.</span>
+      revolada:
+      <input type="text" data-answer="batzegada" aria-label="Resposta 6" />
+    </div>
+
+    <div class="buttons">
+      <button onclick="corregir()">Comprova</button>
+      <button class="secondary" onclick="reiniciar()">Reinicia</button>
+    </div>
+
+    <div id="resultat"></div>
+  </div>
+
+  <script>
+    function normalitzar(text) {
+      return text.trim().toLowerCase();
+    }
+
+    function corregir() {
+      const camps = document.querySelectorAll('input[type="text"]');
+      let correctes = 0;
+      let respostes = 0;
+
+      camps.forEach(camp => {
+        const respostesCorrectes = camp.dataset.answer.split('|').map(normalitzar);
+        const respostaUsuari = normalitzar(camp.value);
+
+        camp.classList.remove('correct', 'incorrect', 'empty');
+
+        if (respostaUsuari === '') {
+          camp.classList.add('empty');
+          return;
+        }
+
+        respostes++;
+
+        if (respostesCorrectes.includes(respostaUsuari)) {
+          camp.classList.add('correct');
+          correctes++;
+        } else {
+          camp.classList.add('incorrect');
+        }
+      });
+
+      const total = camps.length;
+      const resultat = document.getElementById('resultat');
+      resultat.textContent = `Has respost ${respostes} de ${total} preguntes. Respostes correctes: ${correctes}/${total}.`;
+    }
+
+    function reiniciar() {
+      const camps = document.querySelectorAll('input[type="text"]');
+      camps.forEach(camp => {
+        camp.value = '';
+        camp.classList.remove('correct', 'incorrect', 'empty');
+      });
+      document.getElementById('resultat').textContent = '';
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exercici 3.1 - Morfologia i sintaxi</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 24px;
+      background: #f7f7f7;
+      color: #222;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 28px;
+      border-radius: 14px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+    }
+
+    h1 {
+      margin-top: 0;
+      font-size: 1.8rem;
+    }
+
+    .instructions {
+      background: #eef5ff;
+      border-left: 5px solid #1f4e79;
+      padding: 16px 18px;
+      border-radius: 10px;
+      margin-bottom: 24px;
+      color: #1f2d3d;
+      line-height: 1.5;
+    }
+
+    .text-box {
+      background: #fafafa;
+      border: 1px solid #ddd;
+      padding: 18px;
+      border-radius: 10px;
+      margin-bottom: 24px;
+    }
+
+    select {
+      font-size: 1rem;
+      padding: 4px 8px;
+      margin: 0 3px;
+      border: 2px solid #bbb;
+      border-radius: 6px;
+      background: #fff;
+      max-width: 100%;
+    }
+
+    select.correct {
+      border-color: #2e7d32;
+      background: #e8f5e9;
+    }
+
+    select.incorrect {
+      border-color: #c62828;
+      background: #ffebee;
+    }
+
+    .blank-number {
+      font-size: 0.85rem;
+      color: #555;
+      margin-right: 2px;
+    }
+
+    .buttons {
+      margin-top: 24px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      font-size: 1rem;
+      padding: 10px 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background: #1f4e79;
+      color: white;
+    }
+
+    button.secondary {
+      background: #666;
+    }
+
+    .resultat {
+      margin-top: 18px;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    .font {
+      margin-top: 24px;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    .exercise {
+      margin-top: 28px;
+      padding-top: 8px;
+    }
+
+    .exercise + .exercise {
+      margin-top: 36px;
+      padding-top: 28px;
+      border-top: 2px solid #e6e6e6;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 12px;
+      }
+
+      .container {
+        padding: 18px;
+      }
+
+      select {
+        margin-top: 4px;
+        margin-bottom: 4px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <div class="instructions">
+      <strong>Trieu l’opció correcta en cada cas. Cliqueu <em>Comprova</em> per validar les respostes.</strong>
+    </div>
+
+    <section class="exercise" aria-labelledby="exercici-1">
+      <h2 id="exercici-1">Text 1</h2>
+      <div class="text-box">
+        <h2>Adolescents: què els passa pel cap?</h2>
+
+        <p>
+          El cervell dels adolescents és inestable pels ràpids canvis que comporta el pas del cervell infantil a l’adult. Es desperta en els adolescents el voler saber qui són i com són. El cervell es reordena, unes àrees creixen i les altres disminueixen
+          <span class="blank-number">(0)</span>
+          <select data-answer="mitjançant" aria-label="Pregunta 0">
+            <option value="">— tria —</option>
+            <option>a través</option>
+            <option>atenent</option>
+            <option>mitjançant</option>
+          </select>
+          una espècie de poda de les connexions entre neurones.
+          <span class="blank-number">(1)</span>
+          <select data-answer="De fet" aria-label="Pregunta 1">
+            <option value="">— tria —</option>
+            <option>De fet</option>
+            <option>Malgrat això</option>
+            <option>Tanmateix</option>
+          </select>,
+          el cervell només conserva els aprenentatges que l’experiència viscuda li aconsella mantenir i reforçar, al mateix temps que elimina o manté en l’oblit
+          <span class="blank-number">(2)</span>
+          <select data-answer="el que" aria-label="Pregunta 2">
+            <option value="">— tria —</option>
+            <option>el que</option>
+            <option>el què</option>
+            <option>perquè</option>
+          </select>
+          considera superficial.
+        </p>
+
+        <p>
+          A l’institut que dirigeix han optat
+          <span class="blank-number">(3)</span>
+          <select data-answer="per" aria-label="Pregunta 3">
+            <option value="">— tria —</option>
+            <option>a</option>
+            <option>per</option>
+            <option>per a</option>
+          </select>
+          aplicar els avenços neurocientífics en l’educació dels seus alumnes, entre
+          <span class="blank-number">(4)</span>
+          <select data-answer="els quals" aria-label="Pregunta 4">
+            <option value="">— tria —</option>
+            <option>els quals</option>
+            <option>els qui</option>
+            <option>què</option>
+          </select>
+          hi ha la potenciació de la intel·ligència emocional i de les activitats artístiques, la creació d’un entorn físic més agradable o,
+          <span class="blank-number">(5)</span>
+          <select data-answer="fins i tot" aria-label="Pregunta 5">
+            <option value="">— tria —</option>
+            <option>fins i tot</option>
+            <option>inclòs</option>
+            <option>per contra</option>
+          </select>,
+          l’opció d’alfabetitzar en neurodidàctica
+          <span class="blank-number">(6)</span>
+          <select data-answer="els" aria-label="Pregunta 6">
+            <option value="">— tria —</option>
+            <option>als</option>
+            <option>els</option>
+            <option>per als</option>
+          </select>
+          adolescents.
+        </p>
+
+        <p>
+          Una de les eines que utilitzen per desvelar els secrets del cervell són les classes de màgia. Per exemple, expliquen als alumnes que l’estratègia que utilitzen els mags de desviar l’atenció
+          <span class="blank-number">(7)</span>
+          <select data-answer="a l’hora" aria-label="Pregunta 7">
+            <option value="">— tria —</option>
+            <option>a l’hora</option>
+            <option>alhora</option>
+            <option>al temps</option>
+          </select>
+          de fer trucs demostra que el rendiment és més alt
+          <span class="blank-number">(8)</span>
+          <select data-answer="quan" aria-label="Pregunta 8">
+            <option value="">— tria —</option>
+            <option>com</option>
+            <option>quan</option>
+            <option>quant</option>
+          </select>
+          la concentració es dirigeix a una sola tasca. Igualment, els adverteixen que alguns mags cometen errors,
+          <span class="blank-number">(9)</span>
+          <select data-answer="de manera que" aria-label="Pregunta 9">
+            <option value="">— tria —</option>
+            <option>de manera que</option>
+            <option>doncs</option>
+            <option>si bé</option>
+          </select>
+          els alumnes aprenen a no magnificar les equivocacions.
+        </p>
+
+        <p>
+          “En una etapa en què la recompensa i el reconeixement són
+          <span class="blank-number">(10)</span>
+          <select data-answer="tan" aria-label="Pregunta 10">
+            <option value="">— tria —</option>
+            <option>tan</option>
+            <option>tant</option>
+            <option>tants</option>
+          </select>
+          importants, és evident que cal
+          <span class="blank-number">(11)</span>
+          <select data-answer="ajudar-los" aria-label="Pregunta 11">
+            <option value="">— tria —</option>
+            <option>ajuda’ls</option>
+            <option>ajudar-los</option>
+            <option>ajudar-los-hi</option>
+          </select>
+          a gestionar els errors. L’error forma part de la vida i pot ser el preàmbul de l’èxit”, referma Nieves Maya, directora del Colegio Carmelitas - Sagrado Corazón de Vitòria.
+        </p>
+      </div>
+
+      <p class="font">Font: Lídia Juanmartí, <em>Ara Criatures</em> (text adaptat)</p>
+
+      <div class="buttons">
+        <button onclick="corregir(this)">Comprova</button>
+        <button class="secondary" onclick="reiniciar(this)">Reinicia</button>
+      </div>
+      <div class="resultat" aria-live="polite"></div>
+    </section>
+
+    <section class="exercise" aria-labelledby="exercici-2">
+      <h2 id="exercici-2">Text 2</h2>
+      <div class="text-box">
+        <h2>Què és Internet?</h2>
+
+        <p>
+          Als anys seixanta del segle passat, els militars dels Estats Units van crear un sistema per a connectar els ordinadors
+          <span class="blank-number">(12)</span>
+          <select data-answer="perquè" aria-label="Pregunta 12">
+            <option value="">— tria —</option>
+            <option>per a què</option>
+            <option>per què</option>
+            <option>perquè</option>
+          </select>
+          poguessin continuar funcionant en cas de guerra o de desastre natural. A poc a poc, les universitats, els centres de recerca i les grans empreses
+          <span class="blank-number">(13)</span>
+          <select data-answer="hi" aria-label="Pregunta 13">
+            <option value="">— tria —</option>
+            <option>en</option>
+            <option>hi</option>
+            <option>l’hi</option>
+          </select>
+          van anar connectant les seves xarxes fins que es va convertir en la gran xarxa de xarxes que és Internet.
+          <span class="blank-number">(14)</span>
+          <select data-answer="Fins" aria-label="Pregunta 14">
+            <option value="">— tria —</option>
+            <option>Des d’</option>
+            <option>Fins</option>
+            <option>Fins a</option>
+          </select>
+          avui, hem accedit a aquesta xarxa 3.488 milions de persones, el 46% de la població del planeta!
+        </p>
+
+        <p>
+          Imaginem que volem enviar una nau de Lego a una amiga a
+          <span class="blank-number">(15)</span>
+          <select data-answer="l’altra" aria-label="Pregunta 15">
+            <option value="">— tria —</option>
+            <option>l’altra</option>
+            <option>l’altre</option>
+            <option>una altra</option>
+          </select>
+          punta del món. Si la hi enviem muntada i es perd, haurem perdut la joguina sencera! En canvi, si ho fem peça per peça amb el manual d’instruccions de muntatge i se’n perd alguna peça, només
+          <span class="blank-number">(16)</span>
+          <select data-answer="caldrà" aria-label="Pregunta 16">
+            <option value="">— tria —</option>
+            <option>caldrà</option>
+            <option>caldria</option>
+            <option>hagués calgut</option>
+          </select>
+          enviar de nou aquesta peça sense haver de tornar a comprar la joguina.
+        </p>
+
+        <p>
+          Així és com funciona Internet: la informació no viatja tota sencera,
+          <span class="blank-number">(17)</span>
+          <select data-answer="sinó" aria-label="Pregunta 17">
+            <option value="">— tria —</option>
+            <option>malgrat</option>
+            <option>si no</option>
+            <option>sinó</option>
+          </select>
+          que es trosseja en paquets més petits i s’envia a través dels camins de la xarxa amb menys trànsit.
+        </p>
+
+        <p>
+          Els vídeos de YouTube
+          <span class="blank-number">(18)</span>
+          <select data-answer="són" aria-label="Pregunta 18">
+            <option value="">— tria —</option>
+            <option>estan</option>
+            <option>s'estan</option>
+            <option>són</option>
+          </select>
+          als ordinadors de Google arreu del món. Quan fem clic al botó de reproducció, l’ordinador que guarda el vídeo el trenca en paquets més petits i els envia
+          <span class="blank-number">(19)</span>
+          <select data-answer="per" aria-label="Pregunta 19">
+            <option value="">— tria —</option>
+            <option>als</option>
+            <option>pels</option>
+            <option>per</option>
+          </select>
+          diferents camins al nostre ordinador.
+          <span class="blank-number">(20)</span>
+          <select data-answer="Com que" aria-label="Pregunta 20">
+            <option value="">— tria —</option>
+            <option>Com</option>
+            <option>Com que</option>
+            <option>Posat que</option>
+          </select>
+          el nostre ordinador té el manual d’instruccions de muntatge, col·loca els paquets en ordre i ens mostra el vídeo.
+        </p>
+      </div>
+
+      <p class="font">Font: Josep M. Ganyet, <em>Cavall Fort</em> (text adaptat)</p>
+
+      <div class="buttons">
+        <button onclick="corregir(this)">Comprova</button>
+        <button class="secondary" onclick="reiniciar(this)">Reinicia</button>
+      </div>
+      <div class="resultat" aria-live="polite"></div>
+    </section>
+  </div>
+
+  <script>
+    function corregir(boto) {
+      const exercici = boto.closest('.exercise');
+      const desplegables = exercici.querySelectorAll('select');
+      const resultat = exercici.querySelector('.resultat');
+      let correctes = 0;
+      let respostes = 0;
+
+      desplegables.forEach(select => {
+        const respostaCorrecta = select.dataset.answer;
+        const respostaUsuari = select.value;
+
+        select.classList.remove('correct', 'incorrect');
+
+        if (respostaUsuari !== '') {
+          respostes++;
+        }
+
+        if (respostaUsuari === respostaCorrecta) {
+          select.classList.add('correct');
+          correctes++;
+        } else if (respostaUsuari !== '') {
+          select.classList.add('incorrect');
+        }
+      });
+
+      const total = desplegables.length;
+
+      if (respostes < total) {
+        resultat.textContent = `Has respost ${respostes} de ${total} preguntes. Resultat provisional: ${correctes}/${total}.`;
+      } else {
+        resultat.textContent = `Resultat final: ${correctes}/${total}.`;
+      }
+    }
+
+    function reiniciar(boto) {
+      const exercici = boto.closest('.exercise');
+      const desplegables = exercici.querySelectorAll('select');
+      desplegables.forEach(select => {
+        select.value = '';
+        select.classList.remove('correct', 'incorrect');
+      });
+      exercici.querySelector('.resultat').textContent = '';
+    }
+  </script>
+</body>
+</html>

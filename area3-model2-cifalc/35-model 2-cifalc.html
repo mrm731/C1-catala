@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exercici 3.5 - Expressions</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 24px;
+      background: #f7f7f7;
+      color: #222;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 28px;
+      border-radius: 14px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+    }
+
+    h1 {
+      margin-top: 0;
+      font-size: 1.8rem;
+    }
+
+    .instructions {
+      background: #eef5ff;
+      border-left: 5px solid #1f4e79;
+      padding: 16px 18px;
+      border-radius: 10px;
+      margin-bottom: 24px;
+      color: #1f2d3d;
+      line-height: 1.5;
+    }
+
+    .example {
+      background: #f1f4f8;
+      border-left: 4px solid #1f4e79;
+      padding: 12px 16px;
+      margin-bottom: 22px;
+      border-radius: 8px;
+    }
+
+    .text-box {
+      background: #fafafa;
+      border: 1px solid #ddd;
+      padding: 18px;
+      border-radius: 10px;
+      margin-bottom: 24px;
+    }
+
+    .bank {
+      background: #fafafa;
+      border: 1px solid #ddd;
+      padding: 16px;
+      border-radius: 10px;
+      margin-bottom: 24px;
+    }
+
+    .bank ul {
+      columns: 2;
+      margin: 8px 0 0 0;
+      padding-left: 22px;
+    }
+
+    .item {
+      margin-bottom: 18px;
+    }
+
+    .item-number {
+      font-weight: bold;
+      margin-right: 4px;
+    }
+
+    select {
+      font-size: 1rem;
+      padding: 4px 8px;
+      margin: 0 3px;
+      border: 2px solid #bbb;
+      border-radius: 6px;
+      background: #fff;
+      max-width: 100%;
+    }
+
+    select.correct {
+      border-color: #2e7d32;
+      background: #e8f5e9;
+    }
+
+    select.incorrect {
+      border-color: #c62828;
+      background: #ffebee;
+    }
+
+    .buttons {
+      margin-top: 24px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      font-size: 1rem;
+      padding: 10px 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background: #1f4e79;
+      color: white;
+    }
+
+    button.secondary {
+      background: #666;
+    }
+
+    #resultat {
+      margin-top: 18px;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <div class="instructions">
+      <strong>
+        Trieu l’expressió adequada per completar el significat de cada frase. Tingueu en compte que hi ha dues expressions que no fareu servir. Cliqueu <em>Comprova</em> per validar les respostes.
+      </strong>
+    </div>
+
+    <div class="example">
+      <strong>Exemple:</strong><br />
+      Vol aprendre a esquiar en una setmana perquè es pensa que això és <strong>bufar i fer ampolles</strong>.
+    </div>
+
+    <div class="bank">
+      <strong>Expressions:</strong>
+      <ul>
+        <li>afegir llenya al foc</li>
+        <li>dir ni ase ni bèstia</li>
+        <li>escampar la boira</li>
+        <li>fer un cop de cap</li>
+        <li>fugir d’estudi</li>
+        <li>mirar de cua d’ull</li>
+        <li>seguir la veta</li>
+        <li>ser l’ase dels cops</li>
+        <li>ser un estira-i-arronsa</li>
+        <li>ser un zero a l’esquerra</li>
+      </ul>
+    </div>
+
+    <div class="text-box">
+      <div class="item">
+        <span class="item-number">1.</span>
+        Em va sorprendre que, després de tants anys de coneixença, em passés pel costat sense
+        <select data-answer="dir ni ase ni bèstia" aria-label="Pregunta 1">
+          <option value="">— tria —</option>
+          <option>afegir llenya al foc</option>
+          <option>dir ni ase ni bèstia</option>
+          <option>escampar la boira</option>
+          <option>fer un cop de cap</option>
+          <option>fugir d’estudi</option>
+          <option>mirar de cua d’ull</option>
+          <option>seguir la veta</option>
+          <option>ser l’ase dels cops</option>
+          <option>ser un estira-i-arronsa</option>
+          <option>ser un zero a l’esquerra</option>
+        </select>.
+      </div>
+
+      <div class="item">
+        <span class="item-number">2.</span>
+        Va demanar una excedència perquè el que necessitava era fer un any sabàtic per
+        <select data-answer="escampar la boira" aria-label="Pregunta 2">
+          <option value="">— tria —</option>
+          <option>afegir llenya al foc</option>
+          <option>dir ni ase ni bèstia</option>
+          <option>escampar la boira</option>
+          <option>fer un cop de cap</option>
+          <option>fugir d’estudi</option>
+          <option>mirar de cua d’ull</option>
+          <option>seguir la veta</option>
+          <option>ser l’ase dels cops</option>
+          <option>ser un estira-i-arronsa</option>
+          <option>ser un zero a l’esquerra</option>
+        </select>.
+      </div>
+
+      <div class="item">
+        <span class="item-number">3.</span>
+        En tota regla, va
+        <select data-answer="ser un estira-i-arronsa" aria-label="Pregunta 3">
+          <option value="">— tria —</option>
+          <option>afegir llenya al foc</option>
+          <option>dir ni ase ni bèstia</option>
+          <option>escampar la boira</option>
+          <option>fer un cop de cap</option>
+          <option>fugir d’estudi</option>
+          <option>mirar de cua d’ull</option>
+          <option>seguir la veta</option>
+          <option>ser l’ase dels cops</option>
+          <option>ser un estira-i-arronsa</option>
+          <option>ser un zero a l’esquerra</option>
+        </select>
+        que va acabar, contra tot pronòstic, en una entesa entre totes dues parts.
+      </div>
+
+      <div class="item">
+        <span class="item-number">4.</span>
+        Després de rumiar-s’ho molt, finalment la Carme va
+        <select data-answer="fer un cop de cap" aria-label="Pregunta 4">
+          <option value="">— tria —</option>
+          <option>afegir llenya al foc</option>
+          <option>dir ni ase ni bèstia</option>
+          <option>escampar la boira</option>
+          <option>fer un cop de cap</option>
+          <option>fugir d’estudi</option>
+          <option>mirar de cua d’ull</option>
+          <option>seguir la veta</option>
+          <option>ser l’ase dels cops</option>
+          <option>ser un estira-i-arronsa</option>
+          <option>ser un zero a l’esquerra</option>
+        </select>
+        i va fer la prova d’accés a la universitat per a més grans de 25 anys. Sempre ho havia volgut.
+      </div>
+
+      <div class="item">
+        <span class="item-number">5.</span>
+        Quan li van demanar explicacions sobre el que havia passat, va eludir tota responsabilitat. Sempre feia igual:
+        <select data-answer="fugir d’estudi" aria-label="Pregunta 5">
+          <option value="">— tria —</option>
+          <option>afegir llenya al foc</option>
+          <option>dir ni ase ni bèstia</option>
+          <option>escampar la boira</option>
+          <option>fer un cop de cap</option>
+          <option>fugir d’estudi</option>
+          <option>mirar de cua d’ull</option>
+          <option>seguir la veta</option>
+          <option>ser l’ase dels cops</option>
+          <option>ser un estira-i-arronsa</option>
+          <option>ser un zero a l’esquerra</option>
+        </select>
+        era la seva especialitat.
+      </div>
+
+      <div class="item">
+        <span class="item-number">6.</span>
+        El vigilant no va deixar de
+        <select data-answer="mirar de cua d’ull" aria-label="Pregunta 6">
+          <option value="">— tria —</option>
+          <option>afegir llenya al foc</option>
+          <option>dir ni ase ni bèstia</option>
+          <option>escampar la boira</option>
+          <option>fer un cop de cap</option>
+          <option>fugir d’estudi</option>
+          <option>mirar de cua d’ull</option>
+          <option>seguir la veta</option>
+          <option>ser l’ase dels cops</option>
+          <option>ser un estira-i-arronsa</option>
+          <option>ser un zero a l’esquerra</option>
+        </select>
+        els alumnes durant tota la visita, no fos cas que a algú se li hagués acudit de tocar alguna peça.
+      </div>
+
+      <div class="item">
+        <span class="item-number">7.</span>
+        Es va cansar de
+        <select data-answer="ser l’ase dels cops" aria-label="Pregunta 7">
+          <option value="">— tria —</option>
+          <option>afegir llenya al foc</option>
+          <option>dir ni ase ni bèstia</option>
+          <option>escampar la boira</option>
+          <option>fer un cop de cap</option>
+          <option>fugir d’estudi</option>
+          <option>mirar de cua d’ull</option>
+          <option>seguir la veta</option>
+          <option>ser l’ase dels cops</option>
+          <option>ser un estira-i-arronsa</option>
+          <option>ser un zero a l’esquerra</option>
+        </select>
+        del departament. Sempre que hi havia algun problema, li ho recriminaven a ella.
+      </div>
+
+      <div class="item">
+        <span class="item-number">8.</span>
+        No estava acostumat a sentir l’avi explicar una història amb tanta passió, així que, tot i que tenia pressa, em vaig quedar i li vaig
+        <select data-answer="seguir la veta" aria-label="Pregunta 8">
+          <option value="">— tria —</option>
+          <option>afegir llenya al foc</option>
+          <option>dir ni ase ni bèstia</option>
+          <option>escampar la boira</option>
+          <option>fer un cop de cap</option>
+          <option>fugir d’estudi</option>
+          <option>mirar de cua d’ull</option>
+          <option>seguir la veta</option>
+          <option>ser l’ase dels cops</option>
+          <option>ser un estira-i-arronsa</option>
+          <option>ser un zero a l’esquerra</option>
+        </select>.
+      </div>
+    </div>
+
+    <div class="buttons">
+      <button onclick="corregir()">Comprova</button>
+      <button class="secondary" onclick="reiniciar()">Reinicia</button>
+    </div>
+
+    <div id="resultat" aria-live="polite"></div>
+  </div>
+
+  <script>
+    function corregir() {
+      const desplegables = document.querySelectorAll('select');
+      let correctes = 0;
+      let respostes = 0;
+
+      desplegables.forEach(select => {
+        const respostaCorrecta = select.dataset.answer;
+        const respostaUsuari = select.value;
+
+        select.classList.remove('correct', 'incorrect');
+
+        if (respostaUsuari !== '') {
+          respostes++;
+        }
+
+        if (respostaUsuari === respostaCorrecta) {
+          select.classList.add('correct');
+          correctes++;
+        } else if (respostaUsuari !== '') {
+          select.classList.add('incorrect');
+        }
+      });
+
+      const total = desplegables.length;
+      const resultat = document.getElementById('resultat');
+
+      if (respostes < total) {
+        resultat.textContent = `Has respost ${respostes} de ${total} preguntes. Resultat provisional: ${correctes}/${total}.`;
+      } else {
+        resultat.textContent = `Resultat final: ${correctes}/${total}.`;
+      }
+    }
+
+    function reiniciar() {
+      const desplegables = document.querySelectorAll('select');
+      desplegables.forEach(select => {
+        select.value = '';
+        select.classList.remove('correct', 'incorrect');
+      });
+      document.getElementById('resultat').textContent = '';
+    }
+  </script>
+</body>
+</html>
