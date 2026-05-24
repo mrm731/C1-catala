@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pronoms febles - combinacions</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 24px;
+      background: #f7f7f7;
+      color: #222;
+    }
+
+    .container {
+      max-width: 950px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 28px;
+      border-radius: 14px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+    }
+
+    .instructions {
+      background: #eef5ff;
+      border-left: 5px solid #1f4e79;
+      padding: 16px 18px;
+      border-radius: 10px;
+      margin-bottom: 24px;
+      color: #1f2d3d;
+    }
+
+    .question {
+      background: #fafafa;
+      border: 1px solid #ddd;
+      padding: 18px;
+      border-radius: 10px;
+      margin-bottom: 18px;
+    }
+
+    .sentence {
+      margin-bottom: 12px;
+      font-weight: bold;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 70px;
+      padding: 8px;
+      border: 2px solid #bbb;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-family: Arial, sans-serif;
+      resize: vertical;
+    }
+
+    textarea.correct {
+      border-color: #2e7d32;
+      background: #e8f5e9;
+    }
+
+    textarea.incorrect {
+      border-color: #c62828;
+      background: #ffebee;
+    }
+
+    .feedback {
+      margin-top: 10px;
+      padding: 10px;
+      border-radius: 6px;
+    }
+
+    .feedback.correct {
+      background: #e8f5e9;
+      border: 1px solid #2e7d32;
+    }
+
+    .feedback.incorrect {
+      background: #ffebee;
+      border: 1px solid #c62828;
+    }
+
+    .buttons {
+      margin-top: 24px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      font-size: 1rem;
+      padding: 10px 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background: #1f4e79;
+      color: white;
+    }
+
+    button.secondary {
+      background: #666;
+    }
+
+    button.solution {
+      background: #2e7d32;
+    }
+
+    #resultat {
+      margin-top: 18px;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    .font {
+      margin-top: 32px;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    .font a {
+      color: #666;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="instructions">
+    <strong>
+      Esmeneu les incorreccions de les frases següents pel que fa a l’ús dels pronoms febles.
+    </strong>
+  </div>
+
+  <form id="exercici">
+
+    <div class="question"
+      data-answer="Porta els cabells bruts? No m’estranya gens perquè sempre els hi porta."
+      data-solution="Porta els cabells bruts? No m’estranya gens perquè sempre <strong>els hi</strong> porta.">
+
+      <div class="sentence">
+        1. Porta els cabells bruts? No m’estranya gens perquè sempre els porta.
+      </div>
+
+      <textarea placeholder="Escriviu la frase corregida"></textarea>
+    </div>
+
+    <div class="question"
+      data-answer="La jutgessa ha decidit embargar-los els sous."
+      data-solution="La jutgessa ha decidit <strong>embargar-los</strong> els sous.">
+
+      <div class="sentence">
+        2. La jutgessa ha decidit embarga’ls-hi els sous.
+      </div>
+
+      <textarea placeholder="Escriviu la frase corregida"></textarea>
+    </div>
+
+    <div class="question"
+      data-answer="La Núria els ho va explicar tot fil per randa."
+      data-solution="La Núria <strong>els ho</strong> va explicar tot fil per randa.">
+
+      <div class="sentence">
+        3. La Núria els hi va explicar tot fil per randa.
+      </div>
+
+      <textarea placeholder="Escriviu la frase corregida"></textarea>
+    </div>
+
+    <div class="question"
+      data-answer="Ha caigut de la cadira i no s’ha fet mal."
+      data-solution="<strong>Ha</strong> caigut de la cadira i no s’ha fet mal.">
+
+      <div class="sentence">
+        4. S’ha caigut de la cadira i no s’ha fet mal.
+      </div>
+
+      <textarea placeholder="Escriviu la frase corregida"></textarea>
+    </div>
+
+    <div class="question"
+      data-answer="Notifiqueu-los la resolució anterior."
+      data-solution="<strong>Notifiqueu-los</strong> la resolució anterior.">
+
+      <div class="sentence">
+        5. Notifiqueu-lis la resolució anterior.
+      </div>
+
+      <textarea placeholder="Escriviu la frase corregida"></textarea>
+    </div>
+
+    <div class="question"
+      data-answer="No sabem si ens en sortirem."
+      data-solution="No sabem si <strong>ens en</strong> sortirem.">
+
+      <div class="sentence">
+        6. No sabem si ens sortirem.
+      </div>
+
+      <textarea placeholder="Escriviu la frase corregida"></textarea>
+    </div>
+
+    <div class="question"
+      data-answer="Li he telefonat des que vam discutir i no he aconseguit que em torni les trucades."
+      data-solution="<strong>Li</strong> he telefonat des que vam discutir i no he aconseguit que <strong>em</strong> torni les trucades.">
+
+      <div class="sentence">
+        7. L’he telefonat des que vam discutir i no he aconseguit que me torni les trucades.
+      </div>
+
+      <textarea placeholder="Escriviu la frase corregida"></textarea>
+    </div>
+
+    <div class="question"
+      data-answer="Tot i estar força constipada, vaig anar a l’excursió i hi vaig trobar en Jaume.|Tot i estar força constipada, vaig anar a l’excursió i vaig trobar-hi en Jaume."
+      data-solution="Tot i estar força constipada, vaig anar a l’excursió i <strong>hi vaig trobar</strong> en Jaume.<br>També és correcta: Tot i estar força constipada, vaig anar a l’excursió i <strong>vaig trobar-hi</strong> en Jaume.">
+
+      <div class="sentence">
+        8. Tot i estar força constipada, vaig anar a l’excursió i hi vaig trobar-hi en Jaume.
+      </div>
+
+      <textarea placeholder="Escriviu la frase corregida"></textarea>
+    </div>
+
+    <div class="question"
+      data-answer="Acostumeu-vos a rentar-vos les dents després de cada àpat."
+      data-solution="<strong>Acostumeu-vos</strong> a rentar-<strong>vos</strong> les dents després de cada àpat.">
+
+      <div class="sentence">
+        9. Acostumeu-se’n a rentar-se les dents després de cada àpat.
+      </div>
+
+      <textarea placeholder="Escriviu la frase corregida"></textarea>
+    </div>
+
+    <div class="question"
+      data-answer="Registreu l’escrit anterior i deixeu-ne constància a les actuacions."
+      data-solution="Registreu l’escrit anterior i <strong>deixeu-ne</strong> constància a les actuacions.">
+
+      <div class="sentence">
+        10. Registreu l’escrit anterior i deixeu constància a les actuacions.
+      </div>
+
+      <textarea placeholder="Escriviu la frase corregida"></textarea>
+    </div>
+
+    <div class="question"
+      data-answer="De tot això, en dono compte al jutge."
+      data-solution="De tot això, <strong>en</strong> dono compte al jutge.">
+
+      <div class="sentence">
+        11. De tot això, dono compte al jutge.
+      </div>
+
+      <textarea placeholder="Escriviu la frase corregida"></textarea>
+    </div>
+
+  </form>
+
+  <div class="buttons">
+    <button type="button" onclick="corregir()">Comprova</button>
+    <button type="button" class="secondary" onclick="reiniciar()">Reinicia</button>
+    <button type="button" class="solution" onclick="mostrarSolucions()">Solució</button>
+  </div>
+
+  <div id="resultat"></div>
+
+  <p class="font">
+    Exercici adaptat del <em>Curs de llengua catalana - Nivell C</em>,
+    del Departament de Justícia de la Generalitat de Catalunya.<br>
+
+    <a href="https://justicia.gencat.cat/web/.content/home/departament/llengua/nivell_c_solucionari.pdf" target="_blank">
+      https://justicia.gencat.cat/web/.content/home/departament/llengua/nivell_c_solucionari.pdf
+    </a>
+  </p>
+
+</div>
+
+<script>
+
+function normalitzar(text) {
+  return text
+    .trim()
+    .toLowerCase()
+    .replace(/'/g, "’")
+    .replace(/\s+/g, " ");
+}
+
+function corregir() {
+
+  const preguntes = document.querySelectorAll('.question');
+
+  let correctes = 0;
+  let respostes = 0;
+
+  preguntes.forEach(pregunta => {
+
+    const respostesCorrectes =
+      pregunta.dataset.answer
+        .split('|')
+        .map(resposta => normalitzar(resposta));
+
+    const textarea =
+      pregunta.querySelector('textarea');
+
+    pregunta.querySelectorAll('.feedback')
+      .forEach(el => el.remove());
+
+    textarea.classList.remove('correct', 'incorrect');
+
+    if (textarea.value.trim() === '') return;
+
+    respostes++;
+
+    const respostaUsuari =
+      normalitzar(textarea.value);
+
+    const respostaBe =
+      respostesCorrectes.includes(respostaUsuari);
+
+    const feedback =
+      document.createElement('div');
+
+    feedback.classList.add('feedback');
+
+    if (respostaBe) {
+
+      correctes++;
+
+      textarea.classList.add('correct');
+
+      feedback.classList.add('correct');
+
+      feedback.textContent =
+        '✔ La frase és correcta.';
+
+    } else {
+
+      textarea.classList.add('incorrect');
+
+      feedback.classList.add('incorrect');
+
+      feedback.innerHTML =
+        '<strong>Solució:</strong> ' +
+        pregunta.dataset.solution;
+    }
+
+    pregunta.appendChild(feedback);
+
+  });
+
+  document.getElementById('resultat').textContent =
+    `Has respost ${respostes} de ${preguntes.length} preguntes. Respostes correctes: ${correctes}/${preguntes.length}.`;
+}
+
+function mostrarSolucions() {
+
+  const preguntes =
+    document.querySelectorAll('.question');
+
+  preguntes.forEach(pregunta => {
+
+    const textarea =
+      pregunta.querySelector('textarea');
+
+    pregunta.querySelectorAll('.feedback')
+      .forEach(el => el.remove());
+
+    textarea.value =
+      pregunta.dataset.answer.split('|')[0];
+
+    textarea.classList.remove('incorrect');
+
+    textarea.classList.add('correct');
+
+    const feedback =
+      document.createElement('div');
+
+    feedback.classList.add('feedback', 'correct');
+
+    feedback.innerHTML =
+      '<strong>Solució:</strong> ' +
+      pregunta.dataset.solution;
+
+    pregunta.appendChild(feedback);
+
+  });
+
+  document.getElementById('resultat').textContent =
+    'S’han mostrat les solucions.';
+}
+
+function reiniciar() {
+
+  document.querySelectorAll('textarea')
+    .forEach(textarea => {
+
+      textarea.value = '';
+
+      textarea.classList.remove('correct', 'incorrect');
+
+    });
+
+  document.querySelectorAll('.feedback')
+    .forEach(el => el.remove());
+
+  document.getElementById('resultat').textContent = '';
+}
+
+</script>
+
+</body>
+</html>

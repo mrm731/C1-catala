@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pronoms febles - combinacions</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 24px;
+      background: #f7f7f7;
+      color: #222;
+    }
+
+    .container {
+      max-width: 950px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 28px;
+      border-radius: 14px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+    }
+
+    .instructions {
+      background: #eef5ff;
+      border-left: 5px solid #1f4e79;
+      padding: 16px 18px;
+      border-radius: 10px;
+      margin-bottom: 24px;
+      color: #1f2d3d;
+    }
+
+    .question {
+      background: #fafafa;
+      border: 1px solid #ddd;
+      padding: 18px;
+      border-radius: 10px;
+      margin-bottom: 18px;
+    }
+
+    .sentence {
+      margin-bottom: 12px;
+      font-weight: bold;
+    }
+
+    .options {
+      margin-bottom: 12px;
+    }
+
+    .options label {
+      margin-right: 18px;
+      cursor: pointer;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 70px;
+      padding: 8px;
+      border: 2px solid #bbb;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-family: Arial, sans-serif;
+      resize: vertical;
+    }
+
+    textarea.correct {
+      border-color: #2e7d32;
+      background: #e8f5e9;
+    }
+
+    textarea.incorrect {
+      border-color: #c62828;
+      background: #ffebee;
+    }
+
+    .feedback {
+      margin-top: 10px;
+      padding: 10px;
+      border-radius: 6px;
+    }
+
+    .feedback.correct {
+      background: #e8f5e9;
+      border: 1px solid #2e7d32;
+    }
+
+    .feedback.incorrect {
+      background: #ffebee;
+      border: 1px solid #c62828;
+    }
+
+    .buttons {
+      margin-top: 24px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      font-size: 1rem;
+      padding: 10px 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background: #1f4e79;
+      color: white;
+    }
+
+    button.secondary {
+      background: #666;
+    }
+
+    button.solution {
+      background: #2e7d32;
+    }
+
+    #resultat {
+      margin-top: 18px;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    .font {
+      margin-top: 32px;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    .font a {
+      color: #666;
+    }
+  </style>
+</head>
+
+<body>
+<div class="container">
+
+  <div class="instructions">
+    <strong>
+      Esmeneu les frases següents quan la combinació <em>els hi</em> sigui incorrecta.
+      Marqueu si la frase és correcta o incorrecta i torneu-la a escriure corregida, si cal.
+    </strong>
+  </div>
+
+  <form id="exercici">
+
+    <div class="question"
+      data-type="correcta"
+      data-answer="La Rut s’havia deixat els comprovants i jo els hi he anat a buscar."
+      data-solution="La Rut s’havia deixat els comprovants i jo <strong>els hi</strong> he anat a buscar.">
+      <div class="sentence">1. La Rut s’havia deixat els comprovants i jo els hi he anat a buscar.</div>
+      <div class="options">
+        <label><input type="radio" name="q1" value="correcta"> Correcta</label>
+        <label><input type="radio" name="q1" value="incorrecta"> Incorrecta</label>
+      </div>
+      <textarea placeholder="Escriviu la frase"></textarea>
+    </div>
+
+    <div class="question"
+      data-type="incorrecta"
+      data-answer="Als meus parents els vam dir que marxàvem d’excursió."
+      data-solution="Als meus parents <strong>els</strong> vam dir que marxàvem d’excursió.">
+      <div class="sentence">2. Als meus parents els hi vam dir que marxàvem d’excursió.</div>
+      <div class="options">
+        <label><input type="radio" name="q2" value="correcta"> Correcta</label>
+        <label><input type="radio" name="q2" value="incorrecta"> Incorrecta</label>
+      </div>
+      <textarea placeholder="Escriviu la frase"></textarea>
+    </div>
+
+    <div class="question"
+      data-type="incorrecta"
+      data-answer="La nena s’ha de quedar amb els meus sogres. Els la portarem abans d’agafar l’avió."
+      data-solution="La nena s’ha de quedar amb els meus sogres. <strong>Els la</strong> portarem abans d’agafar l’avió.">
+      <div class="sentence">3. La nena s’ha de quedar amb els meus sogres. Els hi portarem abans d’agafar l’avió.</div>
+      <div class="options">
+        <label><input type="radio" name="q3" value="correcta"> Correcta</label>
+        <label><input type="radio" name="q3" value="incorrecta"> Incorrecta</label>
+      </div>
+      <textarea placeholder="Escriviu la frase"></textarea>
+    </div>
+
+    <div class="question"
+      data-type="correcta"
+      data-answer="Els llavis pintats, mai els hi he portat!"
+      data-solution="Els llavis pintats, mai <strong>els hi</strong> he portat!">
+      <div class="sentence">4. Els llavis pintats, mai els hi he portat!</div>
+      <div class="options">
+        <label><input type="radio" name="q4" value="correcta"> Correcta</label>
+        <label><input type="radio" name="q4" value="incorrecta"> Incorrecta</label>
+      </div>
+      <textarea placeholder="Escriviu la frase"></textarea>
+    </div>
+<div class="question"
+  data-type="incorrecta"
+  data-answer="Tenim reunió amb els nous socis. Que volem rescindir el contracte, els ho direm tot just comenci la reunió."
+  data-solution="Tenim reunió amb els nous socis. Que volem rescindir el contracte, <strong>els ho</strong> direm tot just comenci la reunió.">
+  <div class="sentence">5. Tenim reunió amb els nous socis. Que volem rescindir el contracte, els hi direm tot just comenci la reunió.</div>
+  <div class="options">
+    <label><input type="radio" name="q5" value="correcta"> Correcta</label>
+    <label><input type="radio" name="q5" value="incorrecta"> Incorrecta</label>
+  </div>
+  <textarea placeholder="Escriviu la frase"></textarea>
+</div>
+
+<div class="question"
+  data-type="incorrecta"
+  data-answer="He comprat xocolata. Als teus fills, els en dono una presa?"
+  data-solution="He comprat xocolata. Als teus fills, <strong>els en</strong> dono una presa?">
+  <div class="sentence">6. He comprat xocolata. Als teus fills, els hi dono una presa?</div>
+  <div class="options">
+    <label><input type="radio" name="q6" value="correcta"> Correcta</label>
+    <label><input type="radio" name="q6" value="incorrecta"> Incorrecta</label>
+  </div>
+  <textarea placeholder="Escriviu la frase"></textarea>
+</div>
+
+<div class="question"
+  data-type="incorrecta"
+  data-answer="Els meus alumnes no es creuen que el menjar ràpid sigui perjudicial per a la salut. Com els ho faries veure?"
+  data-solution="Els meus alumnes no es creuen que el menjar ràpid sigui perjudicial per a la salut. Com <strong>els ho</strong> faries veure?">
+  <div class="sentence">7. Els meus alumnes no es creuen que el menjar ràpid sigui perjudicial per a la salut. Com els hi faries veure?</div>
+  <div class="options">
+    <label><input type="radio" name="q7" value="correcta"> Correcta</label>
+    <label><input type="radio" name="q7" value="incorrecta"> Incorrecta</label>
+  </div>
+  <textarea placeholder="Escriviu la frase"></textarea>
+</div>
+
+<div class="question"
+  data-type="correcta"
+  data-answer="Els teus llibres ja són a casa. Els hi han portat aquest matí."
+  data-solution="Els teus llibres ja són a casa. <strong>Els hi</strong> han portat aquest matí.">
+  <div class="sentence">8. Els teus llibres ja són a casa. Els hi han portat aquest matí.</div>
+  <div class="options">
+    <label><input type="radio" name="q8" value="correcta"> Correcta</label>
+    <label><input type="radio" name="q8" value="incorrecta"> Incorrecta</label>
+  </div>
+  <textarea placeholder="Escriviu la frase"></textarea>
+</div>
+
+<div class="question"
+  data-type="incorrecta"
+  data-answer="Estan interessats en aquest quadre. Els en vas parlar tu?"
+  data-solution="Estan interessats en aquest quadre. <strong>Els en</strong> vas parlar tu?">
+  <div class="sentence">9. Estan interessats en aquest quadre. Els hi vas parlar tu?</div>
+  <div class="options">
+    <label><input type="radio" name="q9" value="correcta"> Correcta</label>
+    <label><input type="radio" name="q9" value="incorrecta"> Incorrecta</label>
+  </div>
+  <textarea placeholder="Escriviu la frase"></textarea>
+</div>
+
+<div class="question"
+  data-type="correcta"
+  data-answer="Ja els hi he reparat, els ordinadors a la Marta."
+  data-solution="Ja <strong>els hi</strong> he reparat, els ordinadors a la Marta.">
+  <div class="sentence">10. Ja els hi he reparat, els ordinadors a la Marta.</div>
+  <div class="options">
+    <label><input type="radio" name="q10" value="correcta"> Correcta</label>
+    <label><input type="radio" name="q10" value="incorrecta"> Incorrecta</label>
+  </div>
+  <textarea placeholder="Escriviu la frase"></textarea>
+</div>
+  </form>
+
+  <div class="buttons">
+    <button type="button" onclick="corregir()">Comprova</button>
+    <button type="button" class="secondary" onclick="reiniciar()">Reinicia</button>
+    <button type="button" class="solution" onclick="mostrarSolucions()">Solució</button>
+  </div>
+
+  <div id="resultat"></div>
+
+  <p class="font">
+    Exercici adaptat del <em>Curs de llengua catalana - Nivell C</em>,
+    del Departament de Justícia de la Generalitat de Catalunya.<br>
+
+    <a href="https://justicia.gencat.cat/web/.content/home/departament/llengua/nivell_c_solucionari.pdf" target="_blank">
+      https://justicia.gencat.cat/web/.content/home/departament/llengua/nivell_c_solucionari.pdf
+    </a>
+  </p>
+
+</div>
+
+<script>
+
+function normalitzar(text) {
+  return text
+    .trim()
+    .toLowerCase()
+    .replace(/'/g, "’")
+    .replace(/\s+/g, " ");
+}
+
+function corregir() {
+
+  const preguntes = document.querySelectorAll('.question');
+
+  let correctes = 0;
+  let respostes = 0;
+
+  preguntes.forEach(pregunta => {
+
+    const tipusCorrecte = pregunta.dataset.type;
+    const fraseCorrecta = normalitzar(pregunta.dataset.answer);
+
+    const radioSeleccionat =
+      pregunta.querySelector('input[type="radio"]:checked');
+
+    const textarea = pregunta.querySelector('textarea');
+
+    pregunta.querySelectorAll('.feedback').forEach(el => el.remove());
+
+    textarea.classList.remove('correct', 'incorrect');
+
+    if (!radioSeleccionat && textarea.value.trim() === '') return;
+
+    respostes++;
+
+    const tipusUsuari = radioSeleccionat
+      ? radioSeleccionat.value
+      : '';
+
+    const fraseUsuari = normalitzar(textarea.value);
+
+    const tipusBe = tipusUsuari === tipusCorrecte;
+    const fraseBe = fraseUsuari === fraseCorrecta;
+
+    const feedback = document.createElement('div');
+
+    feedback.classList.add('feedback');
+
+    let missatge = '';
+
+    if (tipusBe) {
+
+      missatge += `✔ La frase original és ${tipusCorrecte}.<br>`;
+
+    } else {
+
+      const contrari =
+        tipusCorrecte === 'correcta'
+          ? 'incorrecta'
+          : 'correcta';
+
+      missatge +=
+        `✘ La frase original no és ${contrari}; és ${tipusCorrecte}.<br>`;
+    }
+
+    if (fraseBe) {
+
+      textarea.classList.add('correct');
+
+      missatge += '✔ La frase escrita és correcta.';
+
+    } else {
+
+      textarea.classList.add('incorrect');
+
+      missatge +=
+        '<strong>Solució:</strong> ' +
+        pregunta.dataset.solution;
+    }
+
+    if (tipusBe && fraseBe) {
+
+      correctes++;
+
+      feedback.classList.add('correct');
+
+    } else {
+
+      feedback.classList.add('incorrect');
+    }
+
+    feedback.innerHTML = missatge;
+
+    pregunta.appendChild(feedback);
+
+  });
+
+  document.getElementById('resultat').textContent =
+    `Has respost ${respostes} de ${preguntes.length} preguntes. Respostes correctes: ${correctes}/${preguntes.length}.`;
+}
+
+function mostrarSolucions() {
+
+  const preguntes = document.querySelectorAll('.question');
+
+  preguntes.forEach(pregunta => {
+
+    const tipusCorrecte = pregunta.dataset.type;
+
+    const fraseCorrecta = pregunta.dataset.answer;
+
+    const textarea = pregunta.querySelector('textarea');
+
+    pregunta.querySelectorAll('.feedback').forEach(el => el.remove());
+
+    pregunta.querySelectorAll('input[type="radio"]').forEach(radio => {
+
+      radio.checked = radio.value === tipusCorrecte;
+
+    });
+
+    textarea.value = fraseCorrecta;
+
+    textarea.classList.remove('incorrect');
+
+    textarea.classList.add('correct');
+
+    const feedback = document.createElement('div');
+
+    feedback.classList.add('feedback', 'correct');
+
+    feedback.innerHTML =
+      `✔ La frase original és ${tipusCorrecte}.<br>` +
+      '<strong>Solució:</strong> ' +
+      pregunta.dataset.solution;
+
+    pregunta.appendChild(feedback);
+
+  });
+
+  document.getElementById('resultat').textContent =
+    'S’han mostrat les solucions.';
+}
+
+function reiniciar() {
+
+  document.querySelectorAll('input[type="radio"]').forEach(radio => {
+
+    radio.checked = false;
+
+  });
+
+  document.querySelectorAll('textarea').forEach(textarea => {
+
+    textarea.value = '';
+
+    textarea.classList.remove('correct', 'incorrect');
+
+  });
+
+  document.querySelectorAll('.feedback').forEach(el => el.remove());
+
+  document.getElementById('resultat').textContent = '';
+}
+
+</script>
+
+</body>
+</html>

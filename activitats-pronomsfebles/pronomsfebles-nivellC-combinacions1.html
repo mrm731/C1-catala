@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exercici - Pronoms febles</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 24px;
+      background: #f7f7f7;
+      color: #222;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 28px;
+      border-radius: 14px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+    }
+
+    .instructions {
+      background: #eef5ff;
+      border-left: 5px solid #1f4e79;
+      padding: 16px 18px;
+      border-radius: 10px;
+      margin-bottom: 24px;
+      color: #1f2d3d;
+    }
+
+    .question {
+      background: #fafafa;
+      border: 1px solid #ddd;
+      padding: 16px 18px;
+      border-radius: 10px;
+      margin-bottom: 16px;
+    }
+
+    .question p {
+      margin-top: 0;
+      font-weight: bold;
+    }
+
+    .options label {
+      display: block;
+      padding: 7px 10px;
+      margin: 6px 0;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .options label:hover {
+      background: #f0f4f8;
+    }
+
+    .options label.correct {
+      background: #e8f5e9;
+      border: 1px solid #2e7d32;
+    }
+
+    .options label.incorrect {
+      background: #ffebee;
+      border: 1px solid #c62828;
+    }
+
+    .buttons {
+      margin-top: 24px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      font-size: 1rem;
+      padding: 10px 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background: #1f4e79;
+      color: white;
+      transition: 0.2s;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    button.secondary {
+      background: #666;
+    }
+
+    button.solution {
+      background: #2e7d32;
+    }
+
+    #resultat {
+      margin-top: 18px;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    .font {
+      margin-top: 32px;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    .font a {
+      color: #666;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="instructions">
+      <strong>
+        Trieu la resposta adequada en cada cas segons la normativa.
+        Cliqueu <em>Comprova</em> per validar les respostes.
+      </strong>
+    </div>
+
+    <form id="exercici">
+
+      <div class="question" data-answer="c">
+        <p>1. El calendari? __________ a dins l’armari, que ja l’agafaré.</p>
+
+        <div class="options">
+          <label><input type="radio" name="q1" value="a"> a) Deixa’m-el</label>
+          <label><input type="radio" name="q1" value="b"> b) Deixa’m-lo</label>
+          <label><input type="radio" name="q1" value="c"> c) Deixa-me’l</label>
+          <label><input type="radio" name="q1" value="d"> d) Deixa-m’el</label>
+        </div>
+      </div>
+
+      <div class="question" data-answer="d">
+        <p>2. El ratolí és darrere la nevera i no __________ podem treure.</p>
+
+        <div class="options">
+          <label><input type="radio" name="q2" value="a"> a) l’hi</label>
+          <label><input type="radio" name="q2" value="b"> b) le’n</label>
+          <label><input type="radio" name="q2" value="c"> c) n’hi</label>
+          <label><input type="radio" name="q2" value="d"> d) l’en</label>
+        </div>
+      </div>
+
+      <div class="question" data-answer="b">
+        <p>3. El bany era moll? Jo no __________ deixo mai.</p>
+
+        <div class="options">
+          <label><input type="radio" name="q3" value="a"> a) li’n</label>
+          <label><input type="radio" name="q3" value="b"> b) l’hi</label>
+          <label><input type="radio" name="q3" value="c"> c) li hi</label>
+          <label><input type="radio" name="q3" value="d"> d) el hi</label>
+        </div>
+      </div>
+
+      <div class="question" data-answer="c">
+        <p>4. La Clara sempre arriba tard. __________</p>
+
+        <div class="options">
+          <label><input type="radio" name="q4" value="a"> a) Acostumeu-us-hi</label>
+          <label><input type="radio" name="q4" value="b"> b) Acostumeu-s’hi</label>
+          <label><input type="radio" name="q4" value="c"> c) Acostumeu-vos-hi</label>
+          <label><input type="radio" name="q4" value="d"> d) Acostumeu’s-hi</label>
+        </div>
+      </div>
+
+      <div class="question" data-answer="b">
+        <p>5. Quan arribin, la porta serà tancada. __________ obriràs?</p>
+
+        <div class="options">
+          <label><input type="radio" name="q5" value="a"> a) Els la</label>
+          <label><input type="radio" name="q5" value="b"> b) Els l’</label>
+          <label><input type="radio" name="q5" value="c"> c) Les hi</label>
+          <label><input type="radio" name="q5" value="d"> d) Els hi</label>
+        </div>
+      </div>
+
+      <div class="question" data-answer="d">
+        <p>6. El sopar, __________ que ja era fred.</p>
+
+        <div class="options">
+          <label><input type="radio" name="q6" value="a"> a) vam menjar-nos-lo</label>
+          <label><input type="radio" name="q6" value="b"> b) vam menja’ns-el</label>
+          <label><input type="radio" name="q6" value="c"> c) vam menja’ns-lo</label>
+          <label><input type="radio" name="q6" value="d"> d) vam menjar-nos-el</label>
+        </div>
+      </div>
+
+      <div class="question" data-answer="a">
+        <p>7. Hem rebut moltes queixes del professor de biologia. Tu també vols __________?</p>
+
+        <div class="options">
+          <label><input type="radio" name="q7" value="a"> a) queixar-te’n</label>
+          <label><input type="radio" name="q7" value="b"> b) queixar-te</label>
+          <label><input type="radio" name="q7" value="c"> c) queixar-t’hi</label>
+          <label><input type="radio" name="q7" value="d"> d) queixar-t’en</label>
+        </div>
+      </div>
+
+      <div class="question" data-answer="b">
+        <p>8. Vaig preguntar a la Maria si vindria demà i encara no m’ha contestat. Vols __________ tu mateixa?</p>
+
+        <div class="options">
+          <label><input type="radio" name="q8" value="a"> a) preguntar-li-hi</label>
+          <label><input type="radio" name="q8" value="b"> b) preguntar-li-ho</label>
+          <label><input type="radio" name="q8" value="c"> c) preguntar-l’hi</label>
+          <label><input type="radio" name="q8" value="d"> d) preguntar-s’ho</label>
+        </div>
+      </div>
+
+      <div class="question" data-answer="c|d">
+        <p>9. Si l’Albert et demana xocolata, __________ una mica.</p>
+
+        <div class="options">
+          <label><input type="radio" name="q9" value="a"> a) dona-l’en</label>
+          <label><input type="radio" name="q9" value="b"> b) dona-l’hi</label>
+          <label><input type="radio" name="q9" value="c"> c) dona-li’n</label>
+          <label><input type="radio" name="q9" value="d"> d) dona-n’hi</label>
+        </div>
+      </div>
+
+      <div class="question" data-answer="a">
+        <p>10. El portaveu català va presentar la dimissió, però el cap de partit no __________ va acceptar.</p>
+
+        <div class="options">
+          <label><input type="radio" name="q10" value="a"> a) la hi</label>
+          <label><input type="radio" name="q10" value="b"> b) l’hi</label>
+          <label><input type="radio" name="q10" value="c"> c) li ho</label>
+          <label><input type="radio" name="q10" value="d"> d) el la</label>
+        </div>
+      </div>
+
+    </form>
+
+    <div class="buttons">
+      <button onclick="corregir()">Comprova</button>
+      <button class="secondary" onclick="reiniciar()">Reinicia</button>
+      <button class="solution" onclick="mostrarSolucions()">Solució</button>
+    </div>
+
+    <div id="resultat"></div>
+
+    <p class="font">
+      Exercici adaptat del <em>Curs de llengua catalana - Nivell C</em>, 
+      del Departament de Justícia de la Generalitat de Catalunya.<br>
+
+      <a
+        href="https://justicia.gencat.cat/web/.content/home/departament/llengua/nivell_c_solucionari.pdf"
+        target="_blank"
+      >
+        https://justicia.gencat.cat/web/.content/home/departament/llengua/nivell_c_solucionari.pdf
+      </a>
+    </p>
+
+  </div>
+
+  <script>
+
+    function corregir() {
+
+      const preguntes = document.querySelectorAll('.question');
+
+      let correctes = 0;
+      let respostes = 0;
+
+      preguntes.forEach(pregunta => {
+
+        const respostesCorrectes = pregunta.dataset.answer.split('|');
+
+        const opcions = pregunta.querySelectorAll('label');
+
+        const seleccionada = pregunta.querySelector('input[type="radio"]:checked');
+
+        opcions.forEach(label => {
+          label.classList.remove('correct', 'incorrect');
+        });
+
+        if (!seleccionada) return;
+
+        respostes++;
+
+        const labelSeleccionada = seleccionada.closest('label');
+
+        if (respostesCorrectes.includes(seleccionada.value)) {
+          labelSeleccionada.classList.add('correct');
+          correctes++;
+        } else {
+          labelSeleccionada.classList.add('incorrect');
+        }
+
+      });
+
+      document.getElementById('resultat').textContent =
+        `Has respost ${respostes} de ${preguntes.length} preguntes. Respostes correctes: ${correctes}/${preguntes.length}.`;
+    }
+
+    function mostrarSolucions() {
+
+      const preguntes = document.querySelectorAll('.question');
+
+      preguntes.forEach(pregunta => {
+
+        const respostesCorrectes = pregunta.dataset.answer.split('|');
+
+        const opcions = pregunta.querySelectorAll('label');
+
+        opcions.forEach(label => {
+
+          label.classList.remove('correct', 'incorrect');
+
+          const input = label.querySelector('input');
+
+          if (respostesCorrectes.includes(input.value)) {
+            label.classList.add('correct');
+          }
+
+        });
+
+      });
+
+      document.getElementById('resultat').textContent =
+        'S’han mostrat les solucions.';
+    }
+
+    function reiniciar() {
+
+      const inputs = document.querySelectorAll('input[type="radio"]');
+
+      const labels = document.querySelectorAll('label');
+
+      inputs.forEach(input => {
+        input.checked = false;
+      });
+
+      labels.forEach(label => {
+        label.classList.remove('correct', 'incorrect');
+      });
+
+      document.getElementById('resultat').textContent = '';
+    }
+
+  </script>
+
+</body>
+</html>
