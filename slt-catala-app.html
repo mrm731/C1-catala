@@ -272,7 +272,11 @@
   <div class="card">
     <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
       <h2 style="margin:0;">Sessió activa</h2>
-      <button class="btn btn-danger btn-sm" onclick="tancarSessio()">Tancar sessió</button>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+        <button class="btn btn-secondary btn-sm" onclick="tornarMenuTutor()">← Menú d'exercicis</button>
+        <button class="btn btn-secondary btn-sm" id="btnActualitzar" onclick="updateTutorStats()">↻ Actualitzar</button>
+        <button class="btn btn-danger btn-sm" onclick="tancarSessio()">Tancar sessió</button>
+      </div>
     </div>
     <div class="session-code-display" id="tutorCodeDisplay">----</div>
     <div id="tutorExNom" style="text-align:center;color:var(--gray);font-size:14px;margin-bottom:16px;"></div>
@@ -280,11 +284,11 @@
       <div class="stat-box"><div class="stat-num" id="statIntents">0</div><div class="stat-label">Intents</div></div>
       <div class="stat-box"><div class="stat-num" id="statAlumnes">0</div><div class="stat-label">Alumnes únics</div></div>
       <div class="stat-box"><div class="stat-num" id="statMitjana">—</div><div class="stat-label">Mitjana d'encerts</div></div>
+      <div class="stat-box"><div class="stat-num" id="statUltim">—</div><div class="stat-label">Última actualització</div></div>
     </div>
     <hr>
     <div id="tutorExerciciContainer" class="exercise-container"></div>
   </div>
-  <div class="alt-link" style="margin-bottom:32px;"><a onclick="logout()">← Tornar al menú</a></div>
 </div>
 
 <!-- ===== INTERFÍCIE ADMIN ===== -->
@@ -630,6 +634,12 @@ async function initTutorView() {
   startPolling();
 }
 
+function tornarMenuTutor() {
+  stopPolling();
+  currentSessio = null;
+  showPage(`pageTutorMenu`);
+}
+
 async function tancarSessio() {
   if (!currentSessio) return;
   if (!confirm(`Tancar la sessió ${currentSessio.codi}?`)) return;
@@ -651,6 +661,8 @@ function stopPolling() {
 
 async function updateTutorStats() {
   if (!currentSessio) return;
+  const btn = document.getElementById(`btnActualitzar`);
+  if (btn) { btn.textContent = `↻ Actualitzant...`; btn.disabled = true; }
   try {
     const respostes = await supa(`respostes?sessio_id=eq.${currentSessio.id}&order=created_at`);
     if (!respostes) return;
@@ -658,7 +670,6 @@ async function updateTutorStats() {
     const tokens = [...new Set(respostes.map(r => r.session_token))];
     document.getElementById(`statAlumnes`).textContent = tokens.length;
     if (respostes.length > 0) {
-      // Last attempt per token
       const lastPerToken = {};
       respostes.forEach(r => lastPerToken[r.session_token] = r);
       const vals = Object.values(lastPerToken).map(r => {
@@ -671,7 +682,13 @@ async function updateTutorStats() {
     } else {
       document.getElementById(`statMitjana`).textContent = `—`;
     }
+    const now = new Date();
+    document.getElementById(`statUltim`).textContent =
+      `${String(now.getHours()).padStart(2,`0`)}:${String(now.getMinutes()).padStart(2,`0`)}:${String(now.getSeconds()).padStart(2,`0`)}`;
   } catch(e) {}
+  finally {
+    if (btn) { btn.textContent = `↻ Actualitzar`; btn.disabled = false; }
+  }
 }
 
 // ===================== ALUMNE =====================
