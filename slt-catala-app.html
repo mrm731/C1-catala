@@ -129,6 +129,8 @@ tr:hover td{background:#fafafa}
 /* ESTAT SESSIÓ */
 .sessio-activa{background:var(--ok-bg);border:1px solid var(--ok-border);border-radius:var(--radius);padding:12px 16px;display:flex;align-items:center;gap:12px;margin-bottom:16px}
 .dot-verd{width:10px;height:10px;border-radius:50%;background:var(--ok);animation:puls 1.5s infinite}
+.passatge-box{background:#fffef8;border:1px solid #e8e0c8;border-radius:var(--radius);padding:20px 22px;margin-bottom:20px;font-size:14px;line-height:1.9;color:#2a2a2a}
+.passatge-box h3{font-size:15px;font-weight:700;color:var(--gray);margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid #e8e0c8}
 @keyframes puls{0%,100%{opacity:1}50%{opacity:0.4}}
 
 /* RESPONSIVE */
@@ -137,6 +139,59 @@ tr:hover td{background:#fafafa}
 </head>
 <body>
 
+<!-- PANTALLA ALUMNE (completament separada) -->
+<div id="app-alumne" style="min-height:100vh;display:flex;flex-direction:column">
+  <header style="background:#fff;border-bottom:3px solid var(--upc);padding:14px 24px;display:flex;align-items:center;gap:16px;box-shadow:var(--shadow)">
+    <div class="logo-text"><span class="servei">Servei de Llengües i Terminologia</span><span class="uni">UPC · Universitat Politècnica de Catalunya</span></div>
+    <div class="logo-sep"></div>
+    <span style="font-size:13px;color:var(--gray2)">Exercicis de català C1</span>
+  </header>
+  <div style="flex:1;display:flex;align-items:flex-start;justify-content:center;padding:32px 16px">
+    <div id="alumne-portada" style="width:100%;max-width:440px">
+      <div class="card">
+        <div style="font-size:20px;font-weight:700;color:var(--upc);margin-bottom:4px">Accés d'aprenent</div>
+        <div style="font-size:14px;color:var(--gray2);margin-bottom:22px">Exercicis de català C1 — UPC</div>
+        <div id="alumne-portada-alert"></div>
+        <div class="field"><label>Codi de sessió de grup</label>
+          <input type="text" id="al-codi-sessio" placeholder="ex. AB3K" maxlength="6" style="text-transform:uppercase;font-size:18px;letter-spacing:0.12em;text-align:center" oninput="this.value=this.value.toUpperCase()">
+        </div>
+        <button class="btn btn-primary" style="width:100%;justify-content:center" onclick="alumneEntraSessio()">Entrar a la sessió</button>
+        <div style="display:flex;align-items:center;gap:10px;margin:18px 0;color:var(--gray2);font-size:13px">
+          <div style="flex:1;height:1px;background:var(--border)"></div>o bé<div style="flex:1;height:1px;background:var(--border)"></div>
+        </div>
+        <div class="field"><label>Codi d'autoaprenentatge</label>
+          <input type="text" id="al-codi-auto" placeholder="ex. AUTO-XY7" maxlength="12" style="text-transform:uppercase;font-size:16px;letter-spacing:0.08em;text-align:center" oninput="this.value=this.value.toUpperCase()">
+        </div>
+        <button class="btn btn-secondary" style="width:100%;justify-content:center" onclick="alumneEntaAuto()">Practicar des de casa</button>
+        <div style="margin-top:20px;padding-top:16px;border-top:1px solid var(--border);text-align:center">
+          <a href="#" onclick="mostraStaff();return false" style="font-size:13px;color:var(--gray2);text-decoration:none;border-bottom:1px dotted var(--border)">Accés per a tutors/es i administradors/es →</a>
+        </div>
+      </div>
+    </div>
+    <!-- Exercici alumne (substitueix la portada) -->
+    <div id="alumne-exercici-wrap" style="display:none;width:100%;max-width:860px">
+      <div class="card">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px;flex-wrap:wrap">
+          <span id="al-mode-badge" style="font-size:11px;font-weight:700;padding:2px 8px;border-radius:4px;background:var(--upc-light);color:var(--upc-dark)">Sessió de grup</span>
+          <span style="font-size:15px;font-weight:500" id="al-ex-titol">—</span>
+          <span id="al-intent-badge" style="display:none;font-size:12px;background:var(--ok-bg);color:var(--ok);border-radius:12px;padding:2px 10px;margin-left:auto"></span>
+        </div>
+        <div style="font-size:13px;color:var(--gray2);margin-bottom:16px" id="al-ex-instruccions"></div>
+        <div id="al-alert"></div>
+        <div id="al-contingut"></div>
+        <div class="btn-row" id="al-botons">
+          <button class="btn btn-primary" onclick="comprovaSessio()">Comprova</button>
+          <button class="btn btn-secondary" onclick="reiniciaEx()">Esborra</button>
+          <button class="btn btn-secondary" onclick="nouCodi()" style="margin-left:auto">Nou codi de sessió</button>
+        </div>
+        <div id="al-resultat" style="margin-top:14px;font-size:14px;font-weight:500"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- APP STAFF -->
+<div id="app-staff" style="display:none">
 <header>
   <div class="logo-text">
     <span class="servei">Servei de Llengües i Terminologia</span>
@@ -304,25 +359,7 @@ tr:hover td{background:#fafafa}
     </div>
   </div>
 
-  <div id="vista-alumne" style="display:none">
-    <div class="card">
-      <div id="alumne-header" style="margin-bottom:16px">
-        <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px">
-          <span class="badge badge-alumne" id="alumne-mode-badge">Sessió</span>
-          <span style="font-size:14px;font-weight:500" id="alumne-ex-titol">—</span>
-        </div>
-        <div style="font-size:13px;color:var(--gray2)" id="alumne-ex-instruccions"></div>
-      </div>
-      <div id="alumne-alert"></div>
-      <div id="exercici-contingut"></div>
-      <div class="btn-row" id="alumne-botons">
-        <button class="btn btn-primary" onclick="comprovaSessio()">Comprova</button>
-        <button class="btn btn-secondary" onclick="reiniciaEx()">Esborra</button>
-        <button class="btn btn-primary" id="btn-envia" onclick="enviaSessio()" style="display:none">Envia les respostes</button>
-      </div>
-      <div id="alumne-resultat" style="margin-top:14px;font-size:14px;font-weight:500"></div>
-    </div>
-  </div>
+  
 </main>
 
 <script>
@@ -403,17 +440,23 @@ const EXERCICIS_BASE = [
     {n:8,kw:'FRÀGIL',ans:'fragilitat'},
    ]},
 
-  {id:'modelweb-34',model:'Model web CIFALC',activitat:'3.4 Sinònims',tipus:'oberta',
+  {id:'modelweb-34',model:'Model web CIFALC',activitat:'3.4 Sinònims',tipus:'sinonims',
    instruccions:"Busqueu en el text un sinònim dels mots que es proposen.",
    exemple:"a pesar de: malgrat",
-   passatgeText:`Una habitació i una cuina petita, que fa temps que ja no faig servir perquè menjo a fora. Em costa molt menjar. Tinc el cotxe sobre l'herba, i deixo el timbre sense connexió. Passa la gent i no m'importa, i penso que tampoc no m'importaria que el cotxe el toquessin o me'l robessin, perquè és un model massa vell i fa molts anys que no em dona plaer de conduir-lo. A vegades hi ha gent que viu molt a prop de la misèria i resulta que és molt pollosa (deixada). El meu sofà té el respatller forca tova (flonjo). Visc en condicions molt modestes (humils) i la meva vida és senzilla. Les roses del jardí veí, amb la pluja de la nit passada, estan delectables (plaents). El meu veí diu que l'averany (auguri) de primavera és bo. Sento el baf (tuf) de la cuina del restaurant.`,
+   passatgeTitol:`El violí d'Auswitch, de M. Àngels Anglada`,
+   passatgeText:`Després dels dies passats tancats a la cel·la, la llitotxa la va trobar fins i tot tova. Els companys, poc o molt pollosos com ell, un suport càlid, conegut.
+
+El van despertar, aquesta vegada. No es podia tornar a quedar adormit! Aleshores ningú no el salvaria dels agreujants temibles, i la mirada del metge Rascher no era cap bon averany. Malgrat que encara se sentia dels cops, la nit li havia passat en un son i, potser per la companyia, sense malsons. El «secretari» del barracot el va treure d'un altre món. En somnis es trobava al seu taller, tan ben endreçat, treballant en la construcció d'una viola, entre l'olor coneguda i agradable de la fusta, les coles i els vernissos —no el baf del barracot. A dalt, la seva mare cantussejava tot cuinant el dinar, que també feia una flaire deliciosa. Tot eren sensacions delectables: el sol daurava les fustes, els arrencava reflexos com de posta, càlids, d'or vell tenyits de vermell i, curiosament, de blau i tot.
+
+Totes les peces sense obrar, tallades per a futurs instruments, lluïen les seves aigües, oloroses, i entremig hi passava l'aire, assecant-les a poc a poc, amb el seu germà, el temps. Ho havia après ja del pare, mai no feia servir una fusta que no fos tallada de cinc anys. De bon avet de les muntanyes i d'erable, d'arbres on havien niat els ocells. On el vent havia cantat —com després ho faria l'arquet. En el somni cada peça i cada eina brillaven com joies, i de fet ho eren, les modestes joies de la seva corona d'artesà.`,
+   font:'Font: M. Àngels Anglada, El violí d'Auswitch (text adaptat)',
    preguntes:[
-    {n:1,text:'deixat: ___',ans:'pollosos'},
-    {n:2,text:'flonjo: ___',ans:'tova'},
-    {n:3,text:'humil: ___',ans:'modestes'},
-    {n:4,text:'plaent: ___',ans:'delectables|agradable'},
-    {n:5,text:'auguri: ___',ans:'averany'},
-    {n:6,text:'tuf: ___',ans:'baf'},
+    {n:1,text:'deixat',ans:'pollosos'},
+    {n:2,text:'flonjo',ans:'tova'},
+    {n:3,text:'humil',ans:'modestes'},
+    {n:4,text:'plaent',ans:'delectables|agradable'},
+    {n:5,text:'auguri',ans:'averany'},
+    {n:6,text:'tuf',ans:'baf'},
    ]},
 
   {id:'modelweb-35',model:'Model web CIFALC',activitat:'3.5 Expressions',tipus:'seleccio',
@@ -496,17 +539,21 @@ const EXERCICIS_BASE = [
     {n:8,kw:'PUR',ans:'puresa'},
    ]},
 
-  {id:'model1-34',model:'Model 1 CIFALC',activitat:'3.4 Sinònims',tipus:'oberta',
+  {id:'model1-34',model:'Model 1 CIFALC',activitat:'3.4 Sinònims',tipus:'sinonims',
    instruccions:"Busqueu en el text un sinònim dels mots que es proposen.",
    exemple:"a pesar de: malgrat",
-   passatgeText:`En aquell paisatge devastador (arrasar) hi havia senders (camí) estrets que s'enfilaven per entre els arbres. La nosa (molèstia) dels turistes era evident. Un cérvol que empaitava (perseguir) una femella menut (petit), difús (vague) entre les ombres del bosc.`,
+   passatgeTitol:`Junil a les terres dels bàrbars, de Joan-Lluís Lluís`,
+   passatgeText:`Eren cinc i vivien prop de la frontera, en un poble de mercats de molta anomenada que servien per mantenir la pau entre l'imperi al sud i els bàrbars al nord. Un poble menut que hauria estat gairebé pròsper si, a banda i banda de la ratlla, no hi haguessin campat bandes d'assaltadors que vivien a costa dels habitants i els viatgers. La poca tropa que hi enviava l'imperi les empaitava sense coratge ni ambició, i així poc impedien que baixessin de les muntanyes en nits de lluna magra, corrent pels senders a matadegolla, i irrompessin a qualsevol poble per devastar-lo en un parell d'hores.
+
+En definitiva, les fronteres semblaven prou estables; haver de preocupar-se de vigilar-les era una font de mandra. I els lladres, una vegada entès que no hi hauria reaccions brutals si no duien una activitat exagerada, sabien estar-se quiets prou temps perquè se'ls considerés una nosa acceptable. Al cantó nord de la frontera, a la banda dels bàrbars, el poder polític era un concepte difús.`,
+   font:'Font: Joan-Lluís Lluís, Junil a les terres dels bàrbars (text adaptat)',
    preguntes:[
-    {n:1,text:'arrasar: ___',ans:'devastar'},
-    {n:2,text:'camí: ___',ans:'senders'},
-    {n:3,text:'molèstia: ___',ans:'nosa'},
-    {n:4,text:'perseguir: ___',ans:'empaitava'},
-    {n:5,text:'petit: ___',ans:'menut'},
-    {n:6,text:'vague: ___',ans:'difús'},
+    {n:1,text:'arrasar',ans:'devastar'},
+    {n:2,text:'camí',ans:'senders'},
+    {n:3,text:'molèstia',ans:'nosa'},
+    {n:4,text:'perseguir',ans:'empaitava'},
+    {n:5,text:'petit',ans:'menut'},
+    {n:6,text:'vague',ans:'difús'},
    ]},
 
   {id:'model1-35',model:'Model 1 CIFALC',activitat:'3.5 Expressions',tipus:'seleccio',
@@ -588,17 +635,21 @@ const EXERCICIS_BASE = [
     {n:7,kw:'PROTOCOL',ans:'protocol·làries'},
    ]},
 
-  {id:'model2-34',model:'Model 2 CIFALC',activitat:'3.4 Sinònims',tipus:'oberta',
+  {id:'model2-34',model:'Model 2 CIFALC',activitat:'3.4 Sinònims',tipus:'sinonims',
    instruccions:"Busqueu en el text un sinònim dels mots que es proposen.",
    exemple:"a pesar de: malgrat",
-   passatgeText:`La tela estava rebregar (arrugar) per l'ús. Va gosar (atrevir-se) a parlar. La seva identitat era indefinida (difús) per a tothom. Va sentir una punxada (fiblada) de dolor. La cuirassa (protecció) que portava era pesada. Va sentir la batzegada (revolada) del vent.`,
+   passatgeTitol:`Els estranys`,
+   passatgeText:`Wielemann mirava amb uns ulls sorpresos i lents, que Miquel Foraster va prendre per un indici d'expectació. A Wielemann se li va rebregar la cara un moment i de seguida es va asseure a la butaca; una punxada el travessava des de l'espatlla esquerra fins al ronyó dret. Adoptant instintivament l'aire del professional, Foraster li va preguntar si estava marejat mentre li prenia el pols. El prussià no trobava paraules per explicar què li passava.
+
+La boca se li omplia d'una saliva densa que només tornava a baixar a força de mastegar-la. Va callar més llargament que de costum, fent servir el silenci de cuirassa contra alguna cosa indefinida. Foraster li observava el color esblanqueït de la pell sense gosar dir res més. A la fi en va sorgir una veu segura i vellutada alhora: —Nen, aquest home està espatllat. Foraster es va girar cap a la vella d'una batzegada, alliberat de dubtes.`,
+   font:'Font: Els estranys (text adaptat)',
    preguntes:[
-    {n:1,text:'arrugar: ___',ans:'rebregar'},
-    {n:2,text:'atrevir-se: ___',ans:'gosar'},
-    {n:3,text:'difús: ___',ans:'indefinida'},
-    {n:4,text:'fiblada: ___',ans:'punxada'},
-    {n:5,text:'protecció: ___',ans:'cuirassa'},
-    {n:6,text:'revolada: ___',ans:'batzegada'},
+    {n:1,text:'arrugar',ans:'rebregar'},
+    {n:2,text:'atrevir-se',ans:'gosar'},
+    {n:3,text:'difús',ans:'indefinida'},
+    {n:4,text:'fiblada',ans:'punxada'},
+    {n:5,text:'protecció',ans:'cuirassa'},
+    {n:6,text:'revolada',ans:'batzegada'},
    ]},
 
   {id:'model2-35',model:'Model 2 CIFALC',activitat:'3.5 Expressions',tipus:'seleccio',
@@ -681,17 +732,21 @@ const EXERCICIS_BASE = [
     {n:8,kw:'CAL·LIGRAFIA',ans:'cal·ligrafiades|cal·ligràfiques'},
    ]},
 
-  {id:'modelprova1-34',model:'Model prova 1 CIFALC',activitat:'3.4 Sinònims',tipus:'oberta',
+  {id:'modelprova1-34',model:'Model prova 1 CIFALC',activitat:'3.4 Sinònims',tipus:'sinonims',
    instruccions:"Busqueu en el text un sinònim dels mots que es proposen.",
    exemple:"a pesar de: malgrat",
-   passatgeText:`Era un home trist (afligit) que buscava una veu consoladora (reconfortant). El desassossec (inquietud) no l'abandonava mai. Tenia una pinta (aspecte) descuidada. La guarda (custodiar) del tresor era la seva missió. Havia après a suportar (tolerar) el dolor sense queixar-se.`,
+   passatgeTitol:`Text literari`,
+   passatgeText:`El seu pare el recorda sempre marxant. D'esquena. Pujant al cotxe i arrencant de seguida. La memòria guarda detalls com ara el seu gest despreocupat en el moment de travessar el llindar de l'entrada, com si sortís de casa per tornar-hi al cap d'una estona, quan tots sabien que potser passarien mesos, qui sap si més d'un any. I encara veu la seva última picada d'ullet, adreçada especialment a ell, al nen dels cabells quasi blancs amb pinta de guiri, que li feia adeu amb la mà.
+
+Quan pensa en el seu pare, en Jim només el veu anant-se'n i torna a notar aquell desassossec, com si alguna cosa més interna que els òrgans vitals es posés a tremolar i no hi hagués manera d'aturar-ho. Els primers deu anys, el devia veure unes vint-i-cinc vegades, trenta a tot estirar. La primera vegada que va decidir no veure'l va ser un mes de desembre. La mare encara plorava alguns matins escoltant «Imagine». En Jim va veure arribar el cotxe del seu pare i va imaginar-se l'escena: la mare acceptant de bon grat l'abraçada consoladora del nouvingut. I, per alguna raó, va decidir que ja no volia suportar-ho més.`,
+   font:'Font: text adaptat',
    preguntes:[
-    {n:1,text:'afligit: ___',ans:'trist'},
-    {n:2,text:'reconfortant: ___',ans:'consoladora'},
-    {n:3,text:'inquietud: ___',ans:'desassossec'},
-    {n:4,text:'aspecte: ___',ans:'pinta'},
-    {n:5,text:'custodiar: ___',ans:'guarda'},
-    {n:6,text:'tolerar: ___',ans:'suportar|acceptant'},
+    {n:1,text:'afligit',ans:'trist'},
+    {n:2,text:'reconfortant',ans:'consoladora'},
+    {n:3,text:'inquietud',ans:'desassossec'},
+    {n:4,text:'aspecte',ans:'pinta'},
+    {n:5,text:'custodiar',ans:'guarda'},
+    {n:6,text:'tolerar',ans:'suportar|acceptant'},
    ]},
 
   {id:'modelprova1-35',model:'Model prova 1 CIFALC',activitat:'3.5 Expressions',tipus:'seleccio',
@@ -774,17 +829,21 @@ const EXERCICIS_BASE = [
     {n:8,kw:'MAGATZEM',ans:'emmagatzemar'},
    ]},
 
-  {id:'modelprova2-34',model:'Model prova 2 CIFALC',activitat:'3.4 Sinònims',tipus:'oberta',
+  {id:'modelprova2-34',model:'Model prova 2 CIFALC',activitat:'3.4 Sinònims',tipus:'sinonims',
    instruccions:"Busqueu en el text un sinònim dels mots que es proposen.",
    exemple:"a pesar de: malgrat",
-   passatgeText:`Era ben plantat (atractiu), alt i de cabells foscos. El nadó (infant) dormia plàcidament al bressol. La mare s'enriolava (posar-se a riure) quan el veia. Les seves paraules desvetllaven (revelar) records amagats. Les cometes pujaven enlaire (amunt) amb el vent. La pedra entrebancava (fer caure) els caminants distrets.`,
+   passatgeTitol:`Camí d'anada, de Felip Vendrell`,
+   passatgeText:`Amb una estranya barreja de timidesa i d'espontaneïtat, la Maria Sureda paladejava les paraules com si fossin de flam i sucre cremat, dins un pis dels anys quaranta on no l'entrebancava cap de les incomoditats que al seu moment passaven per ser les coses més avançades. I deia que la vida havia estat per a ella no gran cosa més que un seguit de decepcions, però s'enriolava i se li allisaven les arrugues del front quan explicava com i per què li van posar el nom que porta.
+
+Soltera, perquè ha volgut. Perquè d'homes ben plantats, a Oliana prou n'hi devia haver. De caràcter suau però decidida, fa com si passés de puntetes, sense fer soroll, per sobre els problemes. Explica, però, i et fa saber, les seves hores de solitud a dins el pis, tota sola. I passa, sostenint enlaire, amb tants miraments com un capellà per la processó de Corpus, una platerada de pastes casolanes colgades d'ametlles trinxades, canyella i pinyons.`,
+   font:'Font: Felip Vendrell, Camí d'anada (text adaptat)',
    preguntes:[
-    {n:1,text:'atractiu: ___',ans:'ben plantat'},
-    {n:2,text:'infant: ___',ans:'nadó'},
+    {n:1,text:'atractiu',ans:'ben plantat'},
+    {n:2,text:'infant',ans:'nadó'},
     {n:3,text:"posar-se a riure: ___",ans:"s'enriolava"},
-    {n:4,text:'revelar: ___',ans:'desvetllaven'},
-    {n:5,text:'amunt: ___',ans:'enlaire'},
-    {n:6,text:'fer caure: ___',ans:'entrebancava'},
+    {n:4,text:'revelar',ans:'desvetllaven'},
+    {n:5,text:'amunt',ans:'enlaire'},
+    {n:6,text:'fer caure',ans:'entrebancava'},
    ]},
 
   {id:'modelprova2-35',model:'Model prova 2 CIFALC',activitat:'3.5 Expressions',tipus:'seleccio',
@@ -806,13 +865,13 @@ const EXERCICIS_BASE = [
 // ═══════════════════════════════════════════
 // ESTAT GLOBAL
 // ═══════════════════════════════════════════
-let usuariActual = null; // {username, rol, nom}
-let sessioActual = null; // {id, codi, exerciciId, tutorUsername}
+let usuariActual = null;
+let sessioActual = null;
 let exerciciActual = null;
-let modeAlumne = null;  // 'sessio' | 'auto'
-let exercicisDB = [];   // exercicis de Supabase (afegits per admin)
+let modeAlumne = null;
+let intentCount = 0;
 let pollInterval = null;
-let exPendent = null;   // exercici extret d'HTML pendent de confirmar
+let exPendent = null;
 
 // ═══════════════════════════════════════════
 // UTILITATS
@@ -901,12 +960,21 @@ function afterLogin(){
     mostraVista('tutor');
   }
 }
+function logout(){
+  usuariActual=null;
+  if(pollInterval){clearInterval(pollInterval);pollInterval=null;}
+  document.getElementById('nav').style.display='none';
+  ['vista-admin','vista-tutor'].forEach(v=>document.getElementById(v).style.display='none');
+  document.getElementById('vista-login').style.display='block';
+  document.getElementById('l-user').value='';document.getElementById('l-pass').value='';
+  mostraAlumne();
+}
 
 function logout(){
   usuariActual=null;
   if(pollInterval){clearInterval(pollInterval);pollInterval=null;}
   document.getElementById('nav').style.display='none';
-  ['vista-admin','vista-tutor','vista-alumne'].forEach(v=>document.getElementById(v).style.display='none');
+  ['vista-admin','vista-tutor'].forEach(v=>document.getElementById(v).style.display='none');
   document.getElementById('vista-login').style.display='block';
   document.getElementById('l-user').value='';
   document.getElementById('l-pass').value='';
@@ -1235,20 +1303,20 @@ function copiarCodiAuto(){
 // ALUMNE — ENTRADA
 // ═══════════════════════════════════════════
 async function alumneEntraSessio(){
-  const codi=document.getElementById('l-codi-sessio').value.trim().toUpperCase();
+  const codi=document.getElementById('al-codi-sessio').value.trim().toUpperCase();
   if(!codi){mostraAlerta('login-alert','Introdueix el codi de sessió.');return;}
   const {data,error}=await db.from('sessions').select('*').eq('codi',codi).eq('activa',true).single();
-  if(error||!data){mostraAlerta('login-alert','Codi incorrecte o sessió no activa.');return;}
+  if(error||!data){mostraAlerta('alumne-portada-alert','Codi incorrecte o sessió no activa. Comprova amb el tutor/a.');return;}
   sessioActual=data;
   modeAlumne='sessio';
   carregaExerciciAlumne(data.exercici_id,'sessio',codi);
 }
 
 async function alumneEntaAuto(){
-  const codi=document.getElementById('l-codi-auto').value.trim().toUpperCase();
+  const codi=document.getElementById('al-codi-auto').value.trim().toUpperCase();
   if(!codi){mostraAlerta('login-alert','Introdueix el codi d\'autoaprenentatge.');return;}
   const {data,error}=await db.from('sessions').select('*').eq('codi',codi).single();
-  if(error||!data){mostraAlerta('login-alert','Codi incorrecte.');return;}
+  if(error||!data){mostraAlerta('alumne-portada-alert','Codi incorrecte. Comprova-ho amb el tutor/a.');return;}
   sessioActual=data;
   modeAlumne='auto';
   carregaExerciciAlumne(data.exercici_id,'auto',codi);
@@ -1261,15 +1329,19 @@ async function carregaExerciciAlumne(exId, mode, codi){
     const {data}=await db.from('exercicis_extra').select('dades').eq('id',id).single();
     if(data)ex=JSON.parse(data.dades);
   }
-  if(!ex){mostraAlerta('login-alert','Exercici no trobat.');return;}
+  if(!ex){mostraAlerta('alumne-portada-alert','Exercici no trobat.');return;}
   exerciciActual=ex;
-  document.getElementById('vista-login').style.display='none';
-  document.getElementById('nav').style.display='none';
-  document.getElementById('vista-alumne').style.display='block';
-  document.getElementById('alumne-mode-badge').textContent=mode==='auto'?'Autoaprenentatge':'Sessió de grup';
-  document.getElementById('alumne-ex-titol').textContent=(ex.model?ex.model+' · ':'')+ex.activitat;
-  document.getElementById('alumne-ex-instruccions').textContent=ex.instruccions||'';
-  document.getElementById('btn-envia').style.display=mode==='sessio'?'inline-flex':'none';
+  if(!window.alumneToken)window.alumneToken=generaCodi(8)+Date.now().toString(36);
+  intentCount=0;
+  document.getElementById('alumne-portada').style.display='none';
+  document.getElementById('alumne-exercici-wrap').style.display='block';
+  const badge=document.getElementById('al-mode-badge');
+  badge.textContent=mode==='auto'?'Autoaprenentatge':'Sessió de grup';
+  badge.style.background=mode==='auto'?'#e8f5e9':'var(--upc-light)';
+  badge.style.color=mode==='auto'?'#2e7d32':'var(--upc-dark)';
+  document.getElementById('al-ex-titol').textContent=(ex.model?ex.model+' · ':'')+ex.activitat;
+  document.getElementById('al-ex-instruccions').textContent=ex.instruccions||'';
+  document.getElementById('al-intent-badge').style.display='none';
   renderExerciciAlumne(ex);
 }
 
@@ -1277,106 +1349,155 @@ async function carregaExerciciAlumne(exId, mode, codi){
 // RENDERITZAR EXERCICI (ALUMNE)
 // ═══════════════════════════════════════════
 function renderExerciciAlumne(ex){
-  const cont=document.getElementById('exercici-contingut');
+  const cont=document.getElementById('al-contingut');
   let html='';
 
-  // Exemple
   if(ex.exemple){
     html+=`<div class="exemple-box"><strong>Exemple:</strong> ${ex.exemple}</div>`;
   }
 
-  if(ex.tipus==='oberta'){
-    // Passatge de text (per 3.3, 3.4)
+  if(ex.tipus==='sinonims'){
+    // Text literari complet primer
+    const parags=(ex.passatgeText||'').split('\n\n').map(p=>p.trim()).filter(Boolean);
+    html+=`<div class="passatge-box">`;
+    if(ex.passatgeTitol)html+=`<h3 style="font-size:15px;font-weight:700;color:var(--gray);margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid #e8e0c8">${ex.passatgeTitol}</h3>`;
+    parags.forEach(p=>{html+=`<p style="margin-bottom:14px;line-height:1.8">${p}</p>`;});
+    if(ex.font)html+=`<p style="font-size:12px;color:var(--gray2);font-style:italic;margin-top:8px">${ex.font}</p>`;
+    html+=`</div>`;
+    // Llista de mots a sota sense respostes
+    html+=`<div style="border-top:2px solid var(--border);padding-top:16px;margin-top:4px">
+      <p style="font-size:13px;font-weight:500;color:var(--gray);margin-bottom:14px">Busqueu al text un sinònim de cada mot:</p>`;
+    html+=ex.preguntes.map(p=>`
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;flex-wrap:wrap">
+        <span style="background:var(--upc);color:#fff;border-radius:50%;width:26px;height:26px;display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0">${p.n}</span>
+        <span style="font-size:14px;font-weight:500;min-width:150px">${p.text} →</span>
+        <input type="text" class="q-input" style="max-width:220px" data-idx="${p.n-1}" placeholder="sinònim...">
+      </div>`).join('');
+    html+=`</div>`;
+
+  } else if(ex.tipus==='oberta'){
     if(ex.passatgeText){
-      // Renderitzar el passatge amb inputs inline
+      // 3.3: passatge amb buits numerats i keyword al costat
       let pt=ex.passatgeText;
       ex.preguntes.forEach(p=>{
-        pt=pt.replace(`___ (${p.kw})`,`<input type="text" class="q-input" data-idx="${p.n-1}" style="min-width:160px" placeholder="${p.kw}">`)
-           .replace(`___ `,`<input type="text" class="q-input" data-idx="${p.n-1}" style="min-width:160px" placeholder=""> `);
+        const marker=`(${p.n}) ___`;
+        const repl=`<span style="white-space:nowrap"><span style="font-size:11px;color:var(--gray2);vertical-align:super;margin-right:2px">(${p.n})</span><input type="text" class="q-input" data-idx="${p.n-1}" style="min-width:150px;display:inline-block;vertical-align:middle"> <span style="color:var(--gray2);font-style:italic;font-size:13px">(${p.kw})</span></span>`;
+        pt=pt.replace(marker,repl);
       });
-      html+=`<div class="text-passatge" style="line-height:2.4">${pt}</div>`;
-      if(ex.font)html+=`<p style="font-size:12px;color:var(--gray2);margin-bottom:16px">${ex.font}</p>`;
+      html+=`<div style="font-size:14px;line-height:2.6;color:#222;padding:16px;background:#fafafa;border:1px solid var(--border);border-radius:var(--radius);margin-bottom:16px">${pt}</div>`;
+      if(ex.font)html+=`<p style="font-size:12px;color:var(--gray2);margin-bottom:16px;font-style:italic">${ex.font}</p>`;
     } else {
-      // Llista de preguntes (per 3.2)
+      // 3.2: llista de frases amb keyword al costat del camp
       html+=ex.preguntes.map(p=>`
-        <div class="q-item">
-          <div class="q-text"><span class="q-num">${p.n}</span>${p.text||`${p.text||''} <span class="q-keyword">(${p.kw})</span>`}</div>
-          <input type="text" class="q-input" data-idx="${p.n-1}" placeholder="Escriviu la forma correcta...">
+        <div style="margin-bottom:14px;padding:12px 16px;border:1px solid var(--border);border-radius:var(--radius);background:#fafafa">
+          <div style="display:flex;align-items:flex-start;gap:10px">
+            <span style="background:var(--upc);color:#fff;border-radius:50%;width:26px;height:26px;display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;margin-top:2px">${p.n}</span>
+            <div style="flex:1">
+              <div style="font-size:14px;color:#222;margin-bottom:8px">${p.text}</div>
+              <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+                <input type="text" class="q-input" data-idx="${p.n-1}" style="max-width:260px" placeholder="Escriviu la forma correcta...">
+                <span style="color:var(--gray2);font-style:italic;font-size:13px">(${p.kw})</span>
+              </div>
+            </div>
+          </div>
         </div>`).join('');
     }
   } else {
-    // SELECCIÓ: renderitzar passatges amb selects inline
-    const passatges=ex.passatges||[{text:ex.text||'',titol:''}];
-    passatges.forEach(pas=>{
-      if(pas.titol)html+=`<h3 style="font-size:14px;font-weight:500;color:var(--upc);margin:16px 0 8px">${pas.titol}</h3>`;
-      let txt=pas.text;
-      // Substituir {n} per selects
-      txt=txt.replace(/\{(\d+)\}/g,(m,ni)=>{
-        const p=ex.preguntes.find(x=>x.n===parseInt(ni));
-        if(!p)return m;
-        const opts=p.opts||ex.opcionsGlobal||[];
-        const optsHTML=`<option value="">— tria —</option>`+opts.map(o=>`<option value="${o}">${o}</option>`).join('');
-        return `<span class="blank-n">(${ni})</span><select class="inline-sel" data-idx="${p.n}">${optsHTML}</select>`;
+    // SELECCIÓ (3.1 i 3.5)
+    const passatges=ex.passatges||[];
+    if(passatges.length>0){
+      passatges.forEach(pas=>{
+        if(pas.titol)html+=`<h3 style="font-size:14px;font-weight:500;color:var(--upc);margin:16px 0 8px">${pas.titol}</h3>`;
+        let txt=pas.text;
+        txt=txt.replace(/\{(\d+)\}/g,(m,ni)=>{
+          const p=ex.preguntes.find(x=>x.n===parseInt(ni));
+          if(!p)return m;
+          const opts=p.opts||ex.opcionsGlobal||[];
+          const optsHTML='<option value="">— tria —</option>'+opts.map(o=>`<option value="${o}">${o}</option>`).join('');
+          return `<span style="font-size:11px;color:var(--gray2);vertical-align:super;margin-right:2px">(${ni})</span><select class="inline-sel" data-idx="${p.n}">${optsHTML}</select>`;
+        });
+        html+=`<div class="text-passatge">${txt}</div>`;
+        if(pas.font)html+=`<p style="font-size:12px;color:var(--gray2);margin:4px 0 12px;font-style:italic">${pas.font}</p>`;
       });
-      html+=`<div class="text-passatge">${txt}</div>`;
-      if(pas.font)html+=`<p style="font-size:12px;color:var(--gray2);margin:4px 0 12px">${pas.font}</p>`;
-    });
-    // Exercicis 3.5: llista de frases
-    if(!ex.passatges&&ex.preguntes){
+    } else {
+      // 3.5: llista de frases
       html+=ex.preguntes.map(p=>{
         const opts=p.opts||ex.opcionsGlobal||[];
-        const optsHTML=`<option value="">— tria —</option>`+opts.map(o=>`<option value="${o}">${o}</option>`).join('');
-        const txt=p.text.replace('___',`<select class="inline-sel" data-idx="${p.n}">${optsHTML}</select>`);
-        return `<div class="q-item"><div class="q-text"><span class="q-num">${p.n}</span>${txt}</div></div>`;
+        const optsHTML='<option value="">— tria —</option>'+opts.map(o=>`<option value="${o}">${o}</option>`).join('');
+        const txt=(p.text||'').replace('___',`<select class="inline-sel" data-idx="${p.n}">${optsHTML}</select>`);
+        return `<div style="margin-bottom:14px;padding:12px 16px;border:1px solid var(--border);border-radius:var(--radius);background:#fafafa;display:flex;align-items:flex-start;gap:10px">
+          <span style="background:var(--upc);color:#fff;border-radius:50%;width:26px;height:26px;display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;margin-top:2px">${p.n}</span>
+          <div style="font-size:14px;color:#222;flex:1;line-height:2">${txt}</div>
+        </div>`;
       }).join('');
     }
   }
   cont.innerHTML=html;
-  document.getElementById('alumne-resultat').textContent='';
-  document.getElementById('btn-envia').disabled=false;
+  document.getElementById('al-resultat').textContent='';
+  if(document.getElementById('al-alert'))document.getElementById('al-alert').innerHTML='';
 }
 
 // ═══════════════════════════════════════════
 // COMPROVA (alumne)
 // ═══════════════════════════════════════════
-function comprovaSessio(){
-  const ex=exerciciActual;
-  if(!ex)return;
-  let correctes=0,respostes=0;
+// ═══════════════════════════════════════════
+// COMPROVA (i envia automàticament si és sessió de grup)
+// ═══════════════════════════════════════════
+async function comprovaSessio(){
+  const ex=exerciciActual;if(!ex)return;
+  const respostes=[];const correctes=[];
+  const esOberta=(ex.tipus==='oberta'||ex.tipus==='sinonims');
 
-  if(ex.tipus==='oberta'){
-    document.querySelectorAll('#exercici-contingut .q-input').forEach((inp,i)=>{
-      const p=ex.preguntes[i];if(!p)return;
-      const val=norm(inp.value);
+  if(esOberta){
+    document.querySelectorAll('#al-contingut .q-input').forEach((inp,i)=>{
+      const p=ex.preguntes[i];
+      const val=inp.value.trim();
       inp.classList.remove('correct','incorrect');
-      if(!val)return;
-      respostes++;
-      const vàlids=p.ans.split('|').map(norm);
-      if(vàlids.includes(val)){inp.classList.add('correct');correctes++;}
-      else inp.classList.add('incorrect');
+      respostes.push(val);
+      if(!p){correctes.push(false);return;}
+      const valids=p.ans.split('|').map(norm);
+      const ok=valids.includes(norm(val));
+      correctes.push(ok);
+      if(val)inp.classList.add(ok?'correct':'incorrect');
     });
   } else {
-    document.querySelectorAll('#exercici-contingut .inline-sel').forEach((sel,i)=>{
+    document.querySelectorAll('#al-contingut .inline-sel').forEach(sel=>{
       const idx=parseInt(sel.dataset.idx);
-      const p=ex.preguntes.find(x=>x.n===idx);if(!p)return;
+      const p=ex.preguntes.find(x=>x.n===idx);
       sel.classList.remove('correct','incorrect');
-      if(!sel.value||sel.value==='— tria —')return;
-      respostes++;
-      // Gestió especial model prova 2 (respostes a,b,c)
-      let correcta=false;
-      if(['a','b','c'].includes(p.ans)){
-        const idx2=p.ans==='a'?0:p.ans==='b'?1:2;
-        correcta=sel.value===(p.opts||[])[idx2];
-      } else {
-        correcta=norm(sel.value)===norm(p.ans);
+      const val=sel.value||'';
+      respostes.push(val);
+      let ok=false;
+      if(p&&val&&val!=='— tria —'){
+        if(p.ans==='Ø')ok=(val==='Ø');
+        else ok=norm(val)===norm(p.ans);
       }
-      if(correcta){sel.classList.add('correct');correctes++;}
-      else sel.classList.add('incorrect');
+      correctes.push(ok);
+      if(val&&val!=='— tria —')sel.classList.add(ok?'correct':'incorrect');
     });
   }
+
   const total=ex.preguntes.length;
-  document.getElementById('alumne-resultat').innerHTML=
-    `Has respost <strong>${respostes}</strong> de <strong>${total}</strong> preguntes. Respostes correctes: <strong style="color:${correctes===total?'var(--ok)':'var(--upc)'}">${correctes}/${total}</strong>.`;
+  const nCorrectes=correctes.filter(Boolean).length;
+  const nRespostes=respostes.filter(r=>r&&r!=='— tria —').length;
+  document.getElementById('al-resultat').innerHTML=
+    `Has respost <strong>${nRespostes}</strong> de <strong>${total}</strong>. Respostes correctes: <strong style="color:${nCorrectes===total?'var(--ok)':'var(--upc)'}">${nCorrectes}/${total}</strong>.`;
+
+  // Enviar si és sessió de grup (autoaprenentatge NO envia)
+  if(modeAlumne==='sessio'&&sessioActual){
+    intentCount++;
+    const badge=document.getElementById('al-intent-badge');
+    badge.style.display='inline-block';
+    badge.textContent=`Intent ${intentCount} enviat ✓`;
+    try{
+      await db.from('respostes').insert({
+        sessio_id:sessioActual.id,
+        respostes:JSON.stringify(respostes),
+        correctes:JSON.stringify(correctes),
+        session_token:window.alumneToken||null
+      });
+    }catch(e){console.error('Error enviant:',e);}
+  }
 }
 
 function reiniciaEx(){
@@ -1388,50 +1509,35 @@ function reiniciaEx(){
   document.getElementById('alumne-resultat').textContent='';
 }
 
-// ═══════════════════════════════════════════
-// ENVIA RESPOSTES (alumne, mode sessió)
-// ═══════════════════════════════════════════
-async function enviaSessio(){
-  const ex=exerciciActual;
-  if(!ex||!sessioActual)return;
-  const respostes=[];const correctes=[];
-  if(ex.tipus==='oberta'){
-    document.querySelectorAll('#exercici-contingut .q-input').forEach((inp,i)=>{
-      const p=ex.preguntes[i];
-      const val=inp.value.trim();
-      respostes.push(val);
-      const vàlids=(p?.ans||'').split('|').map(norm);
-      correctes.push(vàlids.includes(norm(val)));
-    });
-  } else {
-    document.querySelectorAll('#exercici-contingut .inline-sel').forEach(sel=>{
-      const idx=parseInt(sel.dataset.idx);
-      const p=ex.preguntes.find(x=>x.n===idx);
-      const val=sel.value||'';respostes.push(val);
-      let ok=false;
-      if(p){
-        if(['a','b','c'].includes(p.ans)){
-          const i2=p.ans==='a'?0:p.ans==='b'?1:2;ok=val===(p.opts||[])[i2];
-        } else {ok=norm(val)===norm(p.ans);}
-      }
-      correctes.push(ok);
-    });
-  }
-  const {error}=await db.from('respostes').insert({
-    sessio_id:sessioActual.id,
-    respostes:JSON.stringify(respostes),
-    correctes:JSON.stringify(correctes)
-  });
-  if(error){mostraAlerta('alumne-alert','Error en enviar. Torna-ho a provar.');return;}
-  document.getElementById('btn-envia').disabled=true;
-  mostraAlerta('alumne-alert','Respostes enviades correctament. Podeu tancar la pàgina.','ok');
-  document.getElementById('alumne-botons').querySelectorAll('button:not(#btn-envia)').forEach(b=>b.disabled=true);
-}
+
 
 // ═══════════════════════════════════════════
 // INIT
 // ═══════════════════════════════════════════
+// ═══════════════════════════
+// NAV INICIAL
+// ═══════════════════════════
+function mostraAlumne(){
+  document.getElementById('app-alumne').style.display='flex';
+  document.getElementById('app-staff').style.display='none';
+}
+function mostraStaff(){
+  document.getElementById('app-alumne').style.display='none';
+  document.getElementById('app-staff').style.display='block';
+}
+function nouCodi(){
+  sessioActual=null;exerciciActual=null;intentCount=0;modeAlumne=null;
+  document.getElementById('alumne-exercici-wrap').style.display='none';
+  document.getElementById('alumne-portada').style.display='block';
+  document.getElementById('al-codi-sessio').value='';
+  document.getElementById('al-codi-auto').value='';
+  mostraAlerta('alumne-portada-alert','');
+  document.getElementById('al-resultat').textContent='';
+}
+
 setupDB();
+mostraAlumne();
 </script>
+</div><!-- /app-staff -->
 </body>
 </html>
