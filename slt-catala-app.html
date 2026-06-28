@@ -984,7 +984,7 @@ function logout(){
 // VISTES
 // ═══════════════════════════════════════════
 function mostraVista(v){
-  ['admin','tutor','alumne'].forEach(x=>document.getElementById('vista-'+x).style.display='none');
+  ['admin','tutor'].forEach(x=>document.getElementById('vista-'+x).style.display='none');
   document.getElementById('vista-'+v).style.display='block';
   if(v==='admin'){carregaAdmin();}
   if(v==='tutor'){carregaTutor();}
