@@ -629,6 +629,8 @@ async function initTutorView() {
   const url = await resolveExerciciUrl(currentExerciciId);
   currentExerciciData = await fetchAndParseExercici(url);
   renderTutorExercici(currentExerciciData);
+  // Esperem un tick perquè el DOM estigui llest abans de pintar resultats
+  await new Promise(r => setTimeout(r, 100));
   await updateTutorStats();
   startPolling();
 }
