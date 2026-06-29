@@ -848,21 +848,17 @@ function parseExercici(doc, url) {
 // 3.1 — Morfologia i sintaxi
 function parseSeleccioPassatge(doc, data) {
   const textBoxes = doc.querySelectorAll(`.text-box`);
-  textBoxes.forEach((tb, tIdx) => {
-    const fontEl = tb.querySelector(`.font, footer`);
+  textBoxes.forEach((tb) => {
+    const tbCopy = tb.cloneNode(true);
+    const fontEl = tbCopy.querySelector(`.font, footer`);
     const font = fontEl ? fontEl.textContent.trim() : null;
     if (fontEl) fontEl.remove();
-    const passatgeHTML = tb.innerHTML;
-    const passatge = { html: passatgeHTML, font, preguntes: [] };
-    const sels = tb.querySelectorAll ? [] : [];
-    // Restore: re-parse from original
-    const tbCopy = tb.cloneNode(true);
-    const selsCopy = tbCopy.querySelectorAll(`select[data-answer]`);
-    selsCopy.forEach((sel, sIdx) => {
+    const passatge = { html: tbCopy.innerHTML, font, preguntes: [] };
+    tbCopy.querySelectorAll(`select[data-answer]`).forEach((sel) => {
       const opts = [...sel.options].map(o => o.value).filter(v => v !== ``);
       const answer = sel.dataset.answer;
       const qIdx = data.preguntes.length;
-      passatge.preguntes.push({ qIdx, answer, options: opts, passatgeIdx: tIdx, selectIdx: sIdx });
+      passatge.preguntes.push(qIdx);
       data.preguntes.push({ qIdx, answer, options: opts, tipus: `select` });
     });
     data.passatges.push(passatge);
@@ -1101,21 +1097,18 @@ function renderTutorExercici(data) {
 }
 
 function renderTutor31(data, cont) {
-  data.passatges.forEach((passatge, pIdx) => {
-    // Construïm el text-box substituint selects per spans amb la resposta correcta
+  data.passatges.forEach((passatge) => {
     const parser = new DOMParser();
     const pdoc = parser.parseFromString(`<div>${passatge.html}</div>`, `text/html`);
     const sels = pdoc.querySelectorAll(`select[data-answer]`);
     sels.forEach((sel, sIdx) => {
-      const qRef = passatge.preguntes[sIdx];
-      if (!qRef) return;
-      const qIdx = typeof qRef === `object` ? qRef.qIdx : qRef;
+      const qIdx = passatge.preguntes[sIdx];
+      const q = data.preguntes[qIdx];
       const span = document.createElement(`span`);
       span.className = `tutor-answer-correct`;
-      span.textContent = data.preguntes[qIdx]?.answer?.split(`|`)[0] || `?`;
+      span.textContent = q?.answer?.split(`|`)[0] || `?`;
       sel.replaceWith(span);
     });
-
     const div = document.createElement(`div`);
     div.className = `text-box`;
     div.innerHTML = pdoc.body.firstChild.innerHTML;
@@ -1124,16 +1117,11 @@ function renderTutor31(data, cont) {
       div.appendChild(f);
     }
     cont.appendChild(div);
-
-    // Creem un bloc de resultats per cada pregunta del passatge i l'afegim directament al cont
-    passatge.preguntes.forEach((qRef) => {
-      const qIdx = typeof qRef === `object` ? qRef.qIdx : qRef;
+    passatge.preguntes.forEach((qIdx) => {
       const rb = document.createElement(`div`);
       rb.className = `results-block`;
       rb.id = `results-q-${qIdx}`;
-      rb.dataset.qidx = qIdx;
       cont.appendChild(rb);
-      console.log(`[tutor31] creat bloc results-q-${qIdx}`);
     });
   });
 }
@@ -1246,15 +1234,12 @@ function renderTutorResults(data, respostes) {
   const totalAlumnes = [...new Set(respostes.map(r => r.session_token))].length;
 
   if (data.tipus === `seleccio-passatge`) {
-    console.log(`[results] preguntes:`, data.preguntes.length, `passatges:`, data.passatges.length);
     data.passatges.forEach((passatge) => {
-      passatge.preguntes.forEach(qRef => {
-        const qIdx = typeof qRef === `object` ? qRef.qIdx : qRef;
+      passatge.preguntes.forEach(qIdx => {
         const q = data.preguntes[qIdx];
-        if (!q) { console.warn(`[results] pregunta ${qIdx} no trobada`); return; }
+        if (!q) return;
         const rb = document.getElementById(`results-q-${qIdx}`);
-        if (!rb) { console.warn(`[results] bloc results-q-${qIdx} no trobat al DOM`); return; }
-        console.log(`[results] omplint results-q-${qIdx}`);
+        if (!rb) return;
         const counts = qCount[qIdx] || {};
         const total = Object.values(counts).reduce((a, b) => a + b, 0);
         const correctAns = q.answer.split(`|`).map(norm);
