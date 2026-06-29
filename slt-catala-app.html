@@ -23,60 +23,35 @@
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: Roboto, Arial, sans-serif; font-size: 15px; color: #222; background: #f0f4f8; min-height: 100vh; }
 
-  /* HEADER */
   header {
-    background: var(--upc-blue);
-    color: #fff;
-    padding: 0 24px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    min-height: 56px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+    background: var(--upc-blue); color: #fff; padding: 0 24px;
+    display: flex; align-items: center; justify-content: space-between;
+    min-height: 56px; box-shadow: 0 2px 4px rgba(0,0,0,0.15);
   }
   header .brand { font-size: 14px; line-height: 1.4; }
   header .brand strong { font-size: 16px; display: block; }
   header .header-btn {
-    background: rgba(255,255,255,0.15);
-    border: 1px solid rgba(255,255,255,0.4);
-    color: #fff;
-    padding: 6px 14px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 13px;
-    display: none;
+    background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.4);
+    color: #fff; padding: 6px 14px; border-radius: 4px; cursor: pointer;
+    font-size: 13px; display: none;
   }
   header .header-btn:hover { background: rgba(255,255,255,0.25); }
 
-  /* LAYOUT */
   .page { display: none; max-width: 860px; margin: 32px auto; padding: 0 16px; }
   .page.active { display: block; }
 
-  /* CARD */
-  .card {
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-    padding: 32px;
-    margin-bottom: 20px;
-  }
+  .card { background: #fff; border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.1); padding: 32px; margin-bottom: 20px; }
   .card h2 { font-size: 18px; color: var(--upc-blue); margin-bottom: 20px; }
   .card h3 { font-size: 15px; color: var(--upc-blue-dark); margin-bottom: 12px; }
 
-  /* FORMS */
   label { display: block; font-size: 13px; color: var(--gray); margin-bottom: 4px; margin-top: 14px; }
   input[type=text], input[type=password], select.form-select {
     width: 100%; padding: 9px 12px; border: 1px solid var(--border);
-    border-radius: 4px; font-size: 15px; font-family: inherit;
-    transition: border-color .2s;
+    border-radius: 4px; font-size: 15px; font-family: inherit; transition: border-color .2s;
   }
-  input[type=text]:focus, input[type=password]:focus, select.form-select:focus {
-    outline: none; border-color: var(--upc-blue);
-  }
-  .btn {
-    display: inline-block; padding: 9px 20px; border: none; border-radius: 4px;
-    font-size: 14px; font-family: inherit; cursor: pointer; transition: background .2s;
-  }
+  input[type=text]:focus, input[type=password]:focus { outline: none; border-color: var(--upc-blue); }
+
+  .btn { display: inline-block; padding: 9px 20px; border: none; border-radius: 4px; font-size: 14px; font-family: inherit; cursor: pointer; transition: background .2s; }
   .btn-primary { background: var(--upc-blue); color: #fff; }
   .btn-primary:hover { background: var(--upc-blue-dark); }
   .btn-danger { background: #c62828; color: #fff; }
@@ -94,77 +69,48 @@
   .msg-error { background: var(--red-light); color: var(--red); }
   .msg-ok { background: var(--green-light); color: var(--green); }
 
-  /* SESSION CODE */
   .session-code-display {
-    font-size: 48px; font-weight: 700; letter-spacing: 12px;
-    color: var(--upc-blue); text-align: center;
-    background: var(--upc-blue-light); border-radius: 8px;
-    padding: 20px; margin: 12px 0;
+    font-size: 48px; font-weight: 700; letter-spacing: 12px; color: var(--upc-blue);
+    text-align: center; background: var(--upc-blue-light); border-radius: 8px; padding: 20px; margin: 12px 0;
   }
 
-  /* STATS */
   .stats-row { display: flex; gap: 16px; margin-bottom: 16px; flex-wrap: wrap; }
-  .stat-box {
-    flex: 1; min-width: 120px; background: var(--upc-blue-light);
-    border-radius: 6px; padding: 12px 16px; text-align: center;
-  }
+  .stat-box { flex: 1; min-width: 120px; background: var(--upc-blue-light); border-radius: 6px; padding: 12px 16px; text-align: center; }
   .stat-box .stat-num { font-size: 28px; font-weight: 700; color: var(--upc-blue); }
   .stat-box .stat-label { font-size: 12px; color: var(--gray); margin-top: 2px; }
 
-  /* EXERCISE AREA */
   .exercise-container { line-height: 1.8; }
-  .instructions-box {
-    background: var(--upc-blue-light); border-left: 4px solid var(--upc-blue);
-    padding: 12px 16px; border-radius: 0 6px 6px 0; margin-bottom: 16px;
-    font-size: 14px;
-  }
-  .exemple-box {
-    background: var(--gray-light); border: 1px solid var(--border);
-    padding: 10px 14px; border-radius: 4px; margin-bottom: 16px;
-    font-size: 14px;
-  }
-  .text-box {
-    background: #fafafa; border: 1px solid var(--border);
-    padding: 16px 20px; border-radius: 6px; margin-bottom: 16px;
-    line-height: 1.9;
-  }
+  .instructions-box { background: var(--upc-blue-light); border-left: 4px solid var(--upc-blue); padding: 12px 16px; border-radius: 0 6px 6px 0; margin-bottom: 16px; font-size: 14px; }
+  .exemple-box { background: var(--gray-light); border: 1px solid var(--border); padding: 10px 14px; border-radius: 4px; margin-bottom: 16px; font-size: 14px; }
+  .text-box { background: #fafafa; border: 1px solid var(--border); padding: 16px 20px; border-radius: 6px; margin-bottom: 8px; line-height: 1.9; }
   .text-box .font-ref { font-size: 12px; color: var(--gray); margin-top: 10px; font-style: italic; }
 
-  /* INLINE INPUTS */
   input.inline-input {
     width: 120px; padding: 2px 6px; border: 1px solid #aaa;
-    border-radius: 3px; font-size: 15px; font-family: inherit;
-    background: #fff; vertical-align: middle;
+    border-radius: 3px; font-size: 15px; font-family: inherit; background: #fff; vertical-align: middle;
   }
   select.inline-select {
     padding: 2px 4px; border: 1px solid #aaa; border-radius: 3px;
     font-size: 14px; font-family: inherit; background: #fff; vertical-align: middle;
   }
-  .ref-word { font-style: italic; color: var(--gray); font-size: 13px; margin-left: 6px; }
 
-  /* ITEM LIST */
   .item-list { list-style: none; }
   .item-list li { padding: 6px 0; border-bottom: 1px solid #f0f0f0; }
   .item-list li:last-child { border-bottom: none; }
   .item-num { color: var(--gray); font-size: 13px; margin-right: 6px; min-width: 24px; display: inline-block; }
 
-  /* CORRECT / WRONG */
   input.correct, select.correct { background: var(--green-light) !important; border-color: var(--green) !important; }
   input.wrong, select.wrong { background: var(--red-light) !important; border-color: var(--red) !important; }
-  .correct-answer-hint { font-size: 12px; color: var(--green); margin-left: 6px; }
 
-  /* TUTOR VIEW */
   .tutor-answer-correct {
     display: inline-block; background: var(--green-light); color: var(--green);
     border: 1px solid var(--green); border-radius: 3px; padding: 1px 8px;
     font-weight: 500; vertical-align: middle;
   }
-  .tutor-answer-highlight {
-    background: var(--yellow-light); padding: 1px 4px; border-radius: 2px;
-  }
-  .results-block { margin-top: 12px; border-top: 1px solid var(--border); padding-top: 10px; }
-  .result-item { margin-bottom: 8px; }
-  .result-item .option-row { display: flex; align-items: center; gap: 8px; margin: 2px 0; font-size: 13px; }
+
+  .results-block { margin: 4px 0 12px 0; padding: 8px 12px; background: #fafafa; border-left: 3px solid var(--upc-blue-mid); border-radius: 0 4px 4px 0; min-height: 4px; }
+  .result-item { margin-bottom: 10px; }
+  .option-row { display: flex; align-items: center; gap: 8px; margin: 3px 0; font-size: 13px; }
   .option-row .opt-label { min-width: 160px; }
   .progress-bar-wrap { flex: 1; background: #e0e0e0; border-radius: 3px; height: 10px; max-width: 200px; }
   .progress-bar { height: 10px; border-radius: 3px; background: var(--upc-blue); }
@@ -173,49 +119,27 @@
   .q-label { font-size: 13px; font-weight: 500; margin-bottom: 4px; color: #333; }
   .pct-label { font-size: 12px; color: var(--gray); }
 
-  /* ADMIN */
   .tutor-list { list-style: none; margin-top: 8px; }
-  .tutor-list li {
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 8px 12px; border: 1px solid var(--border); border-radius: 4px;
-    margin-bottom: 6px; background: var(--gray-light);
-  }
+  .tutor-list li { display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; border: 1px solid var(--border); border-radius: 4px; margin-bottom: 6px; background: var(--gray-light); }
   .exercici-list { list-style: none; margin-top: 8px; }
-  .exercici-list li {
-    padding: 6px 12px; border: 1px solid var(--border); border-radius: 4px;
-    margin-bottom: 4px; background: var(--gray-light); font-size: 14px;
-  }
+  .exercici-list li { padding: 6px 12px; border: 1px solid var(--border); border-radius: 4px; margin-bottom: 4px; background: var(--gray-light); font-size: 14px; }
 
-  /* TABS */
   .tabs { display: flex; gap: 4px; margin-bottom: 20px; }
-  .tab-btn {
-    padding: 8px 18px; border: 1px solid var(--border); border-radius: 4px 4px 0 0;
-    background: var(--gray-light); cursor: pointer; font-size: 14px; font-family: inherit;
-    border-bottom: none;
-  }
+  .tab-btn { padding: 8px 18px; border: 1px solid var(--border); border-radius: 4px 4px 0 0; background: var(--gray-light); cursor: pointer; font-size: 14px; font-family: inherit; border-bottom: none; }
   .tab-btn.active { background: #fff; color: var(--upc-blue); font-weight: 500; border-color: var(--upc-blue); }
   .tab-content { display: none; }
   .tab-content.active { display: block; }
 
-  /* SESSION SELECT */
   .exercici-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; margin-top: 12px; }
-  .exercici-card {
-    border: 1px solid var(--border); border-radius: 6px; padding: 12px;
-    cursor: pointer; background: #fff; transition: border-color .2s, box-shadow .2s;
-    font-size: 14px;
-  }
+  .exercici-card { border: 1px solid var(--border); border-radius: 6px; padding: 12px; cursor: pointer; background: #fff; transition: border-color .2s, box-shadow .2s; font-size: 14px; }
   .exercici-card:hover { border-color: var(--upc-blue); box-shadow: 0 0 0 2px var(--upc-blue-mid); }
   .exercici-card.selected { border-color: var(--upc-blue); background: var(--upc-blue-light); }
-  .exercici-card .ex-id { font-size: 11px; color: var(--gray); margin-bottom: 4px; }
   .exercici-card .ex-name { font-weight: 500; }
 
-  /* DIVIDER */
   hr { border: none; border-top: 1px solid var(--border); margin: 20px 0; }
 
-  /* RESPONSIVE */
   @media (max-width: 600px) {
     .card { padding: 20px; }
-    .stats-row { gap: 8px; }
     .session-code-display { font-size: 36px; letter-spacing: 8px; }
   }
 </style>
@@ -227,11 +151,13 @@
     Servei de Llengües i Terminologia
     <strong>UPC · Universitat Politècnica de Catalunya</strong>
   </div>
-  <button class="header-btn" id="btnNouCodi">Nou codi</button>
-  <button class="header-btn" id="btnEsborra">Esborra</button>
+  <div>
+    <button class="header-btn" id="btnNouCodi">Nou codi</button>
+    <button class="header-btn" id="btnEsborra">Esborra</button>
+  </div>
 </header>
 
-<!-- ===== INTERFÍCIE A: STAFF ===== -->
+<!-- STAFF LOGIN -->
 <div class="page active" id="pageStaff">
   <div class="card" style="max-width:400px;margin:40px auto;">
     <h2>Accés per a staff</h2>
@@ -245,12 +171,14 @@
   </div>
 </div>
 
-<!-- ===== INTERFÍCIE B: ALUMNE ===== -->
+<!-- ALUMNE -->
 <div class="page" id="pageAlumne">
   <div class="card" id="cardCodiAlumne" style="max-width:400px;margin:40px auto;">
     <h2>Exercicis de català C1</h2>
     <label>Codi de sessió de grup</label>
-    <input type="text" id="inputCodi" maxlength="4" style="text-transform:uppercase;font-size:24px;letter-spacing:6px;text-align:center;" autocomplete="off" placeholder="AB3K">
+    <input type="text" id="inputCodi" maxlength="4"
+      style="text-transform:uppercase;font-size:24px;letter-spacing:6px;text-align:center;"
+      autocomplete="off" placeholder="AB3K">
     <div id="codiMsg"></div>
     <button class="btn btn-primary btn-mt" onclick="entrarSessio()">Entrar</button>
     <div class="alt-link"><a onclick="showInterface('staff')">Accés per a tutors/es i administradors/es →</a></div>
@@ -267,76 +195,7 @@
   </div>
 </div>
 
-<!-- ===== INTERFÍCIE TUTOR ===== -->
-<div class="page" id="pageTutor">
-  <div class="card">
-    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
-      <h2 style="margin:0;">Sessió activa</h2>
-      <div style="display:flex;gap:8px;flex-wrap:wrap;">
-        <button class="btn btn-secondary btn-sm" onclick="tornarMenuTutor()">← Menú d'exercicis</button>
-        <button class="btn btn-danger btn-sm" onclick="tancarSessio()">Tancar sessió</button>
-      </div>
-    </div>
-    <div class="session-code-display" id="tutorCodeDisplay">----</div>
-    <div id="tutorExNom" style="text-align:center;color:var(--gray);font-size:14px;margin-bottom:16px;"></div>
-    <div class="stats-row">
-      <div class="stat-box"><div class="stat-num" id="statIntents">0</div><div class="stat-label">Intents</div></div>
-      <div class="stat-box"><div class="stat-num" id="statAlumnes">0</div><div class="stat-label">Aprenents</div></div>
-      <div class="stat-box"><div class="stat-num" id="statMitjana">—</div><div class="stat-label">Mitjana d'encerts</div></div>
-      <div class="stat-box"><div class="stat-num" id="statUltim">—</div><div class="stat-label">Última actualització</div></div>
-    </div>
-    <hr>
-    <div id="tutorExerciciContainer" class="exercise-container"></div>
-  </div>
-</div>
-
-<!-- ===== INTERFÍCIE ADMIN ===== -->
-<div class="page" id="pageAdmin">
-  <div class="card">
-    <div style="display:flex;justify-content:space-between;align-items:center;">
-      <h2 style="margin:0;">Administrador/a</h2>
-      <button class="btn btn-secondary btn-sm" onclick="logout()">Sortir</button>
-    </div>
-    <hr>
-    <div class="tabs">
-      <button class="tab-btn active" onclick="showTab('tabTutors')">Tutors/es</button>
-      <button class="tab-btn" onclick="showTab('tabExercicis')">Exercicis</button>
-      <button class="tab-btn" onclick="showTab('tabPujar')">Pujar exercici</button>
-    </div>
-
-    <div class="tab-content active" id="tabTutors">
-      <h3>Tutors/es registrats/des</h3>
-      <ul class="tutor-list" id="tutorList"><li style="color:var(--gray);font-size:13px;">Carregant...</li></ul>
-      <hr>
-      <h3>Crear tutor/a nou/va</h3>
-      <label>Nom d'usuari</label>
-      <input type="text" id="newTutorUser" autocomplete="off">
-      <label>Contrasenya</label>
-      <input type="password" id="newTutorPass">
-      <label>Nom visible</label>
-      <input type="text" id="newTutorNom" autocomplete="off">
-      <div id="newTutorMsg"></div>
-      <button class="btn btn-primary btn-mt" onclick="crearTutor()">Crear tutor/a</button>
-    </div>
-
-    <div class="tab-content" id="tabExercicis">
-      <h3>Exercicis disponibles</h3>
-      <ul class="exercici-list" id="exerciciListAdmin"><li style="color:var(--gray);font-size:13px;">Carregant...</li></ul>
-    </div>
-
-    <div class="tab-content" id="tabPujar">
-      <h3>Pujar exercici en format HTML</h3>
-      <label>Nom de l'exercici</label>
-      <input type="text" id="uploadNom" autocomplete="off">
-      <label>URL de l'HTML a GitHub Pages</label>
-      <input type="text" id="uploadUrl" autocomplete="off" placeholder="https://mrm731.github.io/C1-catala/...">
-      <div id="uploadMsg"></div>
-      <button class="btn btn-primary btn-mt" onclick="pujarExercici()">Desar exercici</button>
-    </div>
-  </div>
-</div>
-
-<!-- ===== INTERFÍCIE TUTOR-SELECCIO ===== -->
+<!-- TUTOR MENÚ -->
 <div class="page" id="pageTutorMenu">
   <div class="card">
     <div style="display:flex;justify-content:space-between;align-items:center;">
@@ -350,6 +209,68 @@
     </div>
     <div id="tutorMenuMsg" style="margin-top:12px;"></div>
     <button class="btn btn-primary btn-mt" id="btnCrearSessio" onclick="crearSessio()" style="display:none;">Crear sessió</button>
+  </div>
+</div>
+
+<!-- TUTOR SESSIÓ ACTIVA -->
+<div class="page" id="pageTutor">
+  <div class="card">
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
+      <h2 style="margin:0;">Sessió activa</h2>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+        <button class="btn btn-secondary btn-sm" onclick="tornarMenuTutor()">← Menú d'exercicis</button>
+        <button class="btn btn-danger btn-sm" onclick="tancarSessio()">Tancar sessió</button>
+      </div>
+    </div>
+    <div class="session-code-display" id="tutorCodeDisplay">----</div>
+    <div id="tutorExNom" style="text-align:center;color:var(--gray);font-size:14px;margin-bottom:16px;"></div>
+    <div class="stats-row">
+      <div class="stat-box"><div class="stat-num" id="statIntents">0</div><div class="stat-label">Intents</div></div>
+      <div class="stat-box"><div class="stat-num" id="statAprenents">0</div><div class="stat-label">Aprenents</div></div>
+      <div class="stat-box"><div class="stat-num" id="statMitjana">—</div><div class="stat-label">Mitjana d'encerts</div></div>
+      <div class="stat-box"><div class="stat-num" id="statUltim" style="font-size:18px;">—</div><div class="stat-label">Última actualització</div></div>
+    </div>
+    <hr>
+    <div id="tutorExerciciContainer" class="exercise-container"></div>
+  </div>
+</div>
+
+<!-- ADMIN -->
+<div class="page" id="pageAdmin">
+  <div class="card">
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <h2 style="margin:0;">Administrador/a</h2>
+      <button class="btn btn-secondary btn-sm" onclick="logout()">Sortir</button>
+    </div>
+    <hr>
+    <div class="tabs">
+      <button class="tab-btn active" onclick="showTab(event,'tabTutors')">Tutors/es</button>
+      <button class="tab-btn" onclick="showTab(event,'tabExercicis')">Exercicis</button>
+      <button class="tab-btn" onclick="showTab(event,'tabPujar')">Pujar exercici</button>
+    </div>
+    <div class="tab-content active" id="tabTutors">
+      <h3>Tutors/es registrats/des</h3>
+      <ul class="tutor-list" id="tutorList"><li style="color:var(--gray);font-size:13px;">Carregant...</li></ul>
+      <hr>
+      <h3>Crear tutor/a nou/va</h3>
+      <label>Nom d'usuari</label><input type="text" id="newTutorUser" autocomplete="off">
+      <label>Contrasenya</label><input type="password" id="newTutorPass">
+      <label>Nom visible</label><input type="text" id="newTutorNom" autocomplete="off">
+      <div id="newTutorMsg"></div>
+      <button class="btn btn-primary btn-mt" onclick="crearTutor()">Crear tutor/a</button>
+    </div>
+    <div class="tab-content" id="tabExercicis">
+      <h3>Exercicis disponibles</h3>
+      <ul class="exercici-list" id="exerciciListAdmin"><li style="color:var(--gray);font-size:13px;">Carregant...</li></ul>
+    </div>
+    <div class="tab-content" id="tabPujar">
+      <h3>Pujar exercici en format HTML</h3>
+      <label>Nom de l'exercici</label><input type="text" id="uploadNom" autocomplete="off">
+      <label>URL de l'HTML a GitHub Pages</label>
+      <input type="text" id="uploadUrl" autocomplete="off" placeholder="https://mrm731.github.io/C1-catala/...">
+      <div id="uploadMsg"></div>
+      <button class="btn btn-primary btn-mt" onclick="pujarExercici()">Desar exercici</button>
+    </div>
   </div>
 </div>
 
@@ -389,7 +310,7 @@ const EXERCICIS = {
   'modelprova2-35': `area3-modelprova2-cifalc/35-model prova2-cifalc.html`,
 };
 
-const NOM_EXERCICI = {
+const NOM_TIPUS = {
   '31': `3.1 Morfologia i sintaxi`,
   '32': `3.2 Flexió gramatical`,
   '33': `3.3 Derivació`,
@@ -403,31 +324,15 @@ let currentRole = null;
 let currentSessio = null;
 let currentExerciciId = null;
 let currentExerciciData = null;
-let alumneToken = localStorage.getItem(`alumneToken`) || (() => {
-  const t = Math.random().toString(36).slice(2) + Date.now().toString(36);
-  localStorage.setItem(`alumneToken`, t);
+let selectedExerciciId = null;
+let pollingInterval = null;
+
+// Token únic per navegador — identifica l'aprenent
+const alumneToken = (() => {
+  let t = sessionStorage.getItem(`alumneToken`);
+  if (!t) { t = Math.random().toString(36).slice(2) + Date.now().toString(36); sessionStorage.setItem(`alumneToken`, t); }
   return t;
 })();
-let pollingInterval = null;
-let selectedExerciciId = null;
-
-// ===================== NAV =====================
-function showPage(id) {
-  document.querySelectorAll(`.page`).forEach(p => p.classList.remove(`active`));
-  document.getElementById(id).classList.add(`active`);
-}
-function showInterface(iface) {
-  if (iface === `alumne`) { showPage(`pageAlumne`); }
-  else { showPage(`pageStaff`); }
-}
-function showTab(id) {
-  document.querySelectorAll(`.tab-content`).forEach(t => t.classList.remove(`active`));
-  document.querySelectorAll(`.tab-btn`).forEach(b => b.classList.remove(`active`));
-  document.getElementById(id).classList.add(`active`);
-  event.target.classList.add(`active`);
-  if (id === `tabTutors`) loadTutors();
-  if (id === `tabExercicis`) loadExercicisAdmin();
-}
 
 // ===================== SUPABASE =====================
 async function supa(path, opts = {}) {
@@ -437,19 +342,40 @@ async function supa(path, opts = {}) {
       'Authorization': `Bearer ${SUPA_KEY}`,
       'Content-Type': `application/json`,
       'Prefer': opts.prefer || `return=representation`,
-      ...opts.headers
+      ...(opts.headers || {}),
     },
     method: opts.method || `GET`,
-    body: opts.body ? JSON.stringify(opts.body) : undefined,
+    body: opts.body !== undefined ? JSON.stringify(opts.body) : undefined,
   });
-  if (!res.ok) { const e = await res.json(); throw e; }
   const txt = await res.text();
+  if (!res.ok) throw JSON.parse(txt || `{}`);
   return txt ? JSON.parse(txt) : null;
 }
 
+// ===================== NAV =====================
+function showPage(id) {
+  document.querySelectorAll(`.page`).forEach(p => p.classList.remove(`active`));
+  document.getElementById(id).classList.add(`active`);
+}
+function showInterface(iface) {
+  showPage(iface === `alumne` ? `pageAlumne` : `pageStaff`);
+}
+function showTab(evt, id) {
+  document.querySelectorAll(`.tab-content`).forEach(t => t.classList.remove(`active`));
+  document.querySelectorAll(`.tab-btn`).forEach(b => b.classList.remove(`active`));
+  document.getElementById(id).classList.add(`active`);
+  evt.target.classList.add(`active`);
+  if (id === `tabTutors`) loadTutors();
+  if (id === `tabExercicis`) loadExercicisAdmin();
+}
+function showMsg(el, txt, type) {
+  el.innerHTML = `<div class="msg msg-${type === `error` ? `error` : `ok`}">${txt}</div>`;
+}
+function norm(s) { return (s || ``).toLowerCase(); }
+
 // ===================== LOGIN =====================
-document.getElementById(`loginPass`).addEventListener(`keydown`, e => { if (e.key === `Enter`) doLogin(); });
 document.getElementById(`loginUser`).addEventListener(`keydown`, e => { if (e.key === `Enter`) doLogin(); });
+document.getElementById(`loginPass`).addEventListener(`keydown`, e => { if (e.key === `Enter`) doLogin(); });
 
 async function doLogin() {
   const u = document.getElementById(`loginUser`).value.trim();
@@ -459,9 +385,7 @@ async function doLogin() {
   if (!u || !p) { showMsg(msg, `Omple els dos camps.`, `error`); return; }
   if (u === ADMIN_USER && p === ADMIN_PASS) {
     currentUser = ADMIN_USER; currentRole = `admin`;
-    showPage(`pageAdmin`);
-    loadTutors(); loadExercicisAdmin();
-    return;
+    showPage(`pageAdmin`); loadTutors(); loadExercicisAdmin(); return;
   }
   try {
     const rows = await supa(`usuaris?username=eq.${encodeURIComponent(u)}&rol=eq.tutor`);
@@ -470,8 +394,7 @@ async function doLogin() {
     }
     currentUser = u; currentRole = `tutor`;
     document.getElementById(`tutorWelcome`).textContent = `Benvingut/da, ${rows[0].nom || u}`;
-    showPage(`pageTutorMenu`);
-    loadExercicisGrid();
+    showPage(`pageTutorMenu`); loadExercicisGrid();
   } catch(e) { showMsg(msg, `Error de connexió.`, `error`); }
 }
 
@@ -497,7 +420,7 @@ async function loadTutors() {
     rows.forEach(t => {
       const li = document.createElement(`li`);
       li.innerHTML = `<span><strong>${t.nom || t.username}</strong> <small style="color:var(--gray);">(${t.username})</small></span>
-        <button class="btn btn-danger btn-sm" onclick="eliminarTutor(${t.id}, '${t.username}')">Eliminar</button>`;
+        <button class="btn btn-danger btn-sm" onclick="eliminarTutor(${t.id},'${t.username}')">Eliminar</button>`;
       list.appendChild(li);
     });
   } catch(e) { list.innerHTML = `<li style="color:red;">Error carregant tutors.</li>`; }
@@ -505,10 +428,8 @@ async function loadTutors() {
 
 async function eliminarTutor(id, username) {
   if (!confirm(`Eliminar tutor "${username}"?`)) return;
-  try {
-    await supa(`usuaris?id=eq.${id}`, { method: `DELETE`, prefer: `return=minimal` });
-    loadTutors();
-  } catch(e) { alert(`Error eliminant tutor.`); }
+  try { await supa(`usuaris?id=eq.${id}`, { method: `DELETE`, prefer: `return=minimal` }); loadTutors(); }
+  catch(e) { alert(`Error eliminant tutor.`); }
 }
 
 async function crearTutor() {
@@ -529,13 +450,12 @@ async function crearTutor() {
 
 async function loadExercicisAdmin() {
   const list = document.getElementById(`exerciciListAdmin`);
-  list.innerHTML = `<li style="color:var(--gray);font-size:13px;">Carregant...</li>`;
-  let items = Object.entries(EXERCICIS).map(([id]) => ({ id, nom: `${id.split(`-`)[0]} · ${NOM_EXERCICI[id.slice(-2)]}`, tipus: `integrat` }));
+  list.innerHTML = ``;
+  const items = Object.entries(EXERCICIS).map(([id]) => ({ nom: `${id.split(`-`)[0]} · ${NOM_TIPUS[id.slice(-2)] || id}`, tipus: `integrat` }));
   try {
     const extra = await supa(`exercicis_extra?order=created_at`);
-    if (extra) extra.forEach(e => items.push({ id: `extra-${e.id}`, nom: e.nom, tipus: `pujat` }));
+    if (extra) extra.forEach(e => items.push({ nom: e.nom, tipus: `pujat` }));
   } catch(_) {}
-  list.innerHTML = ``;
   items.forEach(ex => {
     const li = document.createElement(`li`);
     li.innerHTML = `<strong>${ex.nom}</strong> <small style="color:var(--gray);">[${ex.tipus}]</small>`;
@@ -559,44 +479,44 @@ async function pujarExercici() {
 // ===================== TUTOR MENÚ =====================
 async function loadExercicisGrid() {
   const grid = document.getElementById(`exerciciGrid`);
-  grid.innerHTML = `<div style="color:var(--gray);font-size:13px;">Carregant...</div>`;
-  let items = Object.entries(EXERCICIS).map(([id]) => ({
-    id,
-    nom: `${NOM_EXERCICI[id.slice(-2)] || id.slice(-2)}`,
-    model: id.split(`-`)[0]
-  }));
+  grid.innerHTML = ``;
+  const models = {};
+  Object.keys(EXERCICIS).forEach(id => {
+    const model = id.split(`-`)[0];
+    if (!models[model]) models[model] = [];
+    models[model].push({ id, nom: NOM_TIPUS[id.slice(-2)] || id });
+  });
   try {
     const extra = await supa(`exercicis_extra?order=created_at`);
-    if (extra) extra.forEach(e => items.push({ id: `extra-${e.id}`, nom: e.nom, model: `extra` }));
+    if (extra) {
+      models[`extra`] = extra.map(e => ({ id: `extra-${e.id}`, nom: e.nom }));
+    }
   } catch(_) {}
-  grid.innerHTML = ``;
-  // Group by model
-  const models = {};
-  items.forEach(ex => {
-    if (!models[ex.model]) models[ex.model] = [];
-    models[ex.model].push(ex);
-  });
   Object.entries(models).forEach(([model, exs]) => {
     const header = document.createElement(`div`);
-    header.style.cssText = `grid-column:1/-1;font-weight:500;color:var(--upc-blue-dark);margin-top:8px;font-size:13px;`;
+    header.style.cssText = `grid-column:1/-1;font-weight:500;color:var(--upc-blue-dark);margin-top:8px;font-size:13px;text-transform:uppercase;letter-spacing:.5px;`;
     header.textContent = model;
     grid.appendChild(header);
     exs.forEach(ex => {
       const card = document.createElement(`div`);
       card.className = `exercici-card`;
-      card.dataset.id = ex.id;
       card.innerHTML = `<div class="ex-name">${ex.nom}</div>`;
-      card.onclick = () => selectExercici(ex.id, card);
+      card.onclick = () => {
+        document.querySelectorAll(`.exercici-card`).forEach(c => c.classList.remove(`selected`));
+        card.classList.add(`selected`);
+        selectedExerciciId = ex.id;
+        document.getElementById(`btnCrearSessio`).style.display = `inline-block`;
+      };
       grid.appendChild(card);
     });
   });
 }
 
-function selectExercici(id, card) {
-  document.querySelectorAll(`.exercici-card`).forEach(c => c.classList.remove(`selected`));
-  card.classList.add(`selected`);
-  selectedExerciciId = id;
-  document.getElementById(`btnCrearSessio`).style.display = `inline-block`;
+function generarCodi() {
+  const chars = `ABCDEFGHJKLMNPQRSTUVWXYZ23456789`;
+  let c = ``;
+  for (let i = 0; i < 4; i++) c += chars[Math.floor(Math.random() * chars.length)];
+  return c;
 }
 
 async function crearSessio() {
@@ -611,28 +531,7 @@ async function crearSessio() {
     currentSessio = rows[0];
     currentExerciciId = selectedExerciciId;
     await initTutorView();
-  } catch(e) { showMsg(msg, `Error creant sessió.`, `error`); }
-}
-
-function generarCodi() {
-  const chars = `ABCDEFGHJKLMNPQRSTUVWXYZ23456789`;
-  let c = ``;
-  for (let i = 0; i < 4; i++) c += chars[Math.floor(Math.random() * chars.length)];
-  return c;
-}
-
-// ===================== TUTOR VIEW =====================
-async function initTutorView() {
-  document.getElementById(`tutorCodeDisplay`).textContent = currentSessio.codi;
-  document.getElementById(`tutorExNom`).textContent = currentExerciciId;
-  showPage(`pageTutor`);
-  const url = await resolveExerciciUrl(currentExerciciId);
-  currentExerciciData = await fetchAndParseExercici(url);
-  renderTutorExercici(currentExerciciData);
-  // Esperem un tick perquè el DOM estigui llest abans de pintar resultats
-  await new Promise(r => setTimeout(r, 100));
-  await updateTutorStats();
-  startPolling();
+  } catch(e) { showMsg(msg, `Error creant sessió.`, `error`); console.error(e); }
 }
 
 function tornarMenuTutor() {
@@ -641,13 +540,32 @@ function tornarMenuTutor() {
   showPage(`pageTutorMenu`);
 }
 
+// ===================== TUTOR SESSIÓ =====================
+async function initTutorView() {
+  document.getElementById(`tutorCodeDisplay`).textContent = currentSessio.codi;
+  document.getElementById(`tutorExNom`).textContent = currentExerciciId;
+  document.getElementById(`tutorExerciciContainer`).innerHTML = ``;
+  showPage(`pageTutor`);
+
+  try {
+    const url = await resolveExerciciUrl(currentExerciciId);
+    currentExerciciData = await fetchAndParseExercici(url);
+    renderTutorExercici(currentExerciciData);
+  } catch(e) {
+    document.getElementById(`tutorExerciciContainer`).innerHTML = `<p style="color:red;">Error carregant exercici: ${e.message}</p>`;
+    console.error(e);
+  }
+
+  await updateTutorStats();
+  startPolling();
+}
+
 async function tancarSessio() {
   if (!currentSessio) return;
   if (!confirm(`Tancar la sessió ${currentSessio.codi}?`)) return;
   stopPolling();
-  try {
-    await supa(`sessions?id=eq.${currentSessio.id}`, { method: `PATCH`, body: { activa: false }, prefer: `return=minimal` });
-  } catch(_) {}
+  try { await supa(`sessions?id=eq.${currentSessio.id}`, { method: `PATCH`, body: { activa: false }, prefer: `return=minimal` }); }
+  catch(_) {}
   currentSessio = null;
   showPage(`pageTutorMenu`);
 }
@@ -662,43 +580,44 @@ function stopPolling() {
 
 async function updateTutorStats() {
   if (!currentSessio) return;
-  const btn = document.getElementById(`btnActualitzar`);
-
   try {
     const respostes = await supa(`respostes?sessio_id=eq.${currentSessio.id}&order=created_at`);
     if (!respostes) return;
+
     document.getElementById(`statIntents`).textContent = respostes.length;
-    const tokens = [...new Set(respostes.map(r => r.session_token))];
-    document.getElementById(`statAlumnes`).textContent = tokens.length;
+
+    // Aprenents únics: per session_token; fallback a id si null
+    const tokens = new Set(respostes.map(r => r.session_token || r.id));
+    document.getElementById(`statAprenents`).textContent = tokens.size;
+
     if (respostes.length > 0) {
+      // Últim intent per aprenent per calcular la mitjana
       const lastPerToken = {};
-      respostes.forEach(r => lastPerToken[r.session_token] = r);
+      respostes.forEach(r => { lastPerToken[r.session_token || r.id] = r; });
       const vals = Object.values(lastPerToken).map(r => {
         const c = r.correctes || [];
         return c.length > 0 ? c.filter(Boolean).length / c.length : 0;
       });
       const avg = vals.reduce((a, b) => a + b, 0) / vals.length;
       document.getElementById(`statMitjana`).textContent = `${Math.round(avg * 100)}%`;
-      renderTutorResults(currentExerciciData, respostes);
+
+      // Pintar resultats NOMÉS si el DOM de l'exercici ja existeix
+      if (currentExerciciData && document.getElementById(`tutorExerciciContainer`).children.length > 0) {
+        renderTutorResults(currentExerciciData, respostes);
+      }
     } else {
       document.getElementById(`statMitjana`).textContent = `—`;
     }
+
     const now = new Date();
     document.getElementById(`statUltim`).textContent =
       `${String(now.getHours()).padStart(2,`0`)}:${String(now.getMinutes()).padStart(2,`0`)}:${String(now.getSeconds()).padStart(2,`0`)}`;
-  } catch(e) {}
-  finally {
-  }
+  } catch(e) { console.error(`updateTutorStats error:`, e); }
 }
 
 // ===================== ALUMNE =====================
-document.getElementById(`inputCodi`).addEventListener(`keydown`, e => {
-  if (e.key === `Enter`) entrarSessio();
-  e.target.value = e.target.value.toUpperCase();
-});
-document.getElementById(`inputCodi`).addEventListener(`input`, e => {
-  e.target.value = e.target.value.toUpperCase();
-});
+document.getElementById(`inputCodi`).addEventListener(`input`, e => { e.target.value = e.target.value.toUpperCase(); });
+document.getElementById(`inputCodi`).addEventListener(`keydown`, e => { if (e.key === `Enter`) entrarSessio(); });
 
 async function entrarSessio() {
   const codi = document.getElementById(`inputCodi`).value.toUpperCase().trim();
@@ -710,14 +629,17 @@ async function entrarSessio() {
     if (!rows || rows.length === 0) { showMsg(msg, `Codi no trobat o sessió tancada.`, `error`); return; }
     currentSessio = rows[0];
     currentExerciciId = rows[0].exercici_id;
+
+    const url = await resolveExerciciUrl(currentExerciciId);
+    currentExerciciData = await fetchAndParseExercici(url);
+
     document.getElementById(`cardCodiAlumne`).style.display = `none`;
     document.getElementById(`exerciciAlumneWrap`).style.display = `block`;
     document.getElementById(`btnNouCodi`).style.display = `inline-block`;
     document.getElementById(`btnEsborra`).style.display = `inline-block`;
-    const url = await resolveExerciciUrl(currentExerciciId);
-    currentExerciciData = await fetchAndParseExercici(url);
+
     renderAlumneExercici(currentExerciciData);
-  } catch(e) { showMsg(msg, `Error de connexió.`, `error`); console.error(e); }
+  } catch(e) { showMsg(msg, `Error de connexió o exercici no trobat.`, `error`); console.error(e); }
 }
 
 document.getElementById(`btnNouCodi`).addEventListener(`click`, () => {
@@ -728,15 +650,16 @@ document.getElementById(`btnNouCodi`).addEventListener(`click`, () => {
   document.getElementById(`btnNouCodi`).style.display = `none`;
   document.getElementById(`btnEsborra`).style.display = `none`;
   document.getElementById(`codiMsg`).innerHTML = ``;
+  document.getElementById(`alumneMsg`).innerHTML = ``;
 });
 
 document.getElementById(`btnEsborra`).addEventListener(`click`, esborraRespostes);
 
 function esborraRespostes() {
-  document.querySelectorAll(`input.inline-input`).forEach(i => {
+  document.querySelectorAll(`#exerciciAlumneContainer input.inline-input`).forEach(i => {
     i.value = ``; i.classList.remove(`correct`, `wrong`);
   });
-  document.querySelectorAll(`select.inline-select`).forEach(s => {
+  document.querySelectorAll(`#exerciciAlumneContainer select.inline-select`).forEach(s => {
     s.selectedIndex = 0; s.classList.remove(`correct`, `wrong`);
   });
   document.getElementById(`alumneMsg`).innerHTML = ``;
@@ -746,32 +669,32 @@ async function comprova() {
   if (!currentExerciciData) return;
   const respostes = [];
   const correctes = [];
-  const inputs = document.querySelectorAll(`#exerciciAlumneContainer [data-qidx]`);
-  inputs.forEach(el => {
+  document.querySelectorAll(`#exerciciAlumneContainer [data-answer]`).forEach(el => {
     const ans = el.tagName === `SELECT` ? el.value : el.value.trim();
-    const correct = el.dataset.answer.split(`|`).map(norm);
-    const isOk = correct.includes(norm(ans));
+    const validAns = el.dataset.answer.split(`|`).map(norm);
+    const ok = validAns.includes(norm(ans));
     el.classList.remove(`correct`, `wrong`);
-    el.classList.add(isOk ? `correct` : `wrong`);
+    el.classList.add(ok ? `correct` : `wrong`);
     respostes.push(ans);
-    correctes.push(isOk);
+    correctes.push(ok);
   });
   const total = correctes.length;
   const ok = correctes.filter(Boolean).length;
-  const msgEl = document.getElementById(`alumneMsg`);
-  showMsg(msgEl, `${ok} de ${total} correctes (${Math.round(ok/total*100)}%)`, ok === total ? `ok` : `error`);
+  showMsg(document.getElementById(`alumneMsg`),
+    `${ok} de ${total} correctes (${Math.round(ok / total * 100)}%)`,
+    ok === total ? `ok` : `error`);
   try {
     await supa(`respostes`, {
       method: `POST`,
       body: { sessio_id: currentSessio.id, respostes, correctes, session_token: alumneToken }
     });
-  } catch(e) { console.error(`Error desant respostes`, e); }
+  } catch(e) { console.error(`Error desant respostes:`, e); }
 }
 
 // ===================== FETCH & PARSE =====================
 async function resolveExerciciUrl(id) {
   if (EXERCICIS[id]) return BASE_URL + EXERCICIS[id];
-  if (id.startsWith(`extra-`)) {
+  if (id && id.startsWith(`extra-`)) {
     const eid = id.replace(`extra-`, ``);
     const rows = await supa(`exercicis_extra?id=eq.${eid}`);
     if (rows && rows.length > 0) return rows[0].url;
@@ -781,156 +704,140 @@ async function resolveExerciciUrl(id) {
 
 async function fetchAndParseExercici(url) {
   const res = await fetch(url);
+  if (!res.ok) throw new Error(`HTTP ${res.status} en ${url}`);
   const html = await res.text();
-  const parser = new DOMParser();
-  const doc = parser.parseFromString(html, `text/html`);
-  return parseExercici(doc, url);
+  const doc = new DOMParser().parseFromString(html, `text/html`);
+  return parseExercici(doc);
 }
 
-function parseExercici(doc, url) {
-  const data = { url, tipus: null, instruccions: null, exemple: null, passatges: [], preguntes: [] };
+// ===================== PARSE =====================
+// Estratègia: un sol pas de parsing, sense clonar ni tocar el DOM original.
+// Totes les dades es llegeixen del doc original i s'emmagatzemen en objectes plain.
 
-  // Instructions
+function parseExercici(doc) {
+  const data = {
+    tipus: null,
+    instruccions: null,
+    exemple: null,
+    passatges: [],   // [{html, font, preguntes:[qIdx,...]}]
+    preguntes: [],   // [{qIdx, tipus, answer, options?, mot?}]
+    textLiterari: null,  // per a 3.4
+  };
+
   const instrEl = doc.querySelector(`.instructions, .instruccions`);
   if (instrEl) data.instruccions = instrEl.innerHTML;
   const exEl = doc.querySelector(`.exemple, .example`);
   if (exEl) data.exemple = exEl.innerHTML;
 
-  // Detect type by content
-  const selects = doc.querySelectorAll(`select[data-answer]`);
-  const openInputs = doc.querySelectorAll(`div.item input[data-answer]`);
+  const hasTextBox = doc.querySelector(`.text-box`) !== null;
+  const hasSelect = doc.querySelector(`select[data-answer]`) !== null;
+  const hasInput = doc.querySelector(`div.item input[data-answer]`) !== null;
 
-  if (selects.length > 0) {
-    // 3.1 or 3.5
-    const textBox = doc.querySelector(`.text-box`);
-    if (textBox) {
-      data.tipus = `seleccio-passatge`; // 3.1
-      parseSeleccioPassatge(doc, data);
+  if (hasSelect && hasTextBox) {
+    data.tipus = `seleccio-passatge`; // 3.1
+    parse31(doc, data);
+  } else if (hasSelect && !hasTextBox) {
+    data.tipus = `seleccio`; // 3.5
+    parse35(doc, data);
+  } else if (hasInput && hasTextBox) {
+    // Distingim 3.3 de 3.4: a 3.4 cada div.item té un mot visible (no numerat)
+    const firstItem = doc.querySelector(`div.item`);
+    const firstInp = firstItem ? firstItem.querySelector(`input[data-answer]`) : null;
+    // Treiem el text del div sense l'input
+    const itemText = firstItem ? firstItem.textContent.replace(firstInp ? firstInp.value : ``, ``).trim() : ``;
+    // 3.4: el text del item NO comença per dígit (és el mot a sinonimitzar)
+    if (firstItem && !/^\d/.test(itemText)) {
+      data.tipus = `sinonims`; // 3.4
+      parse34(doc, data);
     } else {
-      data.tipus = `seleccio`; // 3.5
-      parseSeleccio(doc, data);
+      data.tipus = `oberta-passatge`; // 3.3
+      parse33(doc, data);
     }
-  } else if (openInputs.length > 0) {
-    const textBox = doc.querySelector(`.text-box`);
-    if (textBox) {
-      // Could be 3.3 or 3.4
-      // 3.4 has items with a word + input (sinonims)
-      const items = doc.querySelectorAll(`div.item`);
-      const hasSinonimPattern = [...items].some(item => {
-        const txt = item.textContent.trim();
-        return txt && !txt.match(/^\d+\./);
-      });
-      // Check if text-box exists and items have sinonim pattern
-      const firstItem = items[0];
-      if (firstItem) {
-        const inp = firstItem.querySelector(`input[data-answer]`);
-        const txt = firstItem.textContent.replace(inp ? inp.value : ``, ``).trim();
-        // If the item text doesn't start with a number, it's sinonims
-        if (txt && !/^\d+\./.test(txt)) {
-          data.tipus = `sinonims`; // 3.4
-          parseSinonims(doc, data);
-        } else {
-          data.tipus = `oberta-passatge`; // 3.3
-          parseOberrtaPassatge(doc, data);
-        }
-      } else {
-        data.tipus = `oberta-passatge`;
-        parseOberrtaPassatge(doc, data);
-      }
-    } else {
-      data.tipus = `oberta`; // 3.2
-      parseOberta(doc, data);
-    }
+  } else if (hasInput && !hasTextBox) {
+    data.tipus = `oberta`; // 3.2
+    parse32(doc, data);
   }
+
   return data;
 }
 
-// 3.1 — Morfologia i sintaxi
-function parseSeleccioPassatge(doc, data) {
-  const textBoxes = doc.querySelectorAll(`.text-box`);
-  textBoxes.forEach((tb) => {
-    // Recollim les dades de cada select ABANS de tocar el DOM
-    const selectData = [];
-    tb.querySelectorAll(`select[data-answer]`).forEach((sel) => {
+// 3.1 — llegim selects del DOM original (no clone), guardem innerHTML del text-box separat
+function parse31(doc, data) {
+  doc.querySelectorAll(`.text-box`).forEach(tb => {
+    // Llegim els selects PRIMER, del DOM original
+    const preguntes = [];
+    tb.querySelectorAll(`select[data-answer]`).forEach(sel => {
       const opts = [...sel.options].map(o => o.value).filter(v => v !== ``);
-      selectData.push({ answer: sel.dataset.answer, options: opts });
+      const qIdx = data.preguntes.length;
+      preguntes.push(qIdx);
+      data.preguntes.push({ qIdx, tipus: `select`, answer: sel.dataset.answer, options: opts });
     });
-
-    // Ara fem el clone per extreure l'HTML net (sense font)
-    const tbCopy = tb.cloneNode(true);
-    const fontEl = tbCopy.querySelector(`.font, footer`);
+    // Ara fem el clone per obtenir l'HTML (el clone té els selects amb options perquè els acabem de llegir del DOM viu)
+    const clone = tb.cloneNode(true);
+    const fontEl = clone.querySelector(`.font, footer`);
     const font = fontEl ? fontEl.textContent.trim() : null;
     if (fontEl) fontEl.remove();
-
-    const passatge = { html: tbCopy.innerHTML, font, preguntes: [] };
-
-    selectData.forEach(({ answer, options }) => {
-      const qIdx = data.preguntes.length;
-      passatge.preguntes.push(qIdx);
-      data.preguntes.push({ qIdx, answer, options, tipus: `select` });
-    });
-
-    data.passatges.push(passatge);
+    data.passatges.push({ html: clone.innerHTML, font, preguntes });
   });
 }
 
-// 3.2 — Flexió gramatical
-function parseOberta(doc, data) {
-  const items = doc.querySelectorAll(`div.item`);
-  items.forEach((item, i) => {
+// 3.2 — frases amb input
+function parse32(doc, data) {
+  doc.querySelectorAll(`div.item`).forEach(item => {
     const inp = item.querySelector(`input[data-answer]`);
     if (!inp) return;
-    const answer = inp.dataset.answer;
-    const fullText = item.innerHTML;
-    data.preguntes.push({ qIdx: data.preguntes.length, answer, fullItemHTML: fullText, tipus: `input` });
+    const clone = item.cloneNode(true);
+    const qIdx = data.preguntes.length;
+    data.preguntes.push({ qIdx, tipus: `input`, answer: inp.dataset.answer, fullItemHTML: clone.outerHTML });
   });
 }
 
-// 3.3 — Derivació
-function parseOberrtaPassatge(doc, data) {
-  const textBoxes = doc.querySelectorAll(`.text-box`);
-  textBoxes.forEach((tb, tIdx) => {
-    const fontEl = tb.querySelector(`.font, footer`);
-    const font = fontEl ? fontEl.textContent.trim() : null;
-    const passatge = { html: tb.innerHTML, font, preguntes: [] };
-    const inputs = tb.querySelectorAll(`input[data-answer]`);
-    inputs.forEach(inp => {
+// 3.3 — passatge amb inputs inline
+function parse33(doc, data) {
+  doc.querySelectorAll(`.text-box`).forEach(tb => {
+    const preguntes = [];
+    tb.querySelectorAll(`input[data-answer]`).forEach(inp => {
       const qIdx = data.preguntes.length;
-      passatge.preguntes.push(qIdx);
-      data.preguntes.push({ qIdx, answer: inp.dataset.answer, tipus: `input` });
+      preguntes.push(qIdx);
+      data.preguntes.push({ qIdx, tipus: `input`, answer: inp.dataset.answer });
     });
-    data.passatges.push(passatge);
+    const clone = tb.cloneNode(true);
+    const fontEl = clone.querySelector(`.font, footer`);
+    const font = fontEl ? fontEl.textContent.trim() : null;
+    if (fontEl) fontEl.remove();
+    data.passatges.push({ html: clone.innerHTML, font, preguntes });
   });
 }
 
-// 3.4 — Sinònims
-function parseSinonims(doc, data) {
-  const textBox = doc.querySelector(`.text-box`);
-  if (textBox) {
-    const fontEl = textBox.querySelector(`.font, footer`);
+// 3.4 — text literari + llista de mots
+function parse34(doc, data) {
+  const tb = doc.querySelector(`.text-box`);
+  if (tb) {
+    const clone = tb.cloneNode(true);
+    const fontEl = clone.querySelector(`.font, footer`);
     const font = fontEl ? fontEl.textContent.trim() : null;
-    data.textLiterari = { html: textBox.innerHTML, font };
+    if (fontEl) fontEl.remove();
+    data.textLiterari = { html: clone.innerHTML, font };
   }
-  const items = doc.querySelectorAll(`div.item`);
-  items.forEach((item, i) => {
+  doc.querySelectorAll(`div.item`).forEach(item => {
     const inp = item.querySelector(`input[data-answer]`);
     if (!inp) return;
-    const answer = inp.dataset.answer;
-    const mot = item.textContent.replace(inp.value || ``, ``).trim().replace(/→\s*$/, ``).trim();
-    data.preguntes.push({ qIdx: data.preguntes.length, answer, mot, tipus: `input` });
+    // El mot és tot el text del div llevat del contingut de l'input i el fletxa
+    const mot = item.textContent.replace(inp.value || ``, ``).replace(/→/, ``).trim();
+    const qIdx = data.preguntes.length;
+    data.preguntes.push({ qIdx, tipus: `input`, answer: inp.dataset.answer, mot });
   });
 }
 
-// 3.5 — Expressions
-function parseSeleccio(doc, data) {
-  const items = doc.querySelectorAll(`div.item`);
-  items.forEach((item, i) => {
+// 3.5 — frases amb select (sense text-box)
+function parse35(doc, data) {
+  doc.querySelectorAll(`div.item`).forEach(item => {
     const sel = item.querySelector(`select[data-answer]`);
     if (!sel) return;
     const opts = [...sel.options].map(o => o.value).filter(v => v !== ``);
-    const answer = sel.dataset.answer;
-    const fullText = item.innerHTML;
-    data.preguntes.push({ qIdx: data.preguntes.length, answer, options: opts, fullItemHTML: fullText, tipus: `select` });
+    const clone = item.cloneNode(true);
+    const qIdx = data.preguntes.length;
+    data.preguntes.push({ qIdx, tipus: `select`, answer: sel.dataset.answer, options: opts, fullItemHTML: clone.outerHTML });
   });
 }
 
@@ -938,153 +845,139 @@ function parseSeleccio(doc, data) {
 function renderAlumneExercici(data) {
   const cont = document.getElementById(`exerciciAlumneContainer`);
   cont.innerHTML = ``;
-  if (data.instruccions) {
-    cont.innerHTML += `<div class="instructions-box">${data.instruccions}</div>`;
-  }
-  if (data.exemple) {
-    cont.innerHTML += `<div class="exemple-box">${data.exemple}</div>`;
-  }
-
-  if (data.tipus === `seleccio-passatge`) renderAlumne31(data, cont);
-  else if (data.tipus === `oberta`) renderAlumne32(data, cont);
-  else if (data.tipus === `oberta-passatge`) renderAlumne33(data, cont);
-  else if (data.tipus === `sinonims`) renderAlumne34(data, cont);
-  else if (data.tipus === `seleccio`) renderAlumne35(data, cont);
+  if (data.instruccions) cont.innerHTML += `<div class="instructions-box">${data.instruccions}</div>`;
+  if (data.exemple) cont.innerHTML += `<div class="exemple-box">${data.exemple}</div>`;
+  const renders = {
+    'seleccio-passatge': renderAlumne31,
+    'oberta': renderAlumne32,
+    'oberta-passatge': renderAlumne33,
+    'sinonims': renderAlumne34,
+    'seleccio': renderAlumne35,
+  };
+  if (renders[data.tipus]) renders[data.tipus](data, cont);
+  else cont.innerHTML += `<p style="color:red;">Tipus d'exercici desconegut: ${data.tipus}</p>`;
 }
 
+function makeInlineSelect(q) {
+  const sel = document.createElement(`select`);
+  sel.className = `inline-select`;
+  sel.dataset.answer = q.answer;
+  sel.autocomplete = `off`;
+  const empty = document.createElement(`option`);
+  empty.value = ``; empty.textContent = `—`;
+  sel.appendChild(empty);
+  (q.options || []).forEach(opt => {
+    const o = document.createElement(`option`);
+    o.value = opt; o.textContent = opt;
+    sel.appendChild(o);
+  });
+  return sel;
+}
+
+function makeInlineInput(q) {
+  const inp = document.createElement(`input`);
+  inp.type = `text`; inp.className = `inline-input`;
+  inp.dataset.answer = q.answer;
+  inp.autocomplete = `off`;
+  return inp;
+}
+
+// 3.1 — renderitza cada passatge substituint selects per controls interactius
 function renderAlumne31(data, cont) {
-  data.passatges.forEach((passatge, pIdx) => {
-    const div = document.createElement(`div`);
-    div.className = `text-box`;
-    // Parse the passatge HTML and replace selects with interactive ones
-    const parser = new DOMParser();
-    const pdoc = parser.parseFromString(`<div>${passatge.html}</div>`, `text/html`);
+  data.passatges.forEach((passatge) => {
+    const wrapper = document.createElement(`div`);
+    wrapper.className = `text-box`;
+    // Parsegem l'HTML del passatge i substituïm cada select pel control interactiu
+    const pdoc = new DOMParser().parseFromString(`<div>${passatge.html}</div>`, `text/html`);
     const sels = pdoc.querySelectorAll(`select[data-answer]`);
-    sels.forEach((sel, sIdx) => {
-      const q = passatge.preguntes[sIdx];
-      if (!q) return;
-      const newSel = document.createElement(`select`);
-      newSel.className = `inline-select`;
-      newSel.dataset.qidx = q.qIdx;
-      newSel.dataset.answer = q.answer;
-      const emptyOpt = document.createElement(`option`);
-      emptyOpt.value = ``; emptyOpt.textContent = `—`;
-      newSel.appendChild(emptyOpt);
-      q.options.forEach(opt => {
-        const o = document.createElement(`option`);
-        o.value = opt; o.textContent = opt;
-        newSel.appendChild(o);
-      });
-      sel.replaceWith(newSel);
+    sels.forEach((sel, i) => {
+      const qIdx = passatge.preguntes[i];
+      if (qIdx === undefined) return;
+      const q = data.preguntes[qIdx];
+      sel.replaceWith(makeInlineSelect(q));
     });
-    div.innerHTML = pdoc.body.firstChild.innerHTML;
+    wrapper.innerHTML = pdoc.body.firstChild.innerHTML;
     if (passatge.font) {
-      const fontDiv = document.createElement(`div`);
-      fontDiv.className = `font-ref`; fontDiv.textContent = passatge.font;
-      div.appendChild(fontDiv);
+      const f = document.createElement(`div`); f.className = `font-ref`; f.textContent = passatge.font;
+      wrapper.appendChild(f);
     }
-    cont.appendChild(div);
+    cont.appendChild(wrapper);
   });
 }
 
+// 3.2 — llista de frases amb input
 function renderAlumne32(data, cont) {
-  const ul = document.createElement(`ul`);
-  ul.className = `item-list`;
+  const ul = document.createElement(`ul`); ul.className = `item-list`;
   data.preguntes.forEach((q, i) => {
     const li = document.createElement(`li`);
-    const parser = new DOMParser();
-    const pdoc = parser.parseFromString(`<div>${q.fullItemHTML}</div>`, `text/html`);
+    const pdoc = new DOMParser().parseFromString(q.fullItemHTML, `text/html`);
     const inp = pdoc.querySelector(`input[data-answer]`);
-    if (inp) {
-      const newInp = document.createElement(`input`);
-      newInp.type = `text`; newInp.className = `inline-input`;
-      newInp.dataset.qidx = q.qIdx; newInp.dataset.answer = q.answer;
-      newInp.autocomplete = `off`;
-      inp.replaceWith(newInp);
+    if (inp) inp.replaceWith(makeInlineInput(q));
+    li.innerHTML = `<span class="item-num">${i + 1}.</span> `;
+    // Afegim el contingut del div.item (sense el div exterior)
+    const itemDiv = pdoc.querySelector(`div.item`) || pdoc.body.firstChild;
+    if (itemDiv) {
+      [...itemDiv.childNodes].forEach(n => li.appendChild(document.importNode(n, true)));
     }
-    li.innerHTML = `<span class="item-num">${i + 1}.</span> ${pdoc.body.firstChild.innerHTML}`;
     ul.appendChild(li);
   });
   cont.appendChild(ul);
 }
 
+// 3.3 — passatge amb inputs inline
 function renderAlumne33(data, cont) {
-  data.passatges.forEach((passatge, pIdx) => {
-    const div = document.createElement(`div`);
-    div.className = `text-box`;
-    const parser = new DOMParser();
-    const pdoc = parser.parseFromString(`<div>${passatge.html}</div>`, `text/html`);
+  data.passatges.forEach((passatge) => {
+    const wrapper = document.createElement(`div`); wrapper.className = `text-box`;
+    const pdoc = new DOMParser().parseFromString(`<div>${passatge.html}</div>`, `text/html`);
     const inputs = pdoc.querySelectorAll(`input[data-answer]`);
-    inputs.forEach((inp, iIdx) => {
-      const qIdx = passatge.preguntes[iIdx];
-      const q = data.preguntes[qIdx];
-      if (!q) return;
-      const newInp = document.createElement(`input`);
-      newInp.type = `text`; newInp.className = `inline-input`;
-      newInp.dataset.qidx = q.qIdx; newInp.dataset.answer = q.answer;
-      newInp.autocomplete = `off`;
-      inp.replaceWith(newInp);
+    inputs.forEach((inp, i) => {
+      const qIdx = passatge.preguntes[i];
+      if (qIdx === undefined) return;
+      inp.replaceWith(makeInlineInput(data.preguntes[qIdx]));
     });
-    div.innerHTML = pdoc.body.firstChild.innerHTML;
+    wrapper.innerHTML = pdoc.body.firstChild.innerHTML;
     if (passatge.font) {
-      const fontDiv = document.createElement(`div`);
-      fontDiv.className = `font-ref`; fontDiv.textContent = passatge.font;
-      div.appendChild(fontDiv);
+      const f = document.createElement(`div`); f.className = `font-ref`; f.textContent = passatge.font;
+      wrapper.appendChild(f);
     }
-    cont.appendChild(div);
+    cont.appendChild(wrapper);
   });
 }
 
+// 3.4 — text literari + llista de mots
 function renderAlumne34(data, cont) {
   if (data.textLiterari) {
-    const div = document.createElement(`div`);
-    div.className = `text-box`;
+    const div = document.createElement(`div`); div.className = `text-box`;
     div.innerHTML = data.textLiterari.html;
     if (data.textLiterari.font) {
-      const fontDiv = document.createElement(`div`);
-      fontDiv.className = `font-ref`; fontDiv.textContent = data.textLiterari.font;
-      div.appendChild(fontDiv);
+      const f = document.createElement(`div`); f.className = `font-ref`; f.textContent = data.textLiterari.font;
+      div.appendChild(f);
     }
     cont.appendChild(div);
   }
-  const ul = document.createElement(`ul`);
-  ul.className = `item-list`;
+  const ul = document.createElement(`ul`); ul.className = `item-list`;
   data.preguntes.forEach((q, i) => {
     const li = document.createElement(`li`);
-    const inp = document.createElement(`input`);
-    inp.type = `text`; inp.className = `inline-input`;
-    inp.dataset.qidx = q.qIdx; inp.dataset.answer = q.answer;
-    inp.autocomplete = `off`;
     li.innerHTML = `<span class="item-num">${i + 1}.</span> ${q.mot} → `;
-    li.appendChild(inp);
+    li.appendChild(makeInlineInput(q));
     ul.appendChild(li);
   });
   cont.appendChild(ul);
 }
 
+// 3.5 — frases amb select
 function renderAlumne35(data, cont) {
-  const ul = document.createElement(`ul`);
-  ul.className = `item-list`;
+  const ul = document.createElement(`ul`); ul.className = `item-list`;
   data.preguntes.forEach((q, i) => {
     const li = document.createElement(`li`);
-    const parser = new DOMParser();
-    const pdoc = parser.parseFromString(`<div>${q.fullItemHTML}</div>`, `text/html`);
+    const pdoc = new DOMParser().parseFromString(q.fullItemHTML, `text/html`);
     const sel = pdoc.querySelector(`select[data-answer]`);
-    if (sel) {
-      const newSel = document.createElement(`select`);
-      newSel.className = `inline-select`;
-      newSel.dataset.qidx = q.qIdx; newSel.dataset.answer = q.answer;
-      const emptyOpt = document.createElement(`option`);
-      emptyOpt.value = ``; emptyOpt.textContent = `—`;
-      newSel.appendChild(emptyOpt);
-      q.options.forEach(opt => {
-        const o = document.createElement(`option`);
-        o.value = opt; o.textContent = opt;
-        newSel.appendChild(o);
-      });
-      sel.replaceWith(newSel);
+    if (sel) sel.replaceWith(makeInlineSelect(q));
+    li.innerHTML = `<span class="item-num">${i + 1}.</span> `;
+    const itemDiv = pdoc.querySelector(`div.item`) || pdoc.body.firstChild;
+    if (itemDiv) {
+      [...itemDiv.childNodes].forEach(n => li.appendChild(document.importNode(n, true)));
     }
-    li.innerHTML = `<span class="item-num">${i + 1}.</span> ${pdoc.body.firstChild.innerHTML}`;
     ul.appendChild(li);
   });
   cont.appendChild(ul);
@@ -1094,98 +987,89 @@ function renderAlumne35(data, cont) {
 function renderTutorExercici(data) {
   const cont = document.getElementById(`tutorExerciciContainer`);
   cont.innerHTML = ``;
-  if (!data) return;
   if (data.instruccions) cont.innerHTML += `<div class="instructions-box">${data.instruccions}</div>`;
   if (data.exemple) cont.innerHTML += `<div class="exemple-box">${data.exemple}</div>`;
+  const renders = {
+    'seleccio-passatge': renderTutor31,
+    'oberta': renderTutor32,
+    'oberta-passatge': renderTutor33,
+    'sinonims': renderTutor34,
+    'seleccio': renderTutor35,
+  };
+  if (renders[data.tipus]) renders[data.tipus](data, cont);
+}
 
-  if (data.tipus === `seleccio-passatge`) renderTutor31(data, cont);
-  else if (data.tipus === `oberta`) renderTutor32(data, cont);
-  else if (data.tipus === `oberta-passatge`) renderTutor33(data, cont);
-  else if (data.tipus === `sinonims`) renderTutor34(data, cont);
-  else if (data.tipus === `seleccio`) renderTutor35(data, cont);
+function makeCorrectSpan(answer) {
+  const span = document.createElement(`span`);
+  span.className = `tutor-answer-correct`;
+  span.textContent = answer.split(`|`)[0];
+  return span;
+}
+
+function makeResultBloc(qIdx) {
+  const div = document.createElement(`div`);
+  div.className = `results-block`;
+  div.id = `results-q-${qIdx}`;
+  return div;
 }
 
 function renderTutor31(data, cont) {
   data.passatges.forEach((passatge) => {
-    const parser = new DOMParser();
-    const pdoc = parser.parseFromString(`<div>${passatge.html}</div>`, `text/html`);
-    const sels = pdoc.querySelectorAll(`select[data-answer]`);
-    sels.forEach((sel, sIdx) => {
-      const qIdx = passatge.preguntes[sIdx];
-      const q = data.preguntes[qIdx];
-      const span = document.createElement(`span`);
-      span.className = `tutor-answer-correct`;
-      span.textContent = q?.answer?.split(`|`)[0] || `?`;
-      sel.replaceWith(span);
+    const wrapper = document.createElement(`div`); wrapper.className = `text-box`;
+    const pdoc = new DOMParser().parseFromString(`<div>${passatge.html}</div>`, `text/html`);
+    pdoc.querySelectorAll(`select[data-answer]`).forEach((sel, i) => {
+      const qIdx = passatge.preguntes[i];
+      const q = qIdx !== undefined ? data.preguntes[qIdx] : null;
+      sel.replaceWith(makeCorrectSpan(q ? q.answer : `?`));
     });
-    const div = document.createElement(`div`);
-    div.className = `text-box`;
-    div.innerHTML = pdoc.body.firstChild.innerHTML;
+    wrapper.innerHTML = pdoc.body.firstChild.innerHTML;
     if (passatge.font) {
       const f = document.createElement(`div`); f.className = `font-ref`; f.textContent = passatge.font;
-      div.appendChild(f);
+      wrapper.appendChild(f);
     }
-    cont.appendChild(div);
-    passatge.preguntes.forEach((qIdx) => {
-      const rb = document.createElement(`div`);
-      rb.className = `results-block`;
-      rb.id = `results-q-${qIdx}`;
-      cont.appendChild(rb);
-    });
+    cont.appendChild(wrapper);
+    passatge.preguntes.forEach(qIdx => cont.appendChild(makeResultBloc(qIdx)));
   });
 }
 
 function renderTutor32(data, cont) {
-  const ul = document.createElement(`ul`);
-  ul.className = `item-list`;
+  const ul = document.createElement(`ul`); ul.className = `item-list`;
   data.preguntes.forEach((q, i) => {
     const li = document.createElement(`li`);
-    li.id = `result-q-${q.qIdx}`;
-    li.innerHTML = `<span class="item-num">${i + 1}.</span> 
-      <span class="tutor-answer-correct">${q.answer.split(`|`)[0]}</span>
-      <div class="results-block" id="results-q-${q.qIdx}"></div>`;
+    const pdoc = new DOMParser().parseFromString(q.fullItemHTML, `text/html`);
+    const inp = pdoc.querySelector(`input[data-answer]`);
+    if (inp) inp.replaceWith(makeCorrectSpan(q.answer));
+    li.innerHTML = `<span class="item-num">${i + 1}.</span> `;
+    const itemDiv = pdoc.querySelector(`div.item`) || pdoc.body.firstChild;
+    if (itemDiv) [...itemDiv.childNodes].forEach(n => li.appendChild(document.importNode(n, true)));
+    li.appendChild(makeResultBloc(q.qIdx));
     ul.appendChild(li);
   });
   cont.appendChild(ul);
 }
 
 function renderTutor33(data, cont) {
-  data.passatges.forEach((passatge, pIdx) => {
-    const div = document.createElement(`div`);
-    div.className = `text-box`;
-    const parser = new DOMParser();
-    const pdoc = parser.parseFromString(`<div>${passatge.html}</div>`, `text/html`);
-    const inputs = pdoc.querySelectorAll(`input[data-answer]`);
-    inputs.forEach((inp, iIdx) => {
-      const qIdx = passatge.preguntes[iIdx];
-      const q = data.preguntes[qIdx];
-      if (!q) return;
-      const span = document.createElement(`span`);
-      span.className = `tutor-answer-correct`;
-      span.textContent = q.answer.split(`|`)[0];
-      inp.replaceWith(span);
+  data.passatges.forEach((passatge) => {
+    const wrapper = document.createElement(`div`); wrapper.className = `text-box`;
+    const pdoc = new DOMParser().parseFromString(`<div>${passatge.html}</div>`, `text/html`);
+    pdoc.querySelectorAll(`input[data-answer]`).forEach((inp, i) => {
+      const qIdx = passatge.preguntes[i];
+      const q = qIdx !== undefined ? data.preguntes[qIdx] : null;
+      inp.replaceWith(makeCorrectSpan(q ? q.answer : `?`));
     });
-    div.innerHTML = pdoc.body.firstChild.innerHTML;
+    wrapper.innerHTML = pdoc.body.firstChild.innerHTML;
     if (passatge.font) {
       const f = document.createElement(`div`); f.className = `font-ref`; f.textContent = passatge.font;
-      div.appendChild(f);
+      wrapper.appendChild(f);
     }
-    cont.appendChild(div);
-
-    // Un bloc de resultats per cada pregunta del passatge
-    passatge.preguntes.forEach(qIdx => {
-      const rb = document.createElement(`div`);
-      rb.className = `results-block`;
-      rb.id = `results-q-${qIdx}`;
-      cont.appendChild(rb);
-    });
+    cont.appendChild(wrapper);
+    passatge.preguntes.forEach(qIdx => cont.appendChild(makeResultBloc(qIdx)));
   });
 }
 
 function renderTutor34(data, cont) {
   if (data.textLiterari) {
-    const div = document.createElement(`div`);
-    div.className = `text-box`;
+    const div = document.createElement(`div`); div.className = `text-box`;
     div.innerHTML = data.textLiterari.html;
     if (data.textLiterari.font) {
       const f = document.createElement(`div`); f.className = `font-ref`; f.textContent = data.textLiterari.font;
@@ -1193,163 +1077,96 @@ function renderTutor34(data, cont) {
     }
     cont.appendChild(div);
   }
-  const ul = document.createElement(`ul`);
-  ul.className = `item-list`;
+  const ul = document.createElement(`ul`); ul.className = `item-list`;
   data.preguntes.forEach((q, i) => {
     const li = document.createElement(`li`);
-    li.innerHTML = `<span class="item-num">${i + 1}.</span> ${q.mot} → 
-      <span class="tutor-answer-correct">${q.answer.split(`|`)[0]}</span>
-      <div class="results-block" id="results-q-${q.qIdx}"></div>`;
+    li.innerHTML = `<span class="item-num">${i + 1}.</span> ${q.mot} → `;
+    li.appendChild(makeCorrectSpan(q.answer));
+    li.appendChild(makeResultBloc(q.qIdx));
     ul.appendChild(li);
   });
   cont.appendChild(ul);
 }
 
 function renderTutor35(data, cont) {
-  const ul = document.createElement(`ul`);
-  ul.className = `item-list`;
+  const ul = document.createElement(`ul`); ul.className = `item-list`;
   data.preguntes.forEach((q, i) => {
     const li = document.createElement(`li`);
-    const parser = new DOMParser();
-    const pdoc = parser.parseFromString(`<div>${q.fullItemHTML}</div>`, `text/html`);
+    const pdoc = new DOMParser().parseFromString(q.fullItemHTML, `text/html`);
     const sel = pdoc.querySelector(`select[data-answer]`);
-    if (sel) {
-      const span = document.createElement(`span`);
-      span.className = `tutor-answer-correct`;
-      span.textContent = q.answer.split(`|`)[0];
-      sel.replaceWith(span);
-    }
-    li.innerHTML = `<span class="item-num">${i + 1}.</span> ${pdoc.body.firstChild.innerHTML}
-      <div class="results-block" id="results-q-${q.qIdx}"></div>`;
+    if (sel) sel.replaceWith(makeCorrectSpan(q.answer));
+    li.innerHTML = `<span class="item-num">${i + 1}.</span> `;
+    const itemDiv = pdoc.querySelector(`div.item`) || pdoc.body.firstChild;
+    if (itemDiv) [...itemDiv.childNodes].forEach(n => li.appendChild(document.importNode(n, true)));
+    li.appendChild(makeResultBloc(q.qIdx));
     ul.appendChild(li);
   });
   cont.appendChild(ul);
 }
 
-// ===================== TUTOR RESULTS =====================
+// ===================== RENDER RESULTATS TUTOR =====================
 function renderTutorResults(data, respostes) {
   if (!data || !respostes || respostes.length === 0) return;
 
-  // Per question: count answers
-  const qCount = {}; // qIdx -> { ans -> count }
+  // Comptem quantes vegades cada resposta per cada índex de pregunta
+  const qCount = {}; // { qIdx: { resposta: count } }
   respostes.forEach(r => {
-    const resp = r.respostes || [];
-    resp.forEach((ans, i) => {
+    (r.respostes || []).forEach((ans, i) => {
       if (!qCount[i]) qCount[i] = {};
       qCount[i][ans] = (qCount[i][ans] || 0) + 1;
     });
   });
 
-  const totalAlumnes = [...new Set(respostes.map(r => r.session_token))].length;
+  data.preguntes.forEach(q => {
+    const rb = document.getElementById(`results-q-${q.qIdx}`);
+    if (!rb) return;
 
-  if (data.tipus === `seleccio-passatge`) {
-    data.passatges.forEach((passatge) => {
-      passatge.preguntes.forEach(qIdx => {
-        const q = data.preguntes[qIdx];
-        if (!q) return;
-        const rb = document.getElementById(`results-q-${qIdx}`);
-        if (!rb) return;
-        const counts = qCount[qIdx] || {};
-        const total = Object.values(counts).reduce((a, b) => a + b, 0);
-        const correctAns = q.answer.split(`|`).map(norm);
-        const correctCount = Object.entries(counts).filter(([k]) => correctAns.includes(norm(k))).reduce((a, [, v]) => a + v, 0);
-        const pct = total > 0 ? Math.round(correctCount / total * 100) : 0;
-        let html = `<div class="q-label">Pregunta ${qIdx + 1} · <span class="pct-label">${pct}% encerts</span></div>`;
-        q.options.forEach(opt => {
-          const c = counts[opt] || 0;
-          const isCorrect = correctAns.includes(norm(opt));
-          const w = total > 0 ? Math.round(c / total * 100) : 0;
-          html += `<div class="option-row">
-            <span class="opt-label" style="${isCorrect ? `color:var(--green);font-weight:500;` : ``}">${opt}</span>
-            <div class="progress-bar-wrap"><div class="progress-bar ${isCorrect ? `green` : ``}" style="width:${w}%"></div></div>
-            <span class="opt-count">×${c}</span>
-          </div>`;
-        });
-        rb.innerHTML = html;
-      });
-    });
-  } else if (data.tipus === `oberta-passatge`) {
-    data.passatges.forEach((passatge) => {
-      passatge.preguntes.forEach(qIdx => {
-        const q = data.preguntes[qIdx];
-        if (!q) return;
-        const rb = document.getElementById(`results-q-${qIdx}`);
-        if (!rb) return;
-        const counts = qCount[qIdx] || {};
-        const total = Object.values(counts).reduce((a, b) => a + b, 0);
-        const correctAns = q.answer.split(`|`).map(norm);
-        const correctCount = Object.entries(counts).filter(([k]) => correctAns.includes(norm(k))).reduce((a, [, v]) => a + v, 0);
-        const pct = total > 0 ? Math.round(correctCount / total * 100) : 0;
-        let html = `<div class="q-label">Pregunta ${qIdx + 1} · <span class="pct-label">${pct}% encerts</span></div>`;
-        const shown = new Set();
-        Object.entries(counts).filter(([, v]) => v >= 1).sort(([, a], [, b]) => b - a).forEach(([ans, cnt]) => {
-          const isCorrect = correctAns.includes(norm(ans));
-          const w = total > 0 ? Math.round(cnt / total * 100) : 0;
-          html += `<div class="option-row">
-            <span class="opt-label" style="${isCorrect ? `color:var(--green);font-weight:500;` : ``}">${ans}</span>
-            <div class="progress-bar-wrap"><div class="progress-bar ${isCorrect ? `green` : ``}" style="width:${w}%"></div></div>
-            <span class="opt-count">×${cnt}</span>
-          </div>`;
-          shown.add(norm(ans));
-        });
-        if (!shown.has(norm(correctAns[0]))) {
-          html += `<div class="option-row">
-            <span class="opt-label" style="color:var(--green);font-weight:500;">${q.answer.split(`|`)[0]}</span>
-            <div class="progress-bar-wrap"><div class="progress-bar green" style="width:0%"></div></div>
-            <span class="opt-count">×0</span>
-          </div>`;
-        }
-        rb.innerHTML = html;
-      });
-    });
-  } else {
-    // oberta, sinonims, seleccio — per pregunta directament
-    data.preguntes.forEach(q => {
-      const rb = document.getElementById(`results-q-${q.qIdx}`);
-      if (!rb) return;
-      const counts = qCount[q.qIdx] || {};
-      const total = Object.values(counts).reduce((a, b) => a + b, 0);
-      const correctAns = q.answer.split(`|`).map(norm);
-      const correctCount = Object.entries(counts).filter(([k]) => correctAns.includes(norm(k))).reduce((a, [, v]) => a + v, 0);
-      const pct = total > 0 ? Math.round(correctCount / total * 100) : 0;
-      let html = `<div class="pct-label">${pct}% encerts</div>`;
-      const shown = new Set();
-      const optsToShow = q.options
-        ? q.options.map(opt => [opt, counts[opt] || 0])
+    const counts = qCount[q.qIdx] || {};
+    const total = Object.values(counts).reduce((a, b) => a + b, 0);
+    const correctAns = q.answer.split(`|`).map(norm);
+    const correctCount = Object.entries(counts)
+      .filter(([k]) => correctAns.includes(norm(k)))
+      .reduce((a, [, v]) => a + v, 0);
+    const pct = total > 0 ? Math.round(correctCount / total * 100) : 0;
+
+    let html = `<div class="q-label">Pregunta ${q.qIdx + 1} · <span class="pct-label">${pct}% encerts</span></div>`;
+
+    if (q.tipus === `select`) {
+      // 3.1: mostrem totes les opcions (sempre 3); 3.5: només les triades ≥1 + la correcta
+      const opts = data.tipus === `seleccio-passatge`
+        ? (q.options || []).map(opt => [opt, counts[opt] || 0])
         : Object.entries(counts).filter(([, v]) => v >= 1).sort(([, a], [, b]) => b - a);
-      optsToShow.forEach(([ans, cnt]) => {
-        if (data.tipus === `seleccio` && cnt === 0) return; // 3.5: skip unseen
-        const isCorrect = correctAns.includes(norm(ans));
+      const shown = new Set();
+      opts.forEach(([opt, cnt]) => {
+        const isOk = correctAns.includes(norm(opt));
         const w = total > 0 ? Math.round(cnt / total * 100) : 0;
-        html += `<div class="option-row">
-          <span class="opt-label" style="${isCorrect ? `color:var(--green);font-weight:500;` : ``}">${ans}</span>
-          <div class="progress-bar-wrap"><div class="progress-bar ${isCorrect ? `green` : ``}" style="width:${w}%"></div></div>
-          <span class="opt-count">×${cnt}</span>
-        </div>`;
+        html += optionRow(opt, cnt, w, isOk);
+        shown.add(norm(opt));
+      });
+      if (!shown.has(correctAns[0])) html += optionRow(q.answer.split(`|`)[0], 0, 0, true);
+    } else {
+      // input: mostrem les triades ≥1 + la correcta si no hi és
+      const shown = new Set();
+      Object.entries(counts).filter(([, v]) => v >= 1).sort(([, a], [, b]) => b - a).forEach(([ans, cnt]) => {
+        const isOk = correctAns.includes(norm(ans));
+        const w = total > 0 ? Math.round(cnt / total * 100) : 0;
+        html += optionRow(ans, cnt, w, isOk);
         shown.add(norm(ans));
       });
-      if (!shown.has(norm(correctAns[0]))) {
-        html += `<div class="option-row">
-          <span class="opt-label" style="color:var(--green);font-weight:500;">${q.answer.split(`|`)[0]}</span>
-          <div class="progress-bar-wrap"><div class="progress-bar green" style="width:0%"></div></div>
-          <span class="opt-count">×0</span>
-        </div>`;
-      }
-      rb.innerHTML = html;
-    });
-  }
+      if (!shown.has(correctAns[0])) html += optionRow(q.answer.split(`|`)[0], 0, 0, true);
+    }
+
+    rb.innerHTML = html;
+  });
 }
 
-// ===================== UTILS =====================
-function norm(s) { return (s || ``).toLowerCase(); }
-function showMsg(el, txt, type) {
-  el.innerHTML = `<div class="msg msg-${type === `error` ? `error` : `ok`}">${txt}</div>`;
+function optionRow(label, count, pct, isCorrect) {
+  return `<div class="option-row">
+    <span class="opt-label" style="${isCorrect ? `color:var(--green);font-weight:500;` : ``}">${label}</span>
+    <div class="progress-bar-wrap"><div class="progress-bar ${isCorrect ? `green` : ``}" style="width:${pct}%"></div></div>
+    <span class="opt-count">×${count}</span>
+  </div>`;
 }
-
-// ENTER on codi input
-document.getElementById(`inputCodi`).addEventListener(`keydown`, e => {
-  if (e.key === `Enter`) entrarSessio();
-});
 </script>
 </body>
 </html>
