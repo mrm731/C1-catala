@@ -1102,8 +1102,7 @@ function renderTutorExercici(data) {
 
 function renderTutor31(data, cont) {
   data.passatges.forEach((passatge, pIdx) => {
-    const div = document.createElement(`div`);
-    div.className = `text-box`;
+    // Construïm el text-box substituint selects per spans amb la resposta correcta
     const parser = new DOMParser();
     const pdoc = parser.parseFromString(`<div>${passatge.html}</div>`, `text/html`);
     const sels = pdoc.querySelectorAll(`select[data-answer]`);
@@ -1116,6 +1115,9 @@ function renderTutor31(data, cont) {
       span.textContent = data.preguntes[qIdx]?.answer?.split(`|`)[0] || `?`;
       sel.replaceWith(span);
     });
+
+    const div = document.createElement(`div`);
+    div.className = `text-box`;
     div.innerHTML = pdoc.body.firstChild.innerHTML;
     if (passatge.font) {
       const f = document.createElement(`div`); f.className = `font-ref`; f.textContent = passatge.font;
@@ -1123,13 +1125,15 @@ function renderTutor31(data, cont) {
     }
     cont.appendChild(div);
 
-    // Un bloc de resultats per cada pregunta del passatge
-    passatge.preguntes.forEach((qRef, sIdx) => {
+    // Creem un bloc de resultats per cada pregunta del passatge i l'afegim directament al cont
+    passatge.preguntes.forEach((qRef) => {
       const qIdx = typeof qRef === `object` ? qRef.qIdx : qRef;
       const rb = document.createElement(`div`);
       rb.className = `results-block`;
       rb.id = `results-q-${qIdx}`;
+      rb.dataset.qidx = qIdx;
       cont.appendChild(rb);
+      console.log(`[tutor31] creat bloc results-q-${qIdx}`);
     });
   });
 }
@@ -1242,13 +1246,15 @@ function renderTutorResults(data, respostes) {
   const totalAlumnes = [...new Set(respostes.map(r => r.session_token))].length;
 
   if (data.tipus === `seleccio-passatge`) {
+    console.log(`[results] preguntes:`, data.preguntes.length, `passatges:`, data.passatges.length);
     data.passatges.forEach((passatge) => {
       passatge.preguntes.forEach(qRef => {
         const qIdx = typeof qRef === `object` ? qRef.qIdx : qRef;
         const q = data.preguntes[qIdx];
-        if (!q) return;
+        if (!q) { console.warn(`[results] pregunta ${qIdx} no trobada`); return; }
         const rb = document.getElementById(`results-q-${qIdx}`);
-        if (!rb) return;
+        if (!rb) { console.warn(`[results] bloc results-q-${qIdx} no trobat al DOM`); return; }
+        console.log(`[results] omplint results-q-${qIdx}`);
         const counts = qCount[qIdx] || {};
         const total = Object.values(counts).reduce((a, b) => a + b, 0);
         const correctAns = q.answer.split(`|`).map(norm);
