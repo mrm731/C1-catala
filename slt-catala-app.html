@@ -1108,9 +1108,12 @@ function renderTutor35(data, cont) {
 function renderTutorResults(data, respostes) {
   if (!data || !respostes || respostes.length === 0) return;
 
-  // Comptem quantes vegades cada resposta per cada índex de pregunta
+  // Només el darrer intent per aprenent
+  const lastPerToken = {};
+  respostes.forEach(r => { lastPerToken[r.session_token || r.id] = r; });
+
   const qCount = {}; // { qIdx: { resposta: count } }
-  respostes.forEach(r => {
+  Object.values(lastPerToken).forEach(r => {
     const resp = typeof r.respostes === `string` ? JSON.parse(r.respostes) : (r.respostes || []);
     resp.forEach((ans, i) => {
       if (!qCount[i]) qCount[i] = {};
