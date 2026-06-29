@@ -595,7 +595,7 @@ async function updateTutorStats() {
       const lastPerToken = {};
       respostes.forEach(r => { lastPerToken[r.session_token || r.id] = r; });
       const vals = Object.values(lastPerToken).map(r => {
-        const c = r.correctes || [];
+        const c = typeof r.correctes === `string` ? JSON.parse(r.correctes) : (r.correctes || []);
         return c.length > 0 ? c.filter(Boolean).length / c.length : 0;
       });
       const avg = vals.reduce((a, b) => a + b, 0) / vals.length;
@@ -1111,11 +1111,13 @@ function renderTutorResults(data, respostes) {
   // Comptem quantes vegades cada resposta per cada índex de pregunta
   const qCount = {}; // { qIdx: { resposta: count } }
   respostes.forEach(r => {
-    (r.respostes || []).forEach((ans, i) => {
+    const resp = typeof r.respostes === `string` ? JSON.parse(r.respostes) : (r.respostes || []);
+    resp.forEach((ans, i) => {
       if (!qCount[i]) qCount[i] = {};
       qCount[i][ans] = (qCount[i][ans] || 0) + 1;
     });
   });
+
 
   data.preguntes.forEach(q => {
     const rb = document.getElementById(`results-q-${q.qIdx}`);
