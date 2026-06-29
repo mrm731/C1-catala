@@ -849,18 +849,27 @@ function parseExercici(doc, url) {
 function parseSeleccioPassatge(doc, data) {
   const textBoxes = doc.querySelectorAll(`.text-box`);
   textBoxes.forEach((tb) => {
+    // Recollim les dades de cada select ABANS de tocar el DOM
+    const selectData = [];
+    tb.querySelectorAll(`select[data-answer]`).forEach((sel) => {
+      const opts = [...sel.options].map(o => o.value).filter(v => v !== ``);
+      selectData.push({ answer: sel.dataset.answer, options: opts });
+    });
+
+    // Ara fem el clone per extreure l'HTML net (sense font)
     const tbCopy = tb.cloneNode(true);
     const fontEl = tbCopy.querySelector(`.font, footer`);
     const font = fontEl ? fontEl.textContent.trim() : null;
     if (fontEl) fontEl.remove();
+
     const passatge = { html: tbCopy.innerHTML, font, preguntes: [] };
-    tbCopy.querySelectorAll(`select[data-answer]`).forEach((sel) => {
-      const opts = [...sel.options].map(o => o.value).filter(v => v !== ``);
-      const answer = sel.dataset.answer;
+
+    selectData.forEach(({ answer, options }) => {
       const qIdx = data.preguntes.length;
       passatge.preguntes.push(qIdx);
-      data.preguntes.push({ qIdx, answer, options: opts, tipus: `select` });
+      data.preguntes.push({ qIdx, answer, options, tipus: `select` });
     });
+
     data.passatges.push(passatge);
   });
 }
